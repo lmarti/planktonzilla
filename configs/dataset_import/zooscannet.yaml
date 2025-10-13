@@ -1,0 +1,41 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.ZooScanNetDatasetImporter
+hf_dataset_name: zooscannet
+push_to_hub: true
+
+human_readable_name: "ZooScanNet Plankton Images Dataset"
+license: "cc-by-nc-4.0"
+description: |
+  Plankton was sampled with various nets, from bottom or 500m depth to the surface, in many oceans
+  of the world. Samples were imaged with a ZooScan. The full images were processed with ZooProcess which generated
+  regions of interest (ROIs) around each individual object and a set of associated features measured on the object
+  (see Gorsky et al 2010 for more information). The same objects were re-processed to compute features with the
+  scikit-image toolbox http://scikit-image.org. The 1,451,745 resulting objects were sorted by a limited number of
+  operators, following a common taxonomic guide, into 98 taxa, using the web application EcoTaxa http://ecotaxa.obs-vlfr.fr.
+  For the purpose of training machine learning classifiers, the images in each class were split into training, validation, and
+  test sets, with proportions 70%, 15% and 15%.
+download_uris: "https://www.seanoe.org/data/00446/55741/data/113141.tar"
+source_url: "https://www.seanoe.org/data/00446/55741/"
+paperswithcode_id: "zooscannet"
+citation_apa: |
+  Elineau, A., Desnos, C., Jalabert, L., Olivier, M., Romagnan, J.-B., Costa Brandao, M., Lombard, F., Llopis, N., 
+  Courboulès, J., Caray-Counil, L., Serranito, B., Irisson, J.-O., Picheral, M., Gorsky, G., & Stemmann, L. (2017). 
+  ZooScanNet: plankton images captured with the ZooScan. SEANOE. https://doi.org/10.17882/55741
+
+citation_bibtex: |
+  @article{dataset:zooscannet,
+    title      = {ZooScanNet: plankton images captured with the ZooScan},
+    author     = {
+      Elineau, Amanda and Desnos, Corinne and Jalabert, Laetitia and Olivier,
+      Marion and Romagnan, Jean-Baptiste and Costa Brandao, Manoela and Lombard,
+      Fabien and Llopis, Natalia and Courboul\`{e}s, Justine and Caray-Counil,
+      Louis and Serranito, Bruno and Irisson, Jean-Olivier and Picheral, Marc and
+      Gorsky, Gaby and Stemmann, Lars
+    },
+    year       = 2017,
+    journal    = {SEANOE},
+    doi        = {10.17882/55741},
+    affiliation = {Sorbonne Université, CNRS, Laboratoire d'Océanographie de Villefanche, LOV, 06230 Villefranche-sur-mer, France}
+  }

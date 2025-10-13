@@ -1,0 +1,13 @@
+# @package _global_
+# (c) Inria
+
+defaults:
+  - default.yaml
+
+custom_loss:
+  _target_: planktonzilla.loss.RobustAsymmetricLoss
+  gamma_pos: 0
+  gamma_neg: 4
+  eps: 0.1
+  epsilon_pos_pow: -2.5
+  reduction: mean

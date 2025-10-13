@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# default logs location
+logs/
+
+# poetry lock should not be stored
+poetry.lock
+
+# macOS 
+.DS_Store
+
+# vscode configs are particular to each one
+.vscode/

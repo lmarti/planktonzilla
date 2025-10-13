@@ -1,0 +1,18 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=base_zoolake model=...
+defaults:
+  - default.yaml
+  - override /datamodule: cifar100.yaml
+  - override /transformation: cifar100.yaml
+  - override /model: timm-resnet50.yaml
+
+model:
+  optimizer:
+    _target_: torch.optim.Adam
+    _partial_: true
+    weight_decay: 0.0001
+  criterion:
+    _target_: deep_plankton.losses.LdamLoss
+    cls_num_list: []

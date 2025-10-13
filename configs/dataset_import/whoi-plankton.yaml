@@ -1,0 +1,43 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.WHOIPlanktonDatasetImporter
+hf_dataset_name: whoi-plankton
+push_to_hub: true
+
+human_readable_name: "WHOI-Plankton - A Large Scale Fine Grained Visual Recognition Benchmark Dataset for Plankton Classification"
+license: "mit"
+description: |
+  The data set available here comprises > 3.5 million images of microscopic marine plankton, organized
+  according to category labels provided by researchers at the Woods Hole Oceanographic Institution (WHOI). The images
+  are currently placed into one of 103 categories.
+paperswithcode_id: "whoi-plankton"
+download_uris:
+  - "https://darchive.mblwhoilibrary.org/bitstreams/5bf89ef0-0155-5ac2-923b-f2a8578c963a/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/e1fd23e9-1b79-51a8-a165-1f9bb30177d8/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/67fd1c6a-9268-58f6-808d-a757bf49a345/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/c1b63530-b104-5a1f-a8b3-f55898f788e7/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/7d6bd792-3fad-59aa-8906-af1fb377115e/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/18b14b5a-2a68-5f85-845f-1c1591a8f1a6/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/c9bf8e43-fa1c-5fd7-9328-04598db52c2e/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/ff635112-6337-5b34-9354-4035847dae24/download"
+  - "https://darchive.mblwhoilibrary.org/bitstreams/6968c380-3713-57b1-bdca-5b21e514a996/download"
+arxiv_id: "1510.00745v1"
+source_url: "https://github.com/hsosik/WHOI-Plankton"
+citation_apa: |
+  Orenstein, E. C., Beijbom, O., Peacock, E. E., & Sosik, H. M. (2015). WHOI-Plankton - A Large 
+  Scale Fine Grained Visual Recognition Benchmark Dataset for Plankton Classification. CoRR, 
+  abs/1510.00745. http://arxiv.org/abs/1510.00745
+
+citation_bibtex: |
+  @article{dataset:whoi,
+    author       = {Eric C. Orenstein and Oscar Beijbom and Emily E. Peacock and Heidi M. Sosik},
+    title        = {WHOI-Plankton - {A} Large Scale Fine Grained Visual Recognition Benchmark
+                    Dataset for Plankton Classification},
+    journal      = {CoRR},
+    volume       = {abs/1510.00745},
+    year         = {2015},
+    url          = {http://arxiv.org/abs/1510.00745},
+    eprinttype   = {arXiv},
+    eprint       = {1510.00745},
+  }

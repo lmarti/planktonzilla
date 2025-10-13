@@ -1,0 +1,26 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.ZooLakeDatasetImporter
+hf_dataset_name: zoolake
+push_to_hub: true
+
+human_readable_name: "ZooLake Plankton Dataset"
+license: "cc-by-4.0"
+source_url: "https://opendata.eawag.ch/dataset/52b6ba86-5ecb-448c-8c01-eec7cb209dc7/resource/1cc785fa-36c2-447d-bb11-92ce1d1f3f2d/download/data.zip"
+description: "Plankton images annotated into 35 classes over 17900 images of zooplankton and large phytoplankton colonies, detected in Lake Greifensee (Switzerland) with the Dual Scripps Plankton Camera."
+download_uris: "https://opendata.eawag.ch/dataset/52b6ba86-5ecb-448c-8c01-eec7cb209dc7/resource/1cc785fa-36c2-447d-bb11-92ce1d1f3f2d/download/data.zip"
+citation_apa: |
+  Kyathanahally, S. P., Hardeman, T., Merz, E., Bulas, T., Reyes, M., Isles, P., Pomati, F., & Baity-Jesi, M. (2021). 
+  Deep learning classification of lake zooplankton. Frontiers in Microbiology, 12. https://doi.org/10.3389/fmicb.2021.746297
+
+citation_bibtex: |
+  @article{dataset:zoolake,
+    title   = {Deep learning classification of lake zooplankton},
+    author  = {Kyathanahally, S.P. and Hardeman, T. and Merz, E. and Bulas, T. and Reyes, M. and Isles, P. and Pomati, F. and Baity-Jesi, M.},
+    journal = {Frontiers in Microbiology},
+    volume  = {12},
+    year    = {2021},
+    doi     = {10.3389/fmicb.2021.746297},
+    url     = {https://www.frontiersin.org/articles/10.3389/fmicb.2021.746297}
+  }

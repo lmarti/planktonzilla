@@ -1,0 +1,51 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.ZooCAMNetDatasetImporter
+hf_dataset_name: zoocamnet
+push_to_hub: true
+
+human_readable_name: "ZooCAMNet: plankton images captured with the ZooCAM"
+license: "cc-by-nc-4.0"
+description: |
+  Plankton was sampled with a Continuous Underway Fish Egg Sampler (CUFES, 315µm mesh size) at 4 m below the
+  surface, and a WP2 net (200µm mesh size) from 100m to the surface, or 5 m above the sea floor to the surface
+  when the depth was < 100 m, in the Bay of Biscay. The full images were processed with the ZooCAM software
+  and the embedded Matrox Imaging Library (Colas et a., 2018) which generated regions of interest (ROIs) around
+  each individual object and a set of features measured on the object. The same objects were re-processed to
+  compute features with the scikit-image library http://scikit-image.org. The 1,286,590 resulting objects were
+  sorted by a limited number of operators, following a common taxonomic guide, into 93 taxa, using the web
+  application EcoTaxa http://ecotaxa.obs-vlfr.fr. For the purpose of training machine learning classifiers, the
+  images in each class were split into training, validation, and test sets, with proportions 70%, 15% and 15%.
+
+download_uris: "https://www.seanoe.org/data/00907/101928/data/113094.tar"
+source_url: "https://www.seanoe.org/data/00907/101928/"
+paperswithcode_id: "zoocamnet"
+citation_apa: |
+  Romagnan, J.-B., Panaïotis, T., Bourriau, P., Danielou, M.-M., Doray, M., Dupuy, C., Forest, B., Grandremy, N., 
+  Huret, M., Le Mestre, S., Nowaczyk, A., Petitgas, P., Pineau, P., Rouxel, J., Tardivel, M., & Irisson, J.-O. (2024). 
+  ZooCAMNet: plankton images captured with the ZooCAM. SEANOE. https://doi.org/10.17882/101928
+
+citation_bibtex: |
+  @article{dataset:zoocamnet,
+    title      = {ZooCAMNet: plankton images captured with the ZooCAM},
+    author     = {Romagnan, Jean-Baptiste and Panaïotis, Thelma and Bourriau, Paul
+                  and Danielou, Marie-Madeleine and Doray, Mathieu and Dupuy, Christine
+                  and Forest, Bertrand and Grandremy, Nina and Huret, Martin and Le Mestre, Sophie
+                  and Nowaczyk, Antoine and Petitgas, Pierre and Pineau, Philippe and Rouxel, Justin
+                  and Tardivel, Morgan and Irisson, Jean-Olivier},
+    year       = 2024,
+    journal    = {SEANOE},
+    doi        = {10.17882/101928},
+    affiliation = {DECOD (Ecosystem Dynamics and Sustainability), IFREMER, INRAE, Institut Agro, Nantes, Centre Atlantique - Rue de l'Ile d'Yeu - BP 21105 - 44311 Nantes Cedex 03, France. E-mail address: nina.grandremy@ifremer.fr.
+    Sorbonne Université, CNRS, Laboratoire d'Océanographie de Villefanche, LOV, 06230 Villefranche-sur-mer, France.
+    Unité DYNECO-PELAGOS, Laboratoire d'Ecologie Pélagique, Ifremer Centre Bretagne - ZI de la Pointe du Diable - CS 10070 - 29280 Plouzané, France.
+    BIOFEEL, UMRi LIENSs, La Rochelle Université / CNRS, 2, rue Olympe de Gouges, 17000 La Rochelle, France.
+    Laboratoire Hydrodynamique Marine, Unité RDT, Ifremer Centre Bretagne - ZI de la Pointe du Diable - CS 10070 - 29280 Plouzané, France.
+    DECOD (Ecosystem Dynamics and Sustainability), IFREMER, INRAE, Institut Agro, Centre Bretagne - ZI de la Pointe du Diable - CS 10070 - 29280 Plouzané, France.
+    UMR CNRS 5805 EPOC-OASU, Station Marine d'Arcachon, Université de Bordeaux, 2 Rue du Professeur Jolyet, 33120 Arcachon, France.
+    Departement Ressources Biologiques et Environnement, Ifremer Centre Atlantique - Rue de l'Ile d'Yeu - BP 21105 - 44311 Nantes Cedex 03, France.
+    Laboratoire Détection, Capteurs et Mesures, Unité RDT, Ifremer Centre Bretagne - ZI de la Pointe du Diable - CS 10070 - 29280 Plouzané, France.}
+  }
+
+  

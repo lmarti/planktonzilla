@@ -1,0 +1,36 @@
+_target_: transformers.TrainingArguments
+output_dir: ${paths.output_dir}
+overwrite_output_dir: true
+
+do_train: true
+do_eval: true
+do_predict: false
+
+num_train_epochs: 30
+
+fp16: false
+per_device_train_batch_size: 8
+per_device_eval_batch_size: 8
+
+dataloader_num_workers: 10
+learning_rate: 5e-5
+lr_scheduler_type: cosine
+weight_decay: 1e-4
+max_grad_norm: 0.01
+
+metric_for_best_model: eval_f1
+greater_is_better: true
+load_best_model_at_end: true
+
+eval_strategy: epoch
+save_strategy: epoch
+save_total_limit: 2
+
+hub_strategy: checkpoint
+
+remove_unused_columns: false, # important do not touch!
+eval_do_concat_batches: false
+ddp_find_unused_parameters: false
+
+include_for_metrics: ['loss']
+auto_find_batch_size: true

@@ -1,0 +1,16 @@
+# default configuration for dataset importers
+
+_target_: null # to be set
+hf_dataset_name: null
+
+data_dir: ${paths.data_dir}
+
+force_download: false
+resume_download: true
+force_imagefolder_preparation: false
+show_progress: true
+check_image_file_integrity: false
+cleanup_after_processing: false
+
+hf_org_name: project-oceania
+hf_token: ${oc.env:HF_TOKEN, null}

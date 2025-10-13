@@ -1,0 +1,15 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - beit_base_patch16_384.in22k_ft_in22k_in1k
+
+image_processor:
+  _args_:
+    - beit_base_patch16_384.in22k_ft_in22k_in1k
+
+
+

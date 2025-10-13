@@ -1,0 +1,7 @@
+defaults:
+  - default.yaml
+
+name: project-oceania/lensless
+
+transform:
+  _target_: torchvision.transforms.v2.ToTensor

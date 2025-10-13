@@ -1,0 +1,36 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.JEDISystemsOceansCPICSDatasetImporter
+hf_dataset_name: jedi_system_oceans_cpics
+# It is best to download CPICS manually and then import it.
+manual_download_local_file_names: ${paths.data_dir}/manual_downloads/CPICS_Validated.zip
+push_to_hub: true
+
+human_readable_name: "JEDI System/OCEANS_CPICS"
+description: |
+  Plankton image dataset from a cabled observatory system (JEDI System/OCEANS) deployed at coastal area of
+  Oshima island, Tokyo, Japan. To understand multiscale process of planktonic ecosystem in the Kuroshio, a cabled observatory
+  system (JEDI-System/OCEANS) was developed and deployed at a coastal area (20 m depth) of Oshima Island, Tokyo, Japan, during
+  2014 to 2016 (Yamazaki et al., 2016). The observatory system can measure environmental parameters such as temperature and
+  salinity, and take microscopic plankton images continuously. In this dataset, planktonic images obtained by the system were
+  identified using machine learning with the validation process and compiled into DarwinCore occurrence records. All
+  biological images and measured environmental parameters were archived at JST NBDC
+  (https://dbarchive.biosciencedbc.jp/en/jedisystem-oceansdb/desc.html).
+license: "cc-by-sa-4.0"
+download_uris: "https://dbarchive.biosciencedbc.jp/data/jedisystem-oceansdb/LATEST/CPICS_Validated.zip"
+source_url: "https://dbarchive.biosciencedbc.jp/data/jedisystem-oceansdb/LATEST/README_e.html#Sec3"
+citation_apa: |
+  Yamasaki, H. (2022). Plankton image dataset from a cabled observatory system (JEDI System/OCEANS) deployed at coastal area of 
+  Oshima Island, Tokyo, Japan. JAMSTEC. https://doi.org/10.48518/00014
+
+citation_bibtex: |
+  @misc{dataset:jedioceans,
+    doi       = {10.48518/00014},
+    url       = {https://www.godac.jamstec.go.jp/bismal/e/dataset/TUMSAT_JEDI-OCEANS},
+    author    = {Yamasaki,  Hidekatsu},
+    title     = {Plankton image dataset from a cabled observatory system ({JEDI System/OCEANS})
+                 deployed at coastal area of {O}shima {I}sland, {T}okyo, {J}apan},
+    publisher = {JAMSTEC},
+    year      = {2022}
+  }

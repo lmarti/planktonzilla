@@ -1,0 +1,18 @@
+_target_: planktonzilla.dataset.DatasetWrapper
+
+name: ???
+
+streaming: false
+
+val_split: 0.2
+test_split: 0.2
+
+val_split_name: validation
+test_split_name: test
+
+split_seed: 42
+
+shuffle: true
+
+transform: ???
+

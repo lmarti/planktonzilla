@@ -1,0 +1,11 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=base_zoolake model=...
+defaults:
+  - default.yaml
+  - override /datamodule: whoi.yaml
+  - override /transformation: whoi.yaml
+
+pytorch_script_filename: null
+

@@ -1,0 +1,46 @@
+# taken from https://dsip.pages.fbk.eu/dsip-docs/machine-learning/slurm-guide/
+# merged with http://www.idris.fr/jean-zay/gpu/jean-zay-gpu-exec_mono_batch.html
+# 
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
+
+submitit_folder: ${hydra.sweep.dir}/submitit/%j
+timeout_min: 15 # 1440=24 hours, set to more if required
+cpus_per_task: 24
+gpus_per_node: null # Leave null
+
+# If using ddp, this needs to be greater than or equal to the number of GPUs in each node
+tasks_per_node: 1
+# mem_gb: 64
+nodes: 1
+name: ${hydra.job.name}
+comment: null
+exclude: null # Leave null
+cpus_per_gpu: null # Leave null
+gpus_per_task: null # Leave null
+mem_per_gpu: null # Leave null
+mem_per_cpu: null # Leave null
+max_num_timeout: 0
+## Only include this if you want to requeue your jobs
+# additional_parameters: { signal: SIGUSR1@90, requeue: false, hint: nomultithread }
+additional_parameters: { hint: nomultithread }
+# Idk what this does
+array_parallelism: 10
+
+# partition: h100 # your_partition_here
+
+qos: qos_gpu_h100-dev # values: qos_gpu_h100-t3 | qos_gpu_h100-t4 | qos_gpu_h100-dev
+
+# Charge resources used by this job to specified account. The account is an arbitrary string. 
+# The account name may be changed after job submission using the scontrol command.
+account: tec@h100  # your_account_here
+gres: "gpu:1" # The number of GPUs you require
+constraint: h100
+setup:
+    - echo "=== Running job on Jean Zay H100 (mono GPU) ==="
+    # # on se place dans le repertoire de soumission
+    # - cd ${SLURM_SUBMIT_DIR}
+    - module purge
+    - module load arch/h100 
+    # activation of offline for wandb and hf hub
+    - export WANDB_MODE=offline
+    - export HF_HUB_OFFLINE=1

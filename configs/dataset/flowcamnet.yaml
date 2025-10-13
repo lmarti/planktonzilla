@@ -1,0 +1,7 @@
+defaults:
+  - default.yaml
+
+name: project-oceania/flowcamnet
+
+transform:
+  _target_: torchvision.transforms.v2.ToTensor

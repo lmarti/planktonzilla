@@ -1,0 +1,17 @@
+# @package _global_
+
+model:
+  _target_: transformers.AutoModelForImageClassification.from_pretrained
+  _args_:
+    - ????
+  ignore_mismatched_sizes: true
+
+image_processor:
+  _target_: transformers.AutoImageProcessor.from_pretrained
+  _args_:
+    - ????
+  do_resize: true
+  do_pad: true
+  use_fast: true
+
+

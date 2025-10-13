@@ -1,0 +1,14 @@
+# @package _global_
+
+# to execute this experiment run:
+# python train.py experiment=base_zoolake model=...
+defaults:
+  - default.yaml
+  - override /datamodule: lensless.yaml
+  - override /transformation: default.yaml
+
+model:
+  optimizer:
+    _target_: torch.optim.Adam
+    _partial_: true
+    weight_decay: 0.0

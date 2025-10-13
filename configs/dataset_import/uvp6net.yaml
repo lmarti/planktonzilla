@@ -1,0 +1,48 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.UVP6NetDatasetImporter
+hf_dataset_name: uvp6net
+push_to_hub: true
+
+human_readable_name: "UVP6Net: plankton images captured with the UVP6"
+license: "cc-by-nc-4.0"
+description: |
+  Plankton was imaged with UVP6 in contrasted oceanic regions. The full images were processed by the
+  UVP6 firmware and the regions of interest (ROIs) around each individual object were recorded. A set
+  of associated features were measured on the objects (see Picheral et al. 2021, doi:10.1002/lom3.10475,
+  for more information). All objects were classified by a limited number of operators into 110 different
+  classes using the web application EcoTaxa (http://ecotaxa.obs-vlfr.fr). The following dataset corresponds
+  to the 634 459 objects that have an area superior to 73 pixels (equivalent spherical diameter of 9.8 pixels,
+  corresponding to the default size limit of 620µm in the UVP6 configuration). The different files provide
+  information about the features of the objects, their taxonomic identification as well as the raw images.
+  For the purpose of training machine learning classifiers, the images in each class were split into training,
+  validation, and test sets, with proportions 70%, 15% and 15%.
+
+  An additional folder is provided, which includes the subset of images used to train the unique embedded
+  classification model of the UVP6 actually deployed on the NKE CTS5 floats (10.5281/zenodo.10694203). These
+  images correspond to UVP6Net objects filtered to retain only those with a size of 79 pixels to fit with the
+  645µm class from EcoPart, resulting in a total of 595,595 objects. The taxonomic identification was also made
+  coarser (from 110 classes to 20) to ensure adequate performance of the classification model on power-constrained
+  hardware. Images in this subset display objects as shades of grey/white on a black background.
+
+download_uris: "https://www.seanoe.org/data/00908/101948/data/119452.tar"
+source_url: "https://www.seanoe.org/data/00908/101948/"
+paperswithcode_id: "uvp6net"
+citation_apa: |
+  Picheral, M., Jalabert, L., Motreuil, S., Courchet, L., Carray-Counil, L., Ricour, F., Panaiotis, T., Petit, F., & 
+  Elineau, A. (2024). UVP6Net: plankton images captured with the UVP6. SEANOE. https://doi.org/10.17882/101948
+
+citation_bibtex: |
+  @article{dataset:uvp6net,
+    title      = {UVP6Net: plankton images captured with the UVP6},
+    author     = {Picheral, Marc and Jalabert, Laetitia and Motreuil, Solène
+                  and Courchet, Lucas and Carray-Counil, Louis and Ricour, Florian
+                  and Panaiotis, Thelma and Petit, Flavien and Elineau, Amanda},
+    year       = 2024,
+    journal    = {SEANOE},
+    doi        = {10.17882/101948},
+    affiliation = {Sorbonne Université, CNRS, Laboratoire d'Océanographie de Villefanche, LOV, 06230 Villefranche-sur-mer, France.
+    Sorbonne Université, Institut de la Mer de Villefranche, IMEV, 06230 Villefranche-sur-Mer, France.
+    Freshwater and OCeanic science Unit of reSearch (FOCUS), University of Liège, Liège, Belgium.}
+  }

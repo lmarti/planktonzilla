@@ -1,0 +1,34 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.FlowCAMNetDatasetImporter
+hf_dataset_name: flowcamnet
+push_to_hub: true
+human_readable_name: "FlowCAMNet: plankton images captured with the FlowCAM"
+license: cc-by-nc-4.0
+description: |
+  Plankton was imaged with Flowcam in contrasted oceanic regions. The full images were processed with the ImageJ
+  software and the regions of interest (ROIs) around each individual object were recorded. A set of associated
+  features were measured on the objects. All objects were classified by a limited number of operators into 167
+  different classes using the web application EcoTaxa (http://ecotaxa.obs-vlfr.fr). The following dataset
+  corresponds to the 301,247 objects and their calculated features. The different files provide information about
+  the features of the objects, their taxonomic identification as well as the raw images.
+download_uris: https://www.seanoe.org/data/00908/101961/data/113201.tar
+source_url:  https://www.seanoe.org/data/00908/101961/
+paperswithcode_id: flowcamnet
+citation_apa: |
+  Jalabert, L., Signoret, G., Caray-Counil, L., Vilain, M., Martins, E., Lombard, F., Picheral, M., & Irisson, J.-O. (2024).
+  FlowCAMNet: plankton images captured with the FlowCAM. SEANOE. https://doi.org/10.17882/101961
+
+citation_bibtex: |
+  @article{dataset:flowcamnet,
+    title      = {FlowCAMNet: plankton images captured with the FlowCAM},
+    author     = {Jalabert, Laetitia and Signoret, Guillaume and Caray-Counil, Louis
+                and Vilain, Marion and Martins, Emmanuelle and Lombard, Fabien
+                and Picheral, Marc and Irisson, Jean-Olivier},
+    year       = 2024,
+    journal    = {SEANOE},
+    doi        = {10.17882/101961},
+    affiliation = {Sorbonne Université, CNRS, Institut de la Mer de Villefranche, IMEV, 06230 Villefranche-sur-Mer, France.
+        Sorbonne Université, CNRS, Laboratoire d'Océanographie de Villefanche, LOV, 06230 Villefranche-sur-mer, France}
+  }

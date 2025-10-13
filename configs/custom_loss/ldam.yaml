@@ -1,0 +1,12 @@
+# @package _global_
+# (c) Inria
+
+custom_loss:
+  _target_: planktonzilla.loss.LDAMLoss
+  cls_num_list: ??? 
+  max_m: 0.5
+  weight: null
+  s: 30
+
+
+

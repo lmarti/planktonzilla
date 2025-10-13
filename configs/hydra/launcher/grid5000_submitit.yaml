@@ -1,0 +1,5 @@
+# submitit configuration for Inria's grid5000 cluster
+# see https://www.grid5000.fr/w/Submitit
+# Experimental, use at your own risk
+
+_target_: hydra_plugins.hydra_submitit_launcher.submitit_launcher.SlurmLauncher
