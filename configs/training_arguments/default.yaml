@@ -3,8 +3,6 @@ output_dir: ${paths.output_dir}
 overwrite_output_dir: true
 
 do_train: true
-do_eval: true
-do_predict: false
 
 num_train_epochs: 30
 
@@ -28,8 +26,11 @@ save_total_limit: 2
 
 hub_strategy: checkpoint
 
-remove_unused_columns: false # important do not touch!
-eval_do_concat_batches: false
+# -- important do not touch! -- 
+remove_unused_columns: false 
+eval_do_concat_batches: true
+# -- end of do not touch! -- 
+
 ddp_find_unused_parameters: false
 
 include_for_metrics: ['loss']

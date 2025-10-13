@@ -68,12 +68,13 @@ except ValueError:
 
 
 def compute_metrics(eval_pred):
+    """ requires training_args.eval_do_concat_batches = True"""
     metrics = combine([load("f1"), load("precision"), load("recall")])
     predictions = np.argmax(eval_pred.predictions, axis=-1)
     res = metrics.compute(
-        predictions=np.concatenate(predictions), references=np.concatenate(eval_pred.label_ids), average="macro"
+        predictions=predictions, references=eval_pred.label_ids, average="macro"
     )
-    acc = load("accuracy").compute(predictions=np.concatenate(predictions), references=np.concatenate(eval_pred.label_ids))
+    acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
     return {**res, **acc}
 
 
@@ -159,28 +160,6 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     if cfg.get("resume_from_ckpt_path"):
         training_args.resume_from_checkpoint = cfg.resume_from_ckpt_path
 
-    if training_args.do_train or training_args.do_eval:
-        report_to = []
-        # setting up wandb for logging
-        if cfg.tracking.get("use_wandb", False):
-            report_to += ["wandb"]
-            os.environ["WANDB_PROJECT"] = cfg.tracking.wandb_project
-            os.environ["WANDB_ENTITY"] = cfg.tracking.wandb_entity
-            os.environ["WANDB_LOG_MODEL"] = cfg.tracking.wandb_log_model
-            os.environ["WANDB_WATCH"] = cfg.tracking.wandb_watch
-            os.environ["WANDB_DIR"] = cfg.tracking.wandb_dir
-
-        if cfg.tracking.get("use_mlflow", False):
-            report_to += ["mlflow"]
-            os.environ["HF_MLFLOW_LOG_ARTIFACTS"] = str(cfg.tracking.mlflow_log_artifacts).upper()
-            os.environ["MLFLOW_TRACKING_URI"] = cfg.tracking.mlflow_tracking_uri
-            os.environ["MLFLOW_EXPERIMENT_NAME"] = cfg.tracking.mlflow_experiment_name
-            os.environ["MLFLOW_TAGS"] = str(cfg.tracking.get("mlflow_tags", ""))
-
-        log.info(f"Logging metrics and/or models to: {report_to}.")
-        training_args.report_to = report_to if report_to else "none"
-        training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
-
     # Loss function
     custom_loss = None
     if cfg.custom_loss:
@@ -221,23 +200,43 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     test_metrics = {}
 
     if training_args.do_train:
+        report_to = []
+        # setting up wandb for logging
+        if cfg.tracking.get("use_wandb", False):
+            report_to += ["wandb"]
+            os.environ["WANDB_PROJECT"] = cfg.tracking.wandb_project
+            os.environ["WANDB_ENTITY"] = cfg.tracking.wandb_entity
+            os.environ["WANDB_LOG_MODEL"] = cfg.tracking.wandb_log_model
+            os.environ["WANDB_WATCH"] = cfg.tracking.wandb_watch
+            os.environ["WANDB_DIR"] = cfg.tracking.wandb_dir
+
+        if cfg.tracking.get("use_mlflow", False):
+            report_to += ["mlflow"]
+            os.environ["HF_MLFLOW_LOG_ARTIFACTS"] = str(cfg.tracking.mlflow_log_artifacts).upper()
+            os.environ["MLFLOW_TRACKING_URI"] = cfg.tracking.mlflow_tracking_uri
+            os.environ["MLFLOW_EXPERIMENT_NAME"] = cfg.tracking.mlflow_experiment_name
+            os.environ["MLFLOW_TAGS"] = str(cfg.tracking.get("mlflow_tags", ""))
+
+        log.info(f"Logging metrics and/or models to: {report_to}.")
+        training_args.report_to = report_to if report_to else "none"
+        training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
+
         log.info("Starting training.")
         train_results = trainer.train()
         train_metrics = train_results.metrics
         log.info("Done training, evaluating on validation set.")
         val_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.val_split_name], metric_key_prefix="val")
 
-    if training_args.do_eval:
         log.info("Starting evaluation on test set.")
         test_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.test_split_name], metric_key_prefix="test")
 
+        if cfg.model_push_to_hub:
+            log.info(f"Pushing trained model to HuggingFace hub as «{training_args.hub_model_id}».")
+            url = trainer.push_to_hub()
+            log.info(f"Pushed model is available at: {url}.")
+
     # merge train and test metrics
     metric_dict = {**train_metrics, **val_metrics, **test_metrics}
-
-    if cfg.model_push_to_hub:
-        log.info(f"Pushing trained model to HuggingFace hub as «{training_args.hub_model_id}».")
-        url = trainer.push_to_hub()
-        log.info(f"Pushed model is available at: {url}.")
 
     return metric_dict, object_dict
 
