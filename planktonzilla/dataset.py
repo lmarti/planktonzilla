@@ -110,12 +110,16 @@ class DatasetWrapper:
 
         # sub-optimal simple code (might reflect correct split sizes)
         if self.test_split_name not in self.dataset:
-            split = self.dataset["train"].train_test_split(self.test_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label")
+            split = self.dataset["train"].train_test_split(
+                self.test_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label"
+            )
             self.dataset["train"] = split["train"]
             self.dataset[self.test_split_name] = split["test"]
 
         if self.val_split_name not in self.dataset:
-            split = self.dataset["train"].train_test_split(self.val_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label")
+            split = self.dataset["train"].train_test_split(
+                self.val_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label"
+            )
             self.dataset["train"] = split["train"]
             self.dataset[self.val_split_name] = split["test"]
 
@@ -134,8 +138,7 @@ class DatasetWrapper:
             image_processor=image_processor,
             augmentation=None,
         )
-    
+
         self.dataset["train"] = self.dataset["train"].with_transform(train_transform_batch)
         self.dataset[self.val_split_name] = self.dataset[self.val_split_name].with_transform(predict_transform_batch)
         self.dataset[self.test_split_name] = self.dataset[self.test_split_name].with_transform(predict_transform_batch)
-

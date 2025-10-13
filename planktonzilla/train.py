@@ -68,12 +68,10 @@ except ValueError:
 
 
 def compute_metrics(eval_pred):
-    """ requires training_args.eval_do_concat_batches = True"""
+    """requires training_args.eval_do_concat_batches = True"""
     metrics = combine([load("f1"), load("precision"), load("recall")])
     predictions = np.argmax(eval_pred.predictions, axis=-1)
-    res = metrics.compute(
-        predictions=predictions, references=eval_pred.label_ids, average="macro"
-    )
+    res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
     acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
     return {**res, **acc}
 
