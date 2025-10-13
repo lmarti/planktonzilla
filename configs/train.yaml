@@ -10,7 +10,7 @@ defaults:
   - paths: default.yaml
   - extras: default.yaml
   - hydra: default.yaml
-  - augmentation: auto.yaml #none.yaml
+  - augmentation: default.yaml #none.yaml
   - tracking: default.yaml
   - custom_loss: default.yaml
 
