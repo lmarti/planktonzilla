@@ -146,9 +146,9 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
             cfg.model_push_to_hub_org_name
             + "/"
             + cfg.model_push_to_hub_repo_name_prefix
-            + "__"
+            + "_"
             + model.name_or_path.replace("/", "_")
-            + "__"
+            + "_"
             + cfg.dataset.name.replace("/", "_")
         )
         # training_args.hub_token = cfg.hf_token

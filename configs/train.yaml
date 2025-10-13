@@ -46,7 +46,7 @@ resume_from_ckpt_path: null
 # hf_token: ${oc.env:HF_TOKEN, null}
 model_push_to_hub: true
 model_push_to_hub_org_name: project-oceania
-model_push_to_hub_repo_name_prefix: pkz # names of uploaded models will have this prefix
+model_push_to_hub_repo_name_prefix: pz # names of uploaded models will have this prefix
 model_push_as_private: true
 
 # Seed for random number generators in pytorch, numpy and python.random
