@@ -1,0 +1,4 @@
+augmentation:
+  _target_: torchvision.transforms.v2.Compose
+  transforms:
+    - _target_: torchvision.transforms.v2.TrivialAugmentWide

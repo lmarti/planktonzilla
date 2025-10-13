@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - convnextv2_huge.fcmae_ft_in22k_in1k_384
+
+image_processor:
+  _args_:
+    - convnextv2_huge.fcmae_ft_in22k_in1k_384
