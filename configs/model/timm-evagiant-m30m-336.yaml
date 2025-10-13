@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - eva_giant_patch14_336.m30m_ft_in22k_in1k
+
+image_processor:
+  _args_:
+    - eva_giant_patch14_336.m30m_ft_in22k_in1k

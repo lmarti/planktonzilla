@@ -30,10 +30,10 @@ def augment_and_transform_batch(examples, transform, augmentation, image_process
         annotations += [label]
 
     # Apply the image processor transformations: resizing, rescaling, normalization
-    result = image_processor(images=images, return_tensors="pt")
-    result["label"] = annotations
+    results = image_processor(images=images, return_tensors="pt")
+    results["label"] = annotations
 
-    return result
+    return results
 
 
 def compute_mean_and_std_dev(huggingface_dataset: Dataset):
@@ -110,12 +110,12 @@ class DatasetWrapper:
 
         # sub-optimal simple code (might reflect correct split sizes)
         if self.test_split_name not in self.dataset:
-            split = self.dataset["train"].train_test_split(self.test_split, shuffle=self.shuffle, seed=self.split_seed)
+            split = self.dataset["train"].train_test_split(self.test_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label")
             self.dataset["train"] = split["train"]
             self.dataset[self.test_split_name] = split["test"]
 
         if self.val_split_name not in self.dataset:
-            split = self.dataset["train"].train_test_split(self.val_split, shuffle=self.shuffle, seed=self.split_seed)
+            split = self.dataset["train"].train_test_split(self.val_split, shuffle=self.shuffle, seed=self.split_seed, stratify_by_column="label")
             self.dataset["train"] = split["train"]
             self.dataset[self.val_split_name] = split["test"]
 
@@ -134,7 +134,8 @@ class DatasetWrapper:
             image_processor=image_processor,
             augmentation=None,
         )
-
+    
         self.dataset["train"] = self.dataset["train"].with_transform(train_transform_batch)
         self.dataset[self.val_split_name] = self.dataset[self.val_split_name].with_transform(predict_transform_batch)
         self.dataset[self.test_split_name] = self.dataset[self.test_split_name].with_transform(predict_transform_batch)
+

@@ -11,7 +11,7 @@ image_processor:
   _args_:
     - ????
   do_resize: true
-  do_pad: true
+  do_normalize: false
   use_fast: true
 
 
