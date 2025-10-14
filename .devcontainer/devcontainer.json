@@ -1,0 +1,81 @@
+{
+    "name": "planktonzilla",
+    // "dockerComposeFile": "docker-compose.yml",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "WORKSPACE_FOLDER": "/workspace/${localWorkspaceFolderBasename}"
+        }
+    },
+
+    // Enable Docker instance to access all GPUS on the host machine
+	// https://docs.docker.com/config/containers/resource_constraints/#gpu
+	"runArgs": [
+        // "--gpus", "all",
+	 	"--shm-size", "32G",
+        "--env-file", "./.devcontainer/.env"
+	],
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "innerlee.nvidia-smi",
+                "ms-python.gather",
+                "ms-toolsai.jupyter",
+                "ms-azuretools.vscode-docker"
+            ],
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "zsh (login)": {
+                        "path": "/bin/zsh"
+                        //"args": ["-l"]
+                    }
+                },
+                "python.dataScience.alwaysTrustNotebooks": true
+            }
+        }
+    },
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
+        // Avoids container reinstalls -- https://code.visualstudio.com/docs/remote/containers-advanced#_avoiding-extension-reinstalls-on-container-rebuild
+        "source=vscode-extensions-${localEnv:USER:unknown},target=/root/.vscode-server/extensionsCache,type=volume",
+        "source=vscode-insiders-extensions-${localEnv:USER:unknown},target=/root/.vscode-server-insiders/extensionsCache,type=volume",
+        // Keeps pip cache to speed-up installs
+        "source=remote-pip-cache-${localEnv:USER:unknown},target=/root/.cache/pip,type=volume",
+        // Forces not moving data, models and python venv folders.
+        //"source=remote-python-venv,target=${containerWorkspaceFolder}/.venv,type=volume",
+        //"source=remote-data,target=${containerWorkspaceFolder}/data,type=volume",
+        //"source=remote-models,target=${containerWorkspaceFolder}/models,type=volume",
+        // Enables shell history to be saved between runs -- https://code.visualstudio.com/docs/remote/containers-advanced#_persist-bash-history-between-runs
+        "source=zsh-history-${localEnv:USER:unknown},target=/root/.history,type=volume"
+    ],
+    "workspaceMount": "source=${localWorkspaceFolderBasename}-${localEnv:USER:unknown}-remote,target=/workspace,type=volume,consistency=delegated",
+	"workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+
+    // Run on the *local* machine before container creation.
+    "initializeCommand": "./.devcontainer/setup_env.sh",
+
+    // See https://code.visualstudio.com/docs/remote/devcontainerjson-reference for more options.
+    // A command string or list of command arguments to run inside the container after it is created. 
+    // The commands execute from the workspaceFolder in the container.
+    "postCreateCommand": "[ ! -d /workspace/${localWorkspaceFolderBasename}/.git ] && cd /workspace && git clone https://github.com/Inria-Chile/${localWorkspaceFolderBasename} || echo 0",
+
+    // A command string or list of command arguments to run when the container starts (in all cases).
+    "postStartCommand": "poetry install",
+
+	// Pass wandb and mlflow local setup to remote container
+	"remoteEnv": {
+		// https://docs.wandb.ai/guides/track/advanced/environment-variables
+		"WANDB_API_KEY":  "${localEnv:WANDB_API_KEY}",
+		// "WANDB_WATCH":    "${localEnv:WANDB_WATCH}",
+		// https://www.mlflow.org/docs/latest/python_api/mlflow.html#mlflow.start_run
+		"MLFLOW_TRACKING_URI":    "${localEnv:MLFLOW_TRACKING_URI}",
+		"MLFLOW_EXPERIMENT_NAME": "${localWorkspaceFolderBasename}",
+        "HF_TOKEN": "${localEnv:HF_TOKEN}"
+	},
+    // Do not automatically stop the Docker container when VS Code closes. This allows for long training runs.
+    "shutdownAction": "none"
+}
