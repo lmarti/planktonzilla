@@ -49,7 +49,7 @@ from huggingface_hub import DatasetCard
 from omegaconf import DictConfig, MissingMandatoryValue, OmegaConf
 from rich import print as rich_print
 from rich.markdown import Markdown
-from transformers import AutoImageProcessor, AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
+from transformers import AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
 
 from planktonzilla.dataset import DatasetWrapper
 from planktonzilla.utils.hydra import (
@@ -66,7 +66,6 @@ try:
 except ValueError:
     pass
 
-
 def compute_metrics(eval_pred):
     """requires training_args.eval_do_concat_batches = True"""
     metrics = combine([load("f1"), load("precision"), load("recall")])
@@ -74,7 +73,6 @@ def compute_metrics(eval_pred):
     res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
     acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
     return {**res, **acc}
-
 
 @task_wrapper
 def train(cfg: DictConfig) -> tuple[dict, dict]:
@@ -99,19 +97,19 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     # set proper matmul precision
     # hydra.utils.instantiate(cfg.torch_matmul_precision)
 
+    # wiring image_size to transformation
+    cfg.dataset.transform["transforms"][1]["size"] = [
+        cfg.img_size,
+        cfg.img_size,
+    ]
+
     log.info(f"Instantiating wrapper for dataset «{cfg.dataset.name}».")
     dataset_wrapper: DatasetWrapper = hydra.utils.instantiate(cfg.dataset)
-
-    log.info(f"Instantiating image processor «{cfg.model._args_[0]}».")
-    image_processor: AutoImageProcessor = hydra.utils.instantiate(
-        cfg.image_processor,
-        _convert_="all",
-    )
 
     augmentation = hydra.utils.instantiate(cfg.augmentation)
 
     log.info(f"Preparing datasets in «{cfg.dataset.name}».")
-    dataset_wrapper.prepare_datasets(image_processor, augmentation)
+    dataset_wrapper.prepare_datasets(augmentation)
 
     card = DatasetCard.load(cfg.dataset.name)
 
@@ -130,6 +128,14 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         num_labels=len(dataset_wrapper.label2id),
         _convert_="all",
     )
+
+    # freeze backbone
+    if cfg.freeze_backbone:
+        for name, param in model.named_parameters():
+            if "classifier" in name or "head" in name:
+                param.requires_grad = True
+            else:
+                param.requires_grad = False
 
     # TODO: lora setup shoule be here
 
@@ -180,7 +186,6 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         args=training_args,
         train_dataset=dataset_wrapper.dataset["train"],
         eval_dataset=dataset_wrapper.dataset[dataset_wrapper.val_split_name],
-        processing_class=image_processor,
         # data_collator=collate_fn,
         compute_metrics=compute_metrics,
         compute_loss_func=custom_loss,

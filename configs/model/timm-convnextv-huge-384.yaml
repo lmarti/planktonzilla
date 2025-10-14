@@ -5,8 +5,7 @@ defaults:
 
 model:
   _args_:
-    - convnextv2_huge.fcmae_ft_in22k_in1k_384
+    - timm/convnextv2_huge.fcmae_ft_in22k_in1k_384
 
-image_processor:
-  _args_:
-    - convnextv2_huge.fcmae_ft_in22k_in1k_384
+img_size: 384
+freeze_backbone: true

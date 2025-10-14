@@ -7,9 +7,4 @@ model:
   _args_:
     - microsoft/resnet-18
 
-image_processor:
-  _args_:
-    - microsoft/resnet-18
-
-
-
+img_size: 224

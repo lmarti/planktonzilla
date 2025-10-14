@@ -5,8 +5,7 @@ defaults:
 
 model:
   _args_:
-    - eva02_large_patch14_448.mim_m38m_ft_in22k_in1k
+    - timm/eva02_large_patch14_448.mim_m38m_ft_in22k_in1k
 
-image_processor:
-  _args_:
-    - eva02_large_patch14_448.mim_m38m_ft_in22k_in1k
+img_size: 448
+freeze_backbone: true

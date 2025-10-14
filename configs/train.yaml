@@ -50,7 +50,7 @@ model_push_to_hub_repo_name_prefix: pz # names of uploaded models will have this
 model_push_as_private: true
 
 # Seed for random number generators in pytorch, numpy and python.random
-seed: 42
+seed: ${dataset.split_seed}
 
 # Whether to use deterministic algorithms where available. Can slow down training.
 deterministic: false

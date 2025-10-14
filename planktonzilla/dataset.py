@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from functools import partial
 from typing import Callable
 
+import torch
 import numpy as np
 from datasets import Dataset, load_dataset
 from transformers import AutoImageProcessor
@@ -15,8 +16,8 @@ from planktonzilla.utils.logger import get_pylogger
 logger = get_pylogger(__name__)
 
 
-def augment_and_transform_batch(examples, transform, augmentation, image_processor, return_pixel_mask=False):
-    """Apply augmentations and format annotations in COCO format for object detection task"""
+def augment_and_transform_batch(examples, transform, augmentation):
+    """Apply augmentations and transformations"""
 
     images = []
     annotations = []
@@ -30,9 +31,11 @@ def augment_and_transform_batch(examples, transform, augmentation, image_process
         annotations += [label]
 
     # Apply the image processor transformations: resizing, rescaling, normalization
-    results = image_processor(images=images, return_tensors="pt")
-    results["label"] = annotations
+    #results = image_processor(images=images, return_tensors="pt")
+    #results["label"] = annotations
 
+    images = torch.stack(images)
+    results = {"pixel_values": images, "label": annotations}
     return results
 
 
@@ -98,7 +101,7 @@ class DatasetWrapper:
         self.id2label = self.label2id = None
         self.num_classes = -1
 
-    def prepare_datasets(self, image_processor: AutoImageProcessor, augmentation) -> None:
+    def prepare_datasets(self, augmentation) -> None:
         self.dataset = load_dataset(self.name, streaming=self.streaming)
         # self.test_data = load_dataset("vendimia50/ct_metadataset", streaming=self.streaming)["train"]
 
@@ -128,14 +131,12 @@ class DatasetWrapper:
         train_transform_batch = partial(
             augment_and_transform_batch,
             transform=self.transform,
-            image_processor=image_processor,
             augmentation=augmentation,
         )
 
         predict_transform_batch = partial(
             augment_and_transform_batch,
             transform=self.transform,
-            image_processor=image_processor,
             augmentation=None,
         )
 

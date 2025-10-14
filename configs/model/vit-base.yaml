@@ -7,9 +7,6 @@ model:
   _args_:
     - google/vit-base-patch16-224-in21k
 
-image_processor:
-  _args_:
-    - google/vit-base-patch16-224-in21k
-
-
+img_size: 224
+freeze_backbone: true
 

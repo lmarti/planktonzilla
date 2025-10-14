@@ -1,5 +1,8 @@
 # @package _global_
 
+defaults:
+  - default.yaml
+
 augmentation:
   _target_: torchvision.transforms.v2.Compose
   transforms:
