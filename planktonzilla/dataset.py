@@ -43,6 +43,7 @@ def compute_mean_and_std_dev(huggingface_dataset: Dataset):
     sum_pixels = np.zeros(3)  # For R, G, B channels
     sum_squared_pixels = np.zeros(3)
     num_pixels = 0
+
     for item in huggingface_dataset:
         # Access the image (assuming it's a PIL Image object)
         image = item["image"]
@@ -51,7 +52,14 @@ def compute_mean_and_std_dev(huggingface_dataset: Dataset):
         image_array = np.array(image).astype(np.float32) / 255.0
 
         # Reshape the image to (height * width, channels) to easily work with pixels
-        reshaped_image = image_array.reshape(-1, 3)
+        if len(image_array.shape) == 3:
+            # it is a color image with three channels
+            reshaped_image = image_array.reshape(-1, 3)
+        elif len(image_array.shape) == 2:
+            # monochrome image with one channel
+            reshaped_image = image_array.reshape(-1, 1)
+        else:
+            raise ValueError(f"Unsupported image_array shape: {image_array.shape}")
 
         # Accumulate sums
         sum_pixels += np.sum(reshaped_image, axis=0)
@@ -60,11 +68,15 @@ def compute_mean_and_std_dev(huggingface_dataset: Dataset):
         # Update total number of pixels
         num_pixels += reshaped_image.shape[0]
 
-        # 3. Calculate mean and standard deviation
-        mean = sum_pixels / num_pixels
-        std_dev = np.sqrt((sum_squared_pixels / num_pixels) - (mean**2))
+    mean = sum_pixels / num_pixels
+    std_dev = np.sqrt((sum_squared_pixels / num_pixels) - (mean**2))
 
+    if len(image_array.shape) == 3:
+        # it is a color image with three channels
         return mean, std_dev
+    elif len(image_array.shape) == 2:
+        # monochrome image with one channel
+        return [mean[0]], [std_dev[0]]
 
 
 @dataclass

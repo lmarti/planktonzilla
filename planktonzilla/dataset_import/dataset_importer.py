@@ -42,7 +42,7 @@ DATACARD_TEMPLATE = """
 # Doc / guide: https://huggingface.co/docs/hub/datasets-cards
 {{ card_data }}
 ---
-# Dataset Card for *{{ pretty_name | default("Dataset Name", true) }}*
+# Dataset *{{ pretty_name | default("Dataset Name", true) }}*
 {{ dataset_description | default("[More Information Needed]", true) }}
 
 - **Original dataset available online at:**  <{{ source_url | default("[More Information Needed]", true)}}>.
@@ -50,8 +50,8 @@ DATACARD_TEMPLATE = """
 
 ## Details
 
-- **`train` split means (RGB):** {{ dataset_means | default("[More Information Needed]", true) }}
-- **`train` split standard deviations (RGB):** {{ dataset_stds | default("[More Information Needed]", true) }}
+- **train split means (RGB):** {{ dataset_means | default("[More Information Needed]", true) }}
+- **train split standard deviations (RGB):** {{ dataset_stds | default("[More Information Needed]", true) }}
 
 {{ report_markdown | default("[More Information Needed]", true) }}
 

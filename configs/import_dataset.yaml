@@ -14,4 +14,4 @@ defaults:
 task_name: "import_dataset"
 tags: ["dev"]
 
-action: import
+action: show
