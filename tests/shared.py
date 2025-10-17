@@ -1,3 +1,7 @@
+"""
+(c) Inria
+"""
+
 import os
 from functools import wraps
 

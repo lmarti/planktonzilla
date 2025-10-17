@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from functools import partial
 from typing import Callable
 
-import torch
 import numpy as np
+import torch
 from datasets import Dataset, load_dataset
 from transformers import AutoImageProcessor
 

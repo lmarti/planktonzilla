@@ -1,3 +1,7 @@
+"""
+(c) Inria
+"""
+
 import logging
 
 # from pytorch_lightning.utilities import rank_zero_only

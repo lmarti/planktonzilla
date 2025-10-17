@@ -11,29 +11,6 @@ root = pyrootutils.setup_root(
     dotenv=True,
 )
 
-# ------------------------------------------------------------------------------------ #
-# `pyrootutils.setup_root(...)` is recommended at the top of each start file
-# to make the environment more robust and consistent
-#
-# the line above searches for ".git" or "pyproject.toml" in present and parent dirs
-# to determine the project root dir
-#
-# adds root dir to the PYTHONPATH (if `pythonpath=True`)
-# so this file can be run from any place without installing project as a package
-#
-# sets PROJECT_ROOT environment variable which is used in "configs/paths/default.yaml"
-# this makes all paths relative to the project root
-#
-# additionally loads environment variables from ".env" file (if `dotenv=True`)
-#
-# you can get away without using `pyrootutils.setup_root(...)` if you:
-# 1. move this file to the project root dir or install project as a package
-# 2. modify paths in "configs/paths/default.yaml" to not use PROJECT_ROOT
-# 3. always run this file from the project root dir
-#
-# https://github.com/ashleve/pyrootutils
-# ------------------------------------------------------------------------------------ #
-
 import torch.multiprocessing
 
 torch.multiprocessing.set_sharing_strategy("file_system")
@@ -45,7 +22,7 @@ import hydra
 import numpy as np
 import torch
 from evaluate import combine, load
-from huggingface_hub import DatasetCard
+from huggingface_hub import DatasetCard, login
 from omegaconf import DictConfig, MissingMandatoryValue, OmegaConf
 from rich import print as rich_print
 from rich.markdown import Markdown
@@ -65,6 +42,38 @@ try:
     OmegaConf.register_new_resolver("eval", eval)
 except ValueError:
     pass
+
+def validate_environment():
+    if "HF_HUB_OFFLINE" in os.environ and os.environ["HF_HUB_OFFLINE"] == "1":
+        log.warning("⚠️ Environment variable HF_HUB_OFFLINE=1. Hugging Face hub will be offline.")
+    else:
+        if "HF_TOKEN" in os.environ:
+            log.info("✅ HF_TOKEN environment variable is set.")
+            try:
+                login(new_session=False, write_permission=True)
+                log.info("✅ Login to Hugging Face hub verified.")
+            except ValueError as e:
+                log.error(f"🛑 Login to Hugging Face hub failed: {e}.")
+            except ImportError:  # If running in a notebook but ipywidgets is not installed.
+                log.error("🛑 Running in a notebook but ipywidgets is not installed.")
+        else:
+            log.warning("⚠️ HF_TOKEN environment variable is not set. Access to private models and datasets will be limited.")
+
+    if "WANDB_MODE" in os.environ and os.environ["WANDB_MODE"] == "offline":
+        log.warning("⚠️ Environment variable WANDB_MODE=offline. WandB will be offline. Remember to sync results later on.")
+    elif "WANDB_API_KEY" in os.environ:
+        log.info("✅ WANDB_API_KEY environment variable is set.")
+    else:
+        log.warning("⚠️ WANDB_API_KEY environment variable is not set. WandB logging will be disabled.")
+
+    if "MLFLOW_TRACKING_URI" in os.environ:
+        log.info("✅ MLFLOW_TRACKING_URI environment variable is set.")
+        if "MLFLOW_TRACKING_USERNAME" in os.environ:
+            log.info("✅ MLFLOW_TRACKING_USERNAME environment variable is set.")
+        if "MLFLOW_TRACKING_PASSWORD" in os.environ:
+            log.info("✅ MLFLOW_TRACKING_PASSWORD environment variable is set.")
+    else:
+        log.warning("⚠️ MLFLOW_TRACKING_URI environment variable is not set, if mlflow is enabled will log to local folder.")
 
 def compute_metrics(eval_pred):
     """requires training_args.eval_do_concat_batches = True"""
@@ -91,6 +100,8 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
 
     # set seed for random number generators in pytorch, numpy and python.random
 
+    validate_environment()
+
     if cfg.get("seed"):
         set_seed(cfg.seed, cfg.get("deterministic", False))
 
@@ -105,10 +116,10 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     log.info(f"Preparing datasets in «{cfg.dataset.name}».")
     dataset_wrapper.prepare_datasets(augmentation)
 
-    card = DatasetCard.load(cfg.dataset.name)
+    # card = DatasetCard.load(cfg.dataset.name)
 
-    if cfg.get("extras") and cfg.extras.get("print_config"):
-        rich_print(Markdown(card.text))
+    # if cfg.get("extras") and cfg.extras.get("print_config"):
+    #     rich_print(Markdown(card.text))
 
     # wiring num_classes to model
     # cfg.model.num_classes = dataset_wrapper.num_classes
@@ -133,8 +144,8 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
 
     # TODO: lora setup shoule be here
 
-    if cfg.get("extras") and cfg.extras.get("print_config"):
-        print_docstr_as_markdown(model)
+    # if cfg.get("extras") and cfg.extras.get("print_config"):
+    #    print_docstr_as_markdown(model)
 
     log.info("Instantiating training arguments.")
     training_args: TrainingArguments = hydra.utils.instantiate(cfg.training_arguments, _convert_="all")
