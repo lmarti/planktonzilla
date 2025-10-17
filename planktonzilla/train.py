@@ -220,6 +220,12 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
             os.environ["MLFLOW_EXPERIMENT_NAME"] = cfg.tracking.mlflow_experiment_name
             os.environ["MLFLOW_TAGS"] = str(cfg.tracking.get("mlflow_tags", ""))
 
+        if cfg.tracking.get("use_trackio", False):
+            report_to += ["trackio"]
+            os.environ["TRACKIO_DIR"] = cfg.tracking.trackio_dir
+            os.environ["TRACKIO_DATASET_ID"] = cfg.tracking.trackio_dataset_id
+
+
         log.info(f"Logging metrics and/or models to: {report_to}.")
         training_args.report_to = report_to if report_to else "none"
         training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
@@ -233,10 +239,10 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         log.info("Starting evaluation on test set.")
         test_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.test_split_name], metric_key_prefix="test")
 
-        if cfg.model_push_to_hub:
-            log.info(f"Pushing trained model to HuggingFace hub as «{training_args.hub_model_id}».")
-            url = trainer.push_to_hub()
-            log.info(f"Pushed model is available at: {url}.")
+    if cfg.model_push_to_hub:
+        log.info(f"Pushing trained model to HuggingFace hub as «{training_args.hub_model_id}».")
+        url = trainer.push_to_hub(dataset=dataset_wrapper.name, license="mit")
+        log.info(f"Pushed model is available at: {url}.")
 
     # merge train and test metrics
     metric_dict = {**train_metrics, **val_metrics, **test_metrics}
