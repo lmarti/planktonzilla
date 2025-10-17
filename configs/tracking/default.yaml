@@ -11,3 +11,8 @@ use_mlflow: false
 mlflow_log_artifacts: false # makes sense only with remote! copy each saved checkpoint on output_dir to the local or remote artifact storage.
 mlflow_tracking_uri: file:${paths.log_dir}/mlflow # store runs locally
 mlflow_experiment_name: vendimia50
+
+# trackio config
+use_trackio: false
+trackio_dir: ${paths.log_dir}/trackio
+trackio_dataset_id: project-oceania/pz_experiments
