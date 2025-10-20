@@ -1,0 +1,23 @@
+defaults:
+  - default.yaml
+
+fp16: false
+torch_compile: true
+use_cpu: false
+# tf32: true
+bf16: true
+# ddp_backend: nccl
+per_device_train_batch_size: 4096
+per_device_eval_batch_size: 1024
+dataloader_pin_memory: true
+dataloader_persistent_workers: true
+dataloader_prefetch_factor: 10
+
+gradient_accumulation_steps: 1
+
+# dataloader_num_workers: 8
+
+ddp_find_unused_parameters: false
+
+#include_for_metrics: ['loss']
+#auto_find_batch_size: true

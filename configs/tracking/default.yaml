@@ -1,5 +1,5 @@
 # wandb config
-use_wandb: true
+use_wandb: false
 wandb_project: planktonzilla-turbo
 wandb_entity: oceania-plankton
 wandb_log_model: "false" # options: false, checkpoint, end
