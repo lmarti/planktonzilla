@@ -20,7 +20,7 @@ Deep learning framework, datasets, and models for plankton identification.
 Planktonzilla provides a comprehensive toolkit for importing datasets, training computer vision models, and evaluating performance on various plankton image classification tasks. Built on top of Hugging Face Transformers and Hydra for configuration management, it offers specialized tools for handling imbalanced plankton datasets and state-of-the-art loss functions.
 
 - OcéanIA project website: <https://oceania.inria.cl>.
-- OcéanIA Hugging Face organization (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
+- OcéanIA's in Hugging Face hub (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
 
 ## ✨ Features
 
