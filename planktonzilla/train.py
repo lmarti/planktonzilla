@@ -24,8 +24,6 @@ import torch
 from evaluate import combine, load
 from huggingface_hub import DatasetCard, login
 from omegaconf import DictConfig, MissingMandatoryValue, OmegaConf
-from rich import print as rich_print
-from rich.markdown import Markdown
 from transformers import AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
 
 from planktonzilla.dataset import DatasetWrapper
@@ -34,7 +32,6 @@ from planktonzilla.utils.hydra import (
     task_wrapper,
 )
 from planktonzilla.utils.logger import get_pylogger
-from planktonzilla.utils.rich_utils import print_docstr_as_markdown
 
 log = get_pylogger(__name__)
 
@@ -108,21 +105,17 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     # set proper matmul precision
     # hydra.utils.instantiate(cfg.torch_matmul_precision)
 
-    log.info(f"Instantiating wrapper for dataset «{cfg.dataset.name}».")
+    log.info(f"Instantiating dataset wrapper for «{cfg.dataset.name}».")
     dataset_wrapper: DatasetWrapper = hydra.utils.instantiate(cfg.dataset)
 
+    log.info("Instantiating data augmentation(s).")
     augmentation = hydra.utils.instantiate(cfg.augmentation)
 
-    log.info(f"Preparing datasets in «{cfg.dataset.name}».")
+    log.info(f"Preparing data splits for «{cfg.dataset.name}».")
     dataset_wrapper.prepare_datasets(augmentation)
 
-    # card = DatasetCard.load(cfg.dataset.name)
-
-    # if cfg.get("extras") and cfg.extras.get("print_config"):
-    #     rich_print(Markdown(card.text))
-
-    # wiring num_classes to model
-    # cfg.model.num_classes = dataset_wrapper.num_classes
+    dataset_card = DatasetCard.load(cfg.dataset.name)
+    log.info(f"Dataset «{cfg.dataset.name}» {dataset_card.data.dataset_info['dataset_name']} (https://huggingface.co/datasets/{cfg.dataset.name})")
 
     log.info(f"Instantiating base model «{cfg.model._args_[0]}».")
 
@@ -173,6 +166,7 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     custom_loss = None
     if cfg.custom_loss:
         # We are going to use a custom loss.
+        log.info(f"Instantiating custom loss function «{cfg.custom_loss}».")
         try:
             if not cfg.custom_loss.get("cls_num_list"):
                 loss_instance = hydra.utils.instantiate(cfg.custom_loss, _convert_="all")
@@ -180,6 +174,8 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
             cfg.custom_loss["cls_num_list"] = "dummy_value"
             loss_instance = hydra.utils.instantiate(cfg.custom_loss, cls_num_list=dataset_wrapper.cls_num_list, _convert_="all")
         custom_loss = partial(loss_instance.forward)
+    else:
+        log.info("Using default loss function.")
 
     log.info("Instantiating trainer.")
     trainer: Trainer = Trainer(
@@ -231,13 +227,13 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         training_args.report_to = report_to if report_to else "none"
         training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
 
-        log.info("Starting training.")
+        log.info("Training start.")
         train_results = trainer.train()
         train_metrics = train_results.metrics
         log.info("Done training, evaluating on validation set.")
         val_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.val_split_name], metric_key_prefix="val")
 
-        log.info("Starting evaluation on test set.")
+        log.info("Evaluating on test set.")
         test_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.test_split_name], metric_key_prefix="test")
 
     if cfg.model_push_to_hub:
