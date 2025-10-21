@@ -9,4 +9,4 @@ mem_gb: 4
 nodes: 1
 name: ${hydra.job.name}
 setup:
-    - echo "=== Running job in local mode (meant for local testing) ==="
+    - echo === Running job with parameters «${train_params}» in local testing mode ===
