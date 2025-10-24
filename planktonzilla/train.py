@@ -183,7 +183,6 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         args=training_args,
         train_dataset=dataset_wrapper.dataset["train"],
         eval_dataset=dataset_wrapper.dataset[dataset_wrapper.val_split_name],
-        # data_collator=collate_fn,
         compute_metrics=compute_metrics,
         compute_loss_func=custom_loss,
     )

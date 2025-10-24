@@ -14,5 +14,5 @@ transform:
         - ${img_size}
       antialias: true
     - _target_: torchvision.transforms.v2.Normalize
-      mean: [0.996, 0.989, 0.981]
-      std: [0.127, 0.023, 0.035]
+      mean: [0.929, 0.929, 0.929]
+      std: [0.160, 0.160, 0.160]
