@@ -3,8 +3,10 @@ output_dir: ${paths.output_dir}
 overwrite_output_dir: true
 
 do_train: true
+do_eval: true
 
 num_train_epochs: 20
+max_steps: -1  # If set to a positive number, the total number of training steps to perform. Overrides num_train_epochs.
 
 fp16: true
 # tf32: true  # only for ampere arch
@@ -29,8 +31,12 @@ greater_is_better: false
 load_best_model_at_end: true
 
 eval_strategy: epoch
+
 save_strategy: epoch
 save_total_limit: 2
+
+eval_steps: null
+logging_steps: null
 
 hub_strategy: checkpoint
 

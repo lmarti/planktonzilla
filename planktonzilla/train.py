@@ -115,7 +115,7 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     dataset_wrapper.prepare_datasets(augmentation)
 
     dataset_card = DatasetCard.load(cfg.dataset.name)
-    log.info(f"Dataset «{cfg.dataset.name}» {dataset_card.data.dataset_info['dataset_name']} (https://huggingface.co/datasets/{cfg.dataset.name})")
+    log.info(f"Dataset «{cfg.dataset.name}» {dataset_card.data.dataset_info.get('dataset_name', '')} (https://huggingface.co/datasets/{cfg.dataset.name})")
 
     log.info(f"Instantiating base model «{cfg.model._args_[0]}».")
 
@@ -175,6 +175,33 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     else:
         log.info("Using default loss function.")
 
+    report_to = []
+    # setting up wandb for logging
+    if cfg.tracking.get("use_wandb", False):
+        report_to += ["wandb"]
+        os.environ["WANDB_PROJECT"] = cfg.tracking.wandb_project
+        os.environ["WANDB_ENTITY"] = cfg.tracking.wandb_entity
+        os.environ["WANDB_LOG_MODEL"] = cfg.tracking.wandb_log_model
+        os.environ["WANDB_WATCH"] = cfg.tracking.wandb_watch
+        os.environ["WANDB_DIR"] = cfg.tracking.wandb_dir
+
+    if cfg.tracking.get("use_mlflow", False):
+        report_to += ["mlflow"]
+        os.environ["HF_MLFLOW_LOG_ARTIFACTS"] = str(cfg.tracking.mlflow_log_artifacts).upper()
+        os.environ["MLFLOW_TRACKING_URI"] = cfg.tracking.mlflow_tracking_uri
+        os.environ["MLFLOW_EXPERIMENT_NAME"] = cfg.tracking.mlflow_experiment_name
+        os.environ["MLFLOW_TAGS"] = str(cfg.tracking.get("mlflow_tags", ""))
+
+    if cfg.tracking.get("use_trackio", False):
+        report_to += ["trackio"]
+        os.environ["TRACKIO_DIR"] = cfg.tracking.trackio_dir
+        os.environ["TRACKIO_DATASET_ID"] = cfg.tracking.trackio_dataset_id
+
+
+    log.info(f"Logging metrics and/or models to: {report_to}.")
+    training_args.report_to = report_to if report_to else "none"
+    training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
+
     log.info("Instantiating trainer.")
     trainer: Trainer = Trainer(
         model=model,
@@ -197,46 +224,28 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     test_metrics = {}
 
     if training_args.do_train:
-        report_to = []
-        # setting up wandb for logging
-        if cfg.tracking.get("use_wandb", False):
-            report_to += ["wandb"]
-            os.environ["WANDB_PROJECT"] = cfg.tracking.wandb_project
-            os.environ["WANDB_ENTITY"] = cfg.tracking.wandb_entity
-            os.environ["WANDB_LOG_MODEL"] = cfg.tracking.wandb_log_model
-            os.environ["WANDB_WATCH"] = cfg.tracking.wandb_watch
-            os.environ["WANDB_DIR"] = cfg.tracking.wandb_dir
-
-        if cfg.tracking.get("use_mlflow", False):
-            report_to += ["mlflow"]
-            os.environ["HF_MLFLOW_LOG_ARTIFACTS"] = str(cfg.tracking.mlflow_log_artifacts).upper()
-            os.environ["MLFLOW_TRACKING_URI"] = cfg.tracking.mlflow_tracking_uri
-            os.environ["MLFLOW_EXPERIMENT_NAME"] = cfg.tracking.mlflow_experiment_name
-            os.environ["MLFLOW_TAGS"] = str(cfg.tracking.get("mlflow_tags", ""))
-
-        if cfg.tracking.get("use_trackio", False):
-            report_to += ["trackio"]
-            os.environ["TRACKIO_DIR"] = cfg.tracking.trackio_dir
-            os.environ["TRACKIO_DATASET_ID"] = cfg.tracking.trackio_dataset_id
-
-
-        log.info(f"Logging metrics and/or models to: {report_to}.")
-        training_args.report_to = report_to if report_to else "none"
-        training_args.run_name = model.name_or_path.replace("/", "_") + "__" + cfg.dataset.name.replace("/", "_")
-
         log.info("Training start.")
         train_results = trainer.train()
         train_metrics = train_results.metrics
-        log.info("Done training, evaluating on validation set.")
-        val_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.val_split_name], metric_key_prefix="val")
+        log.info("Done training.")
+        if training_args.do_eval:
+            log.info("Evaluating on validation set.")
+            val_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.val_split_name], metric_key_prefix="val")
+    else:
+        log.info("Training skipped as per training arguments, set training_arguments.do_train=true to change this.")
 
+    if training_args.do_eval:
         log.info("Evaluating on test set.")
         test_metrics = trainer.evaluate(dataset_wrapper.dataset[dataset_wrapper.test_split_name], metric_key_prefix="test")
+    else:
+        log.info("Evaluation skipped as per training arguments, set training_arguments.do_eval=true to change this.")
 
     if cfg.model_push_to_hub:
         log.info(f"Pushing trained model to HuggingFace hub as «{training_args.hub_model_id}».")
         url = trainer.push_to_hub(dataset=dataset_wrapper.name, license="mit")
         log.info(f"Pushed model is available at: {url}.")
+    else:
+        log.info("Model push to HuggingFace hub skipped, set model_push_to_hub=true to change this.")
 
     # merge train and test metrics
     metric_dict = {**train_metrics, **val_metrics, **test_metrics}

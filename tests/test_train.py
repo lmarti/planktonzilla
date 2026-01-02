@@ -39,15 +39,13 @@ def test_training(hydra_conf_path: Path, model_name: str, dataset_name: str):
                     f"model={model_name}",
                     "extras.print_config=False",
                     "extras.enforce_tags=False",
+                    "training_arguments=test_minirun",
                 ],
                 return_hydra_config=False,
             )
 
             cfg.training_arguments.output_dir = tmp_dir
             cfg.paths.output_dir = tmp_dir
-            cfg.training_arguments.num_train_epochs = 2
-            cfg.training_arguments.auto_find_batch_size = False
-
             cfg.tracking.use_wandb = False
             cfg.tracking.use_mlflow = False
             cfg.tracking.use_trackio = False
@@ -70,21 +68,21 @@ def test_training_custom_losses(hydra_conf_path: Path, model_name: str, dataset_
                 overrides=[
                     f"dataset={dataset_name}",
                     f"model={model_name}",
+                    f"custom_loss={custom_loss}",
                     "extras.print_config=False",
                     "extras.enforce_tags=False",
+                    "training_arguments=test_minirun",
                 ],
                 return_hydra_config=False,
             )
 
             cfg.training_arguments.output_dir = tmp_dir
             cfg.paths.output_dir = tmp_dir
-            cfg.training_arguments.num_train_epochs = 2
-            cfg.training_arguments.auto_find_batch_size = False
-
             cfg.tracking.use_wandb = False
             cfg.tracking.use_mlflow = False
             cfg.tracking.use_trackio = False
             cfg.model_push_to_hub = False
+            cfg.training_arguments.do_eval = False
 
             metric_dict, _ = train(cfg)
 
