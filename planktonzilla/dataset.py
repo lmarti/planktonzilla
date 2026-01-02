@@ -16,12 +16,12 @@ from planktonzilla.utils.logger import get_pylogger
 logger = get_pylogger(__name__)
 
 
-def augment_and_transform_batch(examples, transform, augmentation):
+def augment_and_transform_batch(examples, transform, augmentation, input_column_name, label_column_name):
     """Apply augmentations and transformations"""
 
     images = []
     annotations = []
-    for image, label in zip(examples["image"], examples["label"], strict=True):
+    for image, label in zip(examples[input_column_name], examples[label_column_name], strict=True):
         # res = transform(images=[np.array(image.convert("RGB"))], category=[label])
         # images += res["images"]
         # annotations += res["category"]
@@ -35,7 +35,7 @@ def augment_and_transform_batch(examples, transform, augmentation):
     #results["label"] = annotations
 
     images = torch.stack(images)
-    results = {"pixel_values": images, "label": annotations}
+    results = {"pixel_values": images, label_column_name: annotations}
     return results
 
 
@@ -82,6 +82,9 @@ def compute_mean_and_std_dev(huggingface_dataset: Dataset):
 @dataclass
 class DatasetWrapper:
     name: str
+
+    input_column_name: str = "image"
+    label_column_name: str = "label"
     streaming: bool = False
 
     split_seed: int = 42
@@ -144,12 +147,16 @@ class DatasetWrapper:
             augment_and_transform_batch,
             transform=self.transform,
             augmentation=augmentation,
+            input_column_name=self.input_column_name,
+            label_column_name=self.label_column_name,
         )
 
         predict_transform_batch = partial(
             augment_and_transform_batch,
             transform=self.transform,
             augmentation=None,
+            input_column_name=self.input_column_name,
+            label_column_name=self.label_column_name,
         )
 
         self.dataset["train"] = self.dataset["train"].with_transform(train_transform_batch)

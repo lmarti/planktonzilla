@@ -2,6 +2,9 @@ _target_: planktonzilla.dataset.DatasetWrapper
 
 name: ???
 
+input_column_name: "image"
+label_column_name: "label"
+
 streaming: false
 
 val_split: 0.2
