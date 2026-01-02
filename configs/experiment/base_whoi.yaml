@@ -4,8 +4,8 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: whoi.yaml
-  - override /transformation: whoi.yaml
+  - override /dataset: whoi.yaml
+  - override /augmentation: whoi.yaml
 
 pytorch_script_filename: null
 

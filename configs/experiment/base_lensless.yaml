@@ -4,8 +4,8 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: lensless.yaml
-  - override /transformation: default.yaml
+  - override /dataset: lensless.yaml
+  - override /augmentation: default.yaml
 
 model:
   optimizer:

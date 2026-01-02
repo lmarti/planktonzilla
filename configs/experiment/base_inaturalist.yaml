@@ -4,8 +4,8 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: inaturalist.yaml
-  - override /transformation: inaturalist.yaml
+  - override /dataset: inaturalist.yaml
+  - override /augmentation: inaturalist.yaml
 
 
 model:

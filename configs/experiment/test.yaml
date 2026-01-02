@@ -4,22 +4,20 @@
 # python train.py experiment=example
 
 defaults:
-  - override /datamodule: cifar10.yaml
+  - override /dataset: cifar10.yaml
   - override /model: timm-resnet18.yaml
-  - override /transformation: none.yaml
   - override /augmentation: none.yaml
-  - override /callbacks: default.yaml
-  - override /trainer: default.yaml
-  - override /logger: many_loggers.yaml
+  - override /training_arguments: default.yaml
+  - override /tracking: many_loggers.yaml
 
 experiment_metadata:
-  dataset: ${eval:'"${hydra:runtime.choices.datamodule}"[0:-5]'}
+  dataset: ${eval:'"${hydra:runtime.choices.dataset}"[0:-5]'}
   model_name: ${eval:'"${hydra:runtime.choices.model}"[0:-5]'}
   loss: ${model.criterion._target_}
   aumentation_name: ${eval:'"${hydra:runtime.choices.augmentation}"[0:-5]'}
-  weighted_random_sampling: ${datamodule.weighted_random_sampling}
-  imbalanced_dataset_sampler: ${datamodule.imbalanced_dataset_sampler}
-  experimental_augmentation_sampler: ${datamodule.experimental_augmentation_sampler}
+  weighted_random_sampling: ${dataset.weighted_random_sampling}
+  imbalanced_dataset_sampler: ${dataset.imbalanced_dataset_sampler}
+  experimental_augmentation_sampler: ${dataset.experimental_augmentation_sampler}
 
 # all parameters below will be merged with parameters from default configurations set above
 # this allows you to overwrite only specified parameters

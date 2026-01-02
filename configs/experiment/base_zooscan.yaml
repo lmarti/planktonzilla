@@ -4,5 +4,5 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: zooscan.yaml
-  - override /transformation: zooscan.yaml
+  - override /dataset: zooscan.yaml
+  - override /augmentation: zooscan.yaml

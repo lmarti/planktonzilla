@@ -4,8 +4,8 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: cifar100.yaml
-  - override /transformation: cifar100.yaml
+  - override /dataset: cifar100.yaml
+  - override /augmentation: cifar100.yaml
   - override /model: timm-resnet50.yaml
 
 model:

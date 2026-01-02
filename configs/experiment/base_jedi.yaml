@@ -4,7 +4,7 @@
 # python train.py experiment=base_zoolake model=...
 defaults:
   - default.yaml
-  - override /datamodule: jedi_oceans.yaml
-  - override /transformation: jedi.yaml
+  - override /dataset: jedi_oceans.yaml
+  - override /augmentation: jedi.yaml
 
 
