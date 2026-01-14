@@ -6,7 +6,10 @@ do_train: true
 do_eval: true
 
 num_train_epochs: 20
-max_steps: -1  # If set to a positive number, the total number of training steps to perform. Overrides num_train_epochs.
+
+# If set to a positive number, the total number of training steps to perform. 
+# Overrides num_train_epochs.
+max_steps: -1 
 
 fp16: true
 # tf32: true  # only for ampere arch
