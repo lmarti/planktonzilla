@@ -2,10 +2,22 @@
 app_name: ${task_name}
 
 # Help header, customize to describe your app to your users
-header: == ${hydra.help.app_name} ==
+header: == pz_${hydra.help.app_name} ==
 
 footer: |-
-  Made with ❤️ by Inria.
+  Made with ❤️  by
+
+                ▓▓░
+
+            ▓▓▓
+          ▓▓▓                           ▓▓▒
+        ▓▓▓                           ▓▓
+       ▓▓▒     ▓▓▒ ▓▓▓▓    ▓▓▓▓▓▓   ▓▓▒    ▓▓▓▓▓
+     ░▓▓     ░▓▓ ▓ ░▓▓   ▓   ▓▓░  ▒▓▓   ▓▓▓   ▓▓░
+     ▓▓    ▓▓▓▓   ▓▓   ▓░  ▓▓▓  ░▓▓  ░▓▓▓   ▓▓▓     ▒▓▓▓▓▓▓▓▓▓▓▓
+     ▓▓▓▓▒ ▓▓    ░▓▓▓▒     ▓▓▓▓░ ▓▓▓▒  ▓▓▓▓  ▓▓▓▓▓░
+
+           Part of OcéanIA <https://oceania.inria.cl>.
 
 # Basic Hydra flags:
 #   $FLAGS_HELP
@@ -19,20 +31,14 @@ footer: |-
 #
 template: |-
   ${hydra.help.header}
-
-  This is ${hydra.help.app_name}!
-  You can choose a db driver by appending
-  == Configuration groups ==
-  Compose your configuration from those groups (i.e. dataset=yolov8-grapes)
+  
+  Compose your configuration from these options:
 
   $APP_CONFIG_GROUPS
 
-  == Config ==
-  
-  This is the config generated for this run.
+  $HYDRA_CONFIG_GROUPS
 
-  -------
+  == Current (default) config ==
+
   $CONFIG
-  -------
-  
   ${hydra.help.footer}
