@@ -9,7 +9,6 @@ from typing import Callable
 import numpy as np
 import torch
 from datasets import Dataset, load_dataset
-from transformers import AutoImageProcessor
 
 from planktonzilla.utils.logger import get_pylogger
 
@@ -31,22 +30,36 @@ def augment_and_transform_batch(examples, transform, augmentation, input_column_
         annotations += [label]
 
     # Apply the image processor transformations: resizing, rescaling, normalization
-    #results = image_processor(images=images, return_tensors="pt")
-    #results["label"] = annotations
+    # results = image_processor(images=images, return_tensors="pt")
+    # results["label"] = annotations
 
     images = torch.stack(images)
     results = {"pixel_values": images, label_column_name: annotations}
     return results
 
 
-def compute_mean_and_std_dev(huggingface_dataset: Dataset):
+def compute_mean_and_std_dev(huggingface_dataset: Dataset, input_column_name: str = "image"):
+    """Compute per-channel mean and standard deviation for a dataset.
+
+    Iterates over a Hugging Face `Dataset` of images and returns the mean and
+    standard deviation for each channel. Returns lists sized according to the
+    image channels (3 for RGB, 1 for grayscale).
+
+    Args:
+        huggingface_dataset (Dataset): Iterable Hugging Face dataset yielding
+            dicts with an `input_column_name` PIL object.
+        input_column_name (str): Name of the column containing the images. Deafault is "image".
+
+    Returns:
+        tuple: (mean, std_dev) where each is a sequence of floats per channel.
+    """
     sum_pixels = np.zeros(3)  # For R, G, B channels
     sum_squared_pixels = np.zeros(3)
     num_pixels = 0
 
     for item in huggingface_dataset:
         # Access the image (assuming it's a PIL Image object)
-        image = item["image"]
+        image = item[input_column_name]
 
         # Convert image to NumPy array and normalize to [0, 1] if needed
         image_array = np.array(image).astype(np.float32) / 255.0
@@ -81,10 +94,16 @@ def compute_mean_and_std_dev(huggingface_dataset: Dataset):
 
 @dataclass
 class DatasetWrapper:
+    """Lightweight wrapper around a Hugging Face Dataset. Provides utilities for
+    preparing splits, applying transforms and maintaining mappings between label
+    ids and names.
+    """
+
     name: str
 
     input_column_name: str = "image"
     label_column_name: str = "label"
+
     streaming: bool = False
 
     split_seed: int = 42
@@ -117,6 +136,18 @@ class DatasetWrapper:
         self.num_classes = -1
 
     def prepare_datasets(self, augmentation) -> None:
+        """Load dataset, create splits and attach transform pipelines.
+
+        This will load the dataset identified by `self.name` using
+        `datasets.load_dataset`, create validation/test splits if missing,
+        compute class counts, and attach `with_transform` callables that apply
+        augmentation and preprocessing to batches.
+
+        Args:
+            augmentation: a callable (or hydra-instantiate result) applied to
+                training examples after the base `transform`.
+        """
+
         self.dataset = load_dataset(self.name, streaming=self.streaming)
         # self.test_data = load_dataset("vendimia50/ct_metadataset", streaming=self.streaming)["train"]
 
