@@ -15,20 +15,21 @@ Deep learning framework, datasets, and models for plankton identification.
 [![Hydra](https://img.shields.io/badge/Hydra-1.3-89b8cd?logo=hexo&logoColor=white)](https://hydra.cc/)
 ![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)
 ![Discord](https://img.shields.io/discord/956298015335927839?logo=Discord&logoColor=white&color=%235865F2&link=https%3A%2F%2Fdiscord.gg%2FkksV2htk)
+
 </div>
 
 Planktonzilla provides a comprehensive toolkit for importing datasets, training computer vision models, and evaluating performance on various plankton image classification tasks. Built on top of Hugging Face Transformers and Hydra for configuration management, it offers specialized tools for handling imbalanced plankton datasets and state-of-the-art loss functions.
 
 - OcéanIA project website: <https://oceania.inria.cl>.
-- OcéanIA's in Hugging Face hub (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
+- OcéanIA Hugging Face hub (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
 
 ## ✨ Features
 
 - **🔧 Modular Configuration**: Hydra-based hierarchical configuration system
-- **📊 Multi-Dataset Support**: Built-in support for ISIISNET, FlowCamNet, Lensless, UVP6Net, WHOI-Plankton, and more
+- **📊 Multiple Plankton Dataset Support**: Built-in support for ISIISNET, FlowCamNet, Lensless, UVP6Net, WHOI-Plankton, and more.
 - **🎯 Specialized Loss Functions**: Advanced loss functions for imbalanced classification (Focal, LDAM, Asymmetric, etc.)
 - **🚀 Model Hub Integration**: Seamless integration with Hugging Face Hub for model sharing
-- **📈 Experiment Tracking**: Built-in support for Weights & Biases and MLflow
+- **📈 Experiment Tracking**: Built-in support for Weights & Biases, MLflow, and Trackio.
 - **🔄 Flexible Training Pipeline**: Based on Hugging Face Transformers Trainer with custom enhancements
 - **📱 Easy CLI Interface**: Simple command-line tools for all operations
 
