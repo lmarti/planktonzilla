@@ -1,4 +1,4 @@
-lora_adapters: null
+null
   #  - name: lora-1
   #    lora_config:
   #      _target_: peft.LoraConfig

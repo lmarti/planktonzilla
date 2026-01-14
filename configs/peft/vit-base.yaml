@@ -1,0 +1,13 @@
+defaults:
+  - default.yaml
+
+# This configuration is experimental
+lora-1:
+  _target_: peft.LoraConfig
+  target_modules: 
+    - query
+    - value
+  lora_dropout: 0.1
+  bias: none
+  r: 8
+  lora_alpha: 16

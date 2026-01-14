@@ -23,7 +23,7 @@ import numpy as np
 import torch
 from evaluate import combine, load
 from huggingface_hub import DatasetCard, login
-from omegaconf import DictConfig, MissingMandatoryValue, OmegaConf
+from omegaconf import DictConfig, OmegaConf
 from transformers import AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
 
 from planktonzilla.dataset import DatasetWrapper
@@ -40,7 +40,15 @@ try:
 except ValueError:
     pass
 
+
 def validate_environment():
+    """Check and log important external service environment variables.
+
+    Warns when Hugging Face hub or tracking services are likely unavailable
+    and logs presence of common environment variables such as `HF_TOKEN`,
+    `WANDB_API_KEY` and `MLFLOW_TRACKING_URI`.
+    """
+
     if "HF_HUB_OFFLINE" in os.environ and os.environ["HF_HUB_OFFLINE"] == "1":
         log.warning("⚠️ Environment variable HF_HUB_OFFLINE=1. Hugging Face hub will be offline.")
     else:
@@ -72,6 +80,7 @@ def validate_environment():
     else:
         log.warning("⚠️ MLFLOW_TRACKING_URI environment variable is not set, if mlflow is enabled will log to local folder.")
 
+
 def compute_metrics(eval_pred):
     """requires training_args.eval_do_concat_batches = True"""
     metrics = combine([load("f1"), load("precision"), load("recall")])
@@ -79,6 +88,7 @@ def compute_metrics(eval_pred):
     res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
     acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
     return {**res, **acc}
+
 
 @task_wrapper
 def train(cfg: DictConfig) -> tuple[dict, dict]:
@@ -115,7 +125,9 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
     dataset_wrapper.prepare_datasets(augmentation)
 
     dataset_card = DatasetCard.load(cfg.dataset.name)
-    log.info(f"Dataset «{cfg.dataset.name}» {dataset_card.data.dataset_info.get('dataset_name', '')} (https://huggingface.co/datasets/{cfg.dataset.name})")
+    log.info(
+        f"Dataset «{cfg.dataset.name}» {dataset_card.data.dataset_info.get('dataset_name', '')} <https://huggingface.co/datasets/{cfg.dataset.name}>."
+    )
 
     log.info(f"Instantiating base model «{cfg.model._args_[0]}».")
 
@@ -127,18 +139,21 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         _convert_="all",
     )
 
+    if cfg.get("peft"):
+        log.info("Adding LoRA adapter(s).")
+        for adapter_name in cfg.peft:
+            adapter = hydra.utils.instantiate(cfg.peft[adapter_name])
+            model.add_adapter(adapter, adapter_name=adapter_name)
+            log.info(f"Added LoRA adapter «{adapter_name}»: {cfg.peft[adapter_name]}.")
+
     # freeze backbone
     if cfg.freeze_backbone:
+        log.info("Model backbone will not be trained.")
         for name, param in model.named_parameters():
             if "classifier" in name or "head" in name:
                 param.requires_grad = True
             else:
                 param.requires_grad = False
-
-    # TODO: lora setup shoule be here
-
-    # if cfg.get("extras") and cfg.extras.get("print_config"):
-    #    print_docstr_as_markdown(model)
 
     log.info("Instantiating training arguments.")
     training_args: TrainingArguments = hydra.utils.instantiate(cfg.training_arguments, _convert_="all")
@@ -196,7 +211,6 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
         report_to += ["trackio"]
         os.environ["TRACKIO_DIR"] = cfg.tracking.trackio_dir
         os.environ["TRACKIO_DATASET_ID"] = cfg.tracking.trackio_dataset_id
-
 
     log.info(f"Logging metrics and/or models to: {report_to}.")
     training_args.report_to = report_to if report_to else "none"
