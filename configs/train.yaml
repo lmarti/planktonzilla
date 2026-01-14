@@ -10,9 +10,10 @@ defaults:
   - paths: default.yaml
   - extras: default.yaml
   - hydra: default.yaml
-  - augmentation: default.yaml #none.yaml
+  - augmentation: default.yaml
   - tracking: default.yaml
   - custom_loss: default.yaml
+  - peft: default.yaml
 
   # experiment configs allow for version control of specific hyperparameters
   # e.g. best hyperparameters for given model and datamodule

@@ -31,12 +31,13 @@ greater_is_better: false
 load_best_model_at_end: true
 
 eval_strategy: epoch
+eval_steps: 1
 
 save_strategy: epoch
 save_total_limit: 2
 
-eval_steps: null
-logging_steps: null
+logging_strategy: epoch
+logging_steps: 1
 
 hub_strategy: checkpoint
 
