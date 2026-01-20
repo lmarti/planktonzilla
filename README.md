@@ -18,26 +18,26 @@ Deep learning framework, datasets, and models for plankton identification.
 
 </div>
 
-Planktonzilla provides a comprehensive toolkit for importing datasets, training computer vision models, and evaluating performance on various plankton image classification tasks. Built on top of Hugging Face Transformers and Hydra for configuration management, it offers specialized tools for handling imbalanced plankton datasets and state-of-the-art loss functions.
+Planktonzilla toolkit for importing datasets, training computer vision models, and evaluating performance on various plankton image classification tasks. Built on top of Hugging Face Transformers and Hydra for configuration management, it offers specialized tools for handling imbalanced plankton datasets and state-of-the-art loss functions.
 
 - OcéanIA project website: <https://oceania.inria.cl>.
-- OcéanIA Hugging Face hub (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
+- OcéanIA in Hugging Face hub (datasets, trained models and demos): <https://huggingface.co/project-oceania>.
 
-## ✨ Features
+## Features
 
-- **🔧 Modular Configuration**: Hydra-based hierarchical configuration system
-- **📊 Multiple Plankton Dataset Support**: Built-in support for ISIISNET, FlowCamNet, Lensless, UVP6Net, WHOI-Plankton, and more.
-- **🎯 Specialized Loss Functions**: Advanced loss functions for imbalanced classification (Focal, LDAM, Asymmetric, etc.)
-- **🚀 Model Hub Integration**: Seamless integration with Hugging Face Hub for model sharing
-- **📈 Experiment Tracking**: Built-in support for Weights & Biases, MLflow, and Trackio.
-- **🔄 Flexible Training Pipeline**: Based on Hugging Face Transformers Trainer with custom enhancements
-- **📱 Easy CLI Interface**: Simple command-line tools for all operations
+- **Modular Configuration**: Hydra-based hierarchical configuration.
+- **Multiple Plankton Dataset Support**: Built-in support for all (afawk) plankton image datasets.
+- **Specialized Loss Functions to handle class imbalance**: Advanced loss functions for imbalanced classification (Focal, LDAM, Asymmetric, etc.)
+- **Model Hub Integration**: Seamless integration with Hugging Face Hub for model sharing
+- **Experiment Tracking**: Built-in support for Weights & Biases, MLflow, and Trackio.
+- **Flexible Training Pipeline**: Based on Hugging Face Transformers Trainer with custom enhancements.
+- **Easy CLI Interface**: Simple command-line tools for all operations.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
-- Python 3.11-3.13
+- Python 3.11-3.14
 - [Poetry](https://python-poetry.org/docs/#installation) for dependency management
 - CUDA-compatible GPU (recommended for training)
 
@@ -238,6 +238,41 @@ If you use Planktonzilla in your research, please cite:
 - **Issues**: [GitHub Issues](https://github.com/Inria-Chile/deep_plankton/issues)
 - **Email**: [info@inria.cl](mailto:info@inria.cl)
 
+```mermaid
+flowchart LR
+  CLI[CLI: console scripts (pz_train, pz_prepare_train, pz_import_dataset)]
+  CFG[Hydra configs (configs/)]
+  ENTRY[`planktonzilla/train.py`]
+  TRAIN_NODE[`planktonzilla/train_node.py`]
+  DATA_IMPORT[`planktonzilla/dataset_import/`]
+  DATA[`planktonzilla/dataset.py`]
+  MODEL[Model (timm / HuggingFace / backbone)]
+  LOSS[`planktonzilla/loss.py` + configs/custom_loss/]
+  TRAIN_LOOP[Training loop / Trainer]
+  TRACK[Tracking (W&B) (configs/tracking/)]
+  OUTPUTS[Outputs: logs/, wandb/, checkpoints/]
+  SCRIPTS[`scripts/train.sh`]
+  TESTS[`tests/`]
+
+  subgraph ConfigFlow
+    CLI -->|cli args| CFG
+    CFG -->|merged config| ENTRY
+  end
+
+  ENTRY -->|spawns| TRAIN_NODE
+  ENTRY -->|loads importers| DATA_IMPORT
+  DATA_IMPORT --> DATA
+  ENTRY -->|selects model| MODEL
+  ENTRY -->|selects loss| LOSS
+  CFG -->|loss params| LOSS
+  DATA -->|batches| TRAIN_LOOP
+  MODEL -->|forward/backbone| TRAIN_LOOP
+  LOSS -->|compute loss| TRAIN_LOOP
+  TRAIN_LOOP -->|metrics & logs| TRACK
+  TRAIN_LOOP -->|save| OUTPUTS
+  SCRIPTS -->|helper| ENTRY
+  TESTS -->|validate| ENTRY
+```
 ---
 
 <div align="center">
