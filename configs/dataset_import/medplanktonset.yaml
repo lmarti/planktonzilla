@@ -1,0 +1,32 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.MedPlanktonSetDatasetImporter
+hf_dataset_name: medplanktonset
+push_to_hub: true
+
+human_readable_name: "MedPlanktonSet - A dataset of labeled IFCB images from the Mediterranean Sea"
+license: cc-by-nc-4.0
+description: |
+download_uris: "https://zenodo.org/records/15471023/files/IFCB_images.zip?download=1"
+source_url: "https://zenodo.org/records/15471023"
+paperswithcode_id: medplanktonset
+citation_apa: |
+    Mente MS & Houliez E, Scalco E., Roselli L., & Sarno D. (2025). MedPlanktonSet - A dataset of labeled IFCB images from the
+    Mediterranean Sea [Data set]. Stazione Zoologica Anton Dohrn. https://doi.org/10.5281/zenodo.15471023
+
+citation_bibtex: |
+  @article{dataset:medplanktonset,
+      author       = {Mente MS \& Houliez E and
+                      Scalco E. and
+                      Roselli L. and
+                      Sarno D.},
+      title        = {MedPlanktonSet -  A dataset of labeled IFCB images
+                       from the Mediterranean Sea
+                      },
+      month        = jun,
+      year         = 2025,
+      publisher    = {Stazione Zoologica Anton Dohrn},
+      doi          = {10.5281/zenodo.15471023},
+      url          = {https://doi.org/10.5281/zenodo.15471023},
+    }

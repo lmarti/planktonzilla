@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - timm/beitv2_large_patch16_224.in1k_ft_in22k_in1k
+
+img_size: 224
+freeze_backbone: true

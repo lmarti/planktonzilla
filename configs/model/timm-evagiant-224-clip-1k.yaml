@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - timm/eva_giant_patch14_224.clip_ft_in1k
+
+img_size: 224
+freeze_backbone: true

@@ -1,0 +1,9 @@
+# @package _global_
+
+model:
+  _target_: planktonzilla.clip_model.ClipClassifier
+  _args_:
+    - ????
+
+img_size: ???
+freeze_backbone: false

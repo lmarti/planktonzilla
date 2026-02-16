@@ -1,0 +1,41 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.SYKEZooScan2024
+hf_dataset_name: sykezooscan2024
+push_to_hub: true
+
+human_readable_name: "SYKE-plankton_ZooScan_2024 "
+license: "cc-by-nc-4.0"
+description: |
+    The SYKE-plankton_ZooScan_2024 dataset consists of over 24k expert-labeled single-specimen zooplankton images. The dataset was 
+    acquired using the ZooScan instrument applied to water samples collected from the Baltic Sea. The data is divided into 20 classes 
+    and all images were annotated by an expert taxonomist.
+    
+    While the dataset can be used to train and test plankton recognition models in general, it was original composed to train and test 
+    open-set recognition (OSR) methods. We provide the splits for OSR used in the original publication. Furthermore, we provide the 
+    corresponding OSR splits for the SYKE-plankton_IFCB_2022 dataset published earlier.
+    
+    If you use the SYKE-plankton_ZooScan_2024 dataset in your research, we kindly ask that you reference the following paper:
+    
+    Kareinen, J., Skyttä, A., Eerola, T., Kraft, K., Lensu, L., Suikkanen, S., Lehtiniemi, M., & Kälviäinen, H. (2024). Open-Set 
+    Plankton Recognition. Out of Distribution Generalization in Computer Vision workshop at ECCV 2024.
+    
+    For more details about the data collection and composition, as well as, the comparison of OSR methods on both dataset, see the 
+    paper.
+download_uris: ""
+source_url: "https://etsin.fairdata.fi/dataset/6fa42787-9772-41a5-a6fc-0dde489ed908" 
+paperswithcode_id: "sykezooscan2024"
+citation_apa: |
+    Kareinen, J., & Skyttä, A. (2024). SYKE-plankton_ZooScan_2024 (Version 1). LUT University. https://doi.org/10.23729/fa115087-
+    26984aa5-aedd-11e260b9694d
+
+citation_bibtex: |
+  @article{dataset:sykezooscan2024,
+    author = {Kareinen, Joona and Skyttä, Annaliina}, 
+    title = {SYKE-plankton_ZooScan_2024}, 
+    howpublished = {\url{https://doi.org/10.23729/fa115087-2698-4aa5-aedd-11e260b9694d}}, 
+    month = {8}, 
+    year = {2024}, 
+    note = {LUT University} 
+  }
