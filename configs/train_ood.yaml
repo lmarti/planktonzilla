@@ -1,0 +1,57 @@
+# @package _global_
+
+# specify here default configuration
+# order of defaults determines the order in which configs override each other
+defaults:
+  - _self_
+  - model: resnet18.yaml 
+  - dataset: lensless.yaml
+  - dataset_ood: lensless.yaml
+  - ood_detectors: default.yaml
+  - paths: default.yaml
+  - extras: default.yaml
+  - hydra: default.yaml
+  - augmentation: default.yaml
+  - tracking: default.yaml
+  - peft: default.yaml
+
+  # experiment configs allow for version control of specific hyperparameters
+  # e.g. best hyperparameters for given model and datamodule
+  - experiment: null
+
+  # config for hyperparameter optimization
+  - hparams_search: null
+
+  # optional local config for machine/user specific settings
+  # it's optional since it doesn't need to exist and is excluded from version control
+  - optional local: default.yaml
+
+  # debugging config (enable through command line, e.g. `python train.py debug=default)
+  - debug: null
+  - override hydra/help: planktonzilla-help
+
+# task name, determines output directory path
+task_name: "train_ood"
+
+# tags to help you identify your experiments
+# you can overwrite this in experiment configs
+# overwrite from command line with `python train.py tags="[first_tag, second_tag]"`
+# appending lists from command line is currently not supported :(
+# https://github.com/facebookresearch/hydra/issues/1547
+tags: ["dev"]
+
+# provide checkpoint path to resume training
+resume_from_ckpt_path: null
+
+# Hugging Face hub config
+# hf_token: ${oc.env:HF_TOKEN, null}
+# model_push_to_hub: true
+# model_push_to_hub_org_name: project-oceania
+# model_push_to_hub_repo_name_prefix: pz # names of uploaded models will have this prefix
+# model_push_as_private: true
+
+# Seed for random number generators in pytorch, numpy and python.random
+seed: ${dataset.split_seed}
+
+# Whether to use deterministic algorithms where available. Can slow down training.
+deterministic: false
