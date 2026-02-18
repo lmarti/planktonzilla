@@ -1,0 +1,6 @@
+vim:
+  _target_: pytorch_ood.detector.ViM
+  model: ???
+  d: 512
+  w: ???
+  b: ???
