@@ -5,6 +5,6 @@ defaults:
 
 model:
   _args_:
-    - timm/resnet18d.ra2_in1k
+    - microsoft/resnet-18
 
 img_size: 224
