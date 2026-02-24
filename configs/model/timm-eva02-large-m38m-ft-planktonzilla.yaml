@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - project-oceania/timm-eva02-large-m38m-ft-planktonzilla
+
+img_size: 448
+freeze_backbone: true

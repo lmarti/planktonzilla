@@ -42,7 +42,6 @@ import pandas as pd
 import time
 
 log = get_pylogger(__name__)
-SAVE=True
 
 
 try:
@@ -195,7 +194,9 @@ def train_ood(cfg: DictConfig) -> tuple[dict, dict]:
     
 
 
-    ds_ood = ds_ood.map(set_unknown, batched=True, num_proc=16)    
+    ds_ood = ds_ood.map(set_unknown, batched=True, num_proc=16)
+    ds_ood = ds_ood.cast(dataset_id.training_dataset.features)
+
     ds_test = concatenate_datasets([ds_ood, dataset_id.test_dataset])
 
     print(f"Largo dataset test full:{len(ds_test)}")
@@ -214,7 +215,7 @@ def train_ood(cfg: DictConfig) -> tuple[dict, dict]:
     train_sampler = DistributedSampler(ds_id,shuffle=False)
     dataloader_train = DataLoader(
         ds_id,
-        batch_size=32,
+        batch_size=16,
         shuffle=False,
         sampler = train_sampler,
         collate_fn=transform_to_tuple,
@@ -222,7 +223,7 @@ def train_ood(cfg: DictConfig) -> tuple[dict, dict]:
 
     dataloader_test = DataLoader(
         ds_test,
-        batch_size=32,
+        batch_size=16,
         shuffle=False,
         sampler=test_sampler,
         collate_fn=transform_to_tuple,
@@ -426,139 +427,6 @@ def train_ood(cfg: DictConfig) -> tuple[dict, dict]:
         
         # Keep GPUs synchronized before moving to the next task
         dist.barrier()
-
-
-    # for detector_name, detector_cfg in cfg.ood_detectors.items():
-    #     if "_target_" in detector_cfg:
-    #         log.info(f"Instantiating {detector_name}...")
-            
-    #         # Preparamos los argumentos extra en un diccionario normal de Python
-    #         extra_args = {"model": model}
-
-    #         # Si es ViM, agregamos los pesos y bias a los argumentos extra
-    #         # NO modificamos detector_cfg
-    #         if detector_name == "vim": # Ojo: asegúrate que la key en el yaml sea exactamente 'vim'
-    #             extra_args["w"] = last_linear.weight
-    #             extra_args["b"] = last_linear.bias
-
-    #         # Pasamos extra_args desempaquetados (**extra_args)
-    #         # Hydra fusionará estos argumentos con los que ya vienen en el YAML
-    #         detector = hydra.utils.instantiate(detector_cfg, **extra_args)
-
-    #         log.info("Fitting detector...")
-
-    #         if SAVE:
-    #             # 1. BOTH GPUs fit on 100% of the data independently. 
-    #             # They will calculate the exact same mathematical parameters.
-    #             detector.fit(dataloader_train, device=device)
-                
-    #             # 2. ONLY GPU 0 is allowed to write to the hard drive
-    #             if dist.get_rank() == 0:
-    #                 log.info("Saving Params...")
-    #                 if detector_name == "mahalanobis":
-    #                     d = {
-    #                         "mu": detector.mu,
-    #                         "precision": detector.precision,
-    #                     }
-    #                     torch.save(d, f"{SAVING_FOLDER}/mahalanobis_parameters.pt")
-
-    #                 elif detector_name == "vim":
-    #                     d = {
-    #                         "alpha": detector.alpha,
-    #                         "principal_subspace": detector.principal_subspace,
-    #                     }
-    #                     torch.save(d, f"{SAVING_FOLDER}/vim_parameters.pt")
-    #         else:
-    #             log.info("Loading Params...")
-    #             # Both GPUs can safely read the file from the hard drive
-    #             if detector_name == "mahalanobis":
-    #                 d = torch.load(f"{SAVING_FOLDER}/mahalanobis_parameters.pt", map_location="cpu", weights_only=False)
-    #                 if "mu" in d and d["mu"] is not None:
-    #                     load_and_cast_param(detector, "mu", d["mu"], device)
-    #                 if "precision" in d and d["precision"] is not None:
-    #                     load_and_cast_param(detector, "precision", d["precision"], device)
-
-    #             elif detector_name == "vim":
-    #                 d = torch.load(f"{SAVING_FOLDER}/vim_parameters.pt", map_location="cpu", weights_only=False)
-    #                 if "alpha" in d and d["alpha"] is not None:
-    #                     load_and_cast_param(detector, "alpha", d["alpha"], device)
-    #                 if "principal_subspace" in d and d["principal_subspace"] is not None:
-    #                     load_and_cast_param(detector, "principal_subspace", d["principal_subspace"], device)
-
-            # # 3. 🛑 THE SAFETY BARRIER
-            # # Force all GPUs to wait here. This prevents GPU 1 from zooming ahead 
-            # # to the evaluation loop while GPU 0 is still busy writing the file!
-            # dist.barrier()
-            # log.info(f"Evaluating detector on Rank {dist.get_rank()}...")
-            
-            # # 1. Grab the indices assigned to this GPU and push them to the device
-            # gpu_indices = torch.tensor(list(test_sampler), dtype=torch.long, device=device)
-            # local_scores = []
-            # local_labels = []
-
-            # with torch.no_grad():
-            #     for x, y in tqdm(dataloader_test, desc=f"Evaluating {detector_name}"):
-            #         x = x.to(device)
-            #         y = y.to(device)
-            #         local_scores.append(detector(x))
-            #         local_labels.append(y)
-
-            # # Concatenate local results
-            # local_scores = torch.cat(local_scores, dim=0).to(device)
-            # local_labels = torch.cat(local_labels, dim=0).to(device)
-            # gpu_indices = gpu_indices.to(device)
-
-            # # ==========================================
-            # # 🚀 THE IN-MEMORY "GLOBAL LIST" GATHERING
-            # # ==========================================
-            # world_size = dist.get_world_size()
-            
-            # # Create empty lists of tensors to hold the incoming data from all GPUs.
-            # # These placeholders MUST be exactly the same shape and dtype as the local tensors.
-            # gathered_scores = [torch.zeros_like(local_scores) for _ in range(world_size)]
-            # gathered_labels = [torch.zeros_like(local_labels) for _ in range(world_size)]
-            # gathered_idxs = [torch.zeros_like(gpu_indices) for _ in range(world_size)]
-            
-            # # Fire the collective operation! 
-            # # This magically fills the empty lists with data from Rank 0, Rank 1, etc.
-            # dist.all_gather(gathered_scores, local_scores)
-            # dist.all_gather(gathered_labels, local_labels)
-            # dist.all_gather(gathered_idxs, gpu_indices)
-
-            # # ==========================================
-            # # 📊 RANK 0 PROCESSES THE GATHERED DATA
-            # # ==========================================
-            # if dist.get_rank() == 0:
-            #     log.info("Stitching in-memory results together...")
-                
-            #     # Concatenate the gathered lists into massive, unordered tensors
-            #     # We move them to CPU here so metric calculation doesn't hog GPU memory
-            #     global_scores = torch.cat(gathered_scores, dim=0).cpu()
-            #     global_labels = torch.cat(gathered_labels, dim=0).cpu()
-            #     global_idxs = torch.cat(gathered_idxs, dim=0).cpu()
-                
-            #     # 🛑 Apply the exact same Magic Fix to reconstruct dataset order
-            #     true_length = len(ds_test)
-                
-            #     perfect_scores = torch.zeros((true_length, *global_scores.shape[1:]), dtype=global_scores.dtype)
-            #     perfect_labels = torch.zeros((true_length, *global_labels.shape[1:]), dtype=global_labels.dtype)
-                
-            #     perfect_scores[global_idxs] = global_scores
-            #     perfect_labels[global_idxs] = global_labels
-                
-            #     # Calculate metrics
-            #     metrics = OODMetrics()
-            #     metrics.update(perfect_scores, perfect_labels)
-
-            #     r = {"Detector": detector_name, "Dataset": "test"}
-            #     r.update(metrics.compute())
-            #     results.append(r)
-                
-            #     # Only save the FINAL combined buffer to disk
-            #     metrics.buffer.save(f"{cfg.paths.output_dir}/{detector_name}_FINAL.pt")
-            
-            # # Keep GPUs synchronized before moving to the next task
-            # dist.barrier()
 
     # calculate mean scores over all datasets, use percent
     if dist.get_rank() == 0:
