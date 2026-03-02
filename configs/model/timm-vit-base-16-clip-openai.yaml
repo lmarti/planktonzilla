@@ -1,0 +1,11 @@
+# @package _global_
+
+defaults:
+  - default.yaml
+
+model:
+  _args_:
+    - timm/vit_base_patch16_clip_224.openai
+
+img_size: 224
+freeze_backbone: false
