@@ -26,6 +26,14 @@ from huggingface_hub import DatasetCard, login
 from omegaconf import DictConfig, OmegaConf
 from transformers import AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
 
+from sklearn.metrics import (
+    f1_score,
+    precision_score,
+    recall_score,
+    accuracy_score,
+)
+
+
 from planktonzilla.dataset import DatasetWrapper
 from planktonzilla.utils.hydra import (
     get_metric_value,
@@ -81,13 +89,28 @@ def validate_environment():
         log.warning("⚠️ MLFLOW_TRACKING_URI environment variable is not set, if mlflow is enabled will log to local folder.")
 
 
+# def compute_metrics(eval_pred):
+#    """requires training_args.eval_do_concat_batches = True"""
+#     metrics = combine([load("f1"), load("precision"), load("recall")])
+#     predictions = np.argmax(eval_pred.predictions, axis=-1)
+#     res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
+#     acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
+#     return {**res, **acc}
+
 def compute_metrics(eval_pred):
-    """requires training_args.eval_do_concat_batches = True"""
-    metrics = combine([load("f1"), load("precision"), load("recall")])
+    """
+    requires training_args.eval_do_concat_batches = True
+    """
+
     predictions = np.argmax(eval_pred.predictions, axis=-1)
-    res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
-    acc = load("accuracy").compute(predictions=predictions, references=eval_pred.label_ids)
-    return {**res, **acc}
+    labels = eval_pred.label_ids
+
+    return {
+        "accuracy": accuracy_score(labels, predictions),
+        "f1": f1_score(labels, predictions, average="macro", zero_division=0),
+        "precision": precision_score(labels, predictions, average="macro", zero_division=0),
+        "recall": recall_score(labels, predictions, average="macro", zero_division=0),
+    }
 
 
 @task_wrapper
