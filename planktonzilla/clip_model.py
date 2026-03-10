@@ -8,6 +8,7 @@ class ClipClassifier(nn.Module):
         name: str,
         pretrained: str,
         repo_path: str,
+        num_features: int,
         num_labels: int,
         id2label: dict = None,
         label2id: dict = None,
@@ -25,10 +26,19 @@ class ClipClassifier(nn.Module):
         self.num_labels = num_labels
         
         self.name_or_path = name + pretrained
-        self.model = clip_model.visual.trunk
+        self.model = clip_model.visual
+        
+        try:
+            _ = self.model.proj # ViT models
+            self.model.proj = None # Delete the projection
 
-        # Head de clasificación
-        self.model.head = nn.Linear(1024, num_labels)
+            self.model = nn.Sequential(
+                self.model,
+                nn.Linear(num_features, num_labels)
+            )
+        except:
+            self.model = self.model.trunk
+            self.model.head = nn.Linear(num_features, num_labels)
 
     def forward(self, pixel_values, labels=None, output_attentions=None, output_hidden_states=None, return_dict=True):
         logits = self.model(pixel_values)
