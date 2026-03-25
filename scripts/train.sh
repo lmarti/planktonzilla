@@ -3,12 +3,12 @@
 #SBATCH --partition=gpu_p6
 #SBATCH --qos=qos_gpu_h100-t3
 #SBATCH --constraint=h100
-#SBATCH --nodes=32
+#SBATCH --nodes=8
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=96
 #SBATCH --gres=gpu:4
 #SBATCH --hint=nomultithread
-#SBATCH --time=20:00:00
+#SBATCH --time=4:00:00
 #SBATCH --output=logs/%x_%j.out  
 
 # === Preparación del entorno ===
@@ -29,7 +29,7 @@ MASTER_PORT=29500
 # === Ejecutar torchrun ===
 srun torchrun \
   --nproc_per_node=4 \
-  --nnodes=32 \
+  --nnodes=8 \
   --rdzv_backend=c10d \
   --rdzv_endpoint=$MASTER_ADDR:$MASTER_PORT \
   train.py "$@"

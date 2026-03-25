@@ -1,0 +1,56 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.SYKEIFCB2022DatasetImporter
+hf_dataset_name: syke_ifcb_2022
+push_to_hub: true
+
+human_readable_name: "SYKE-plankton_IFCB_2022"
+license: "cc-by-nc-4.0"
+description: |
+  The data set available here is published along with an article “Kraft et al. (2022). Towards operational 
+  phytoplankton recognition with automated high-throughput imaging, near real-time data processing, and 
+  convolutional neural networks. Front Mar. Sci. 9. Doi: 10.3389/fmars.2022.867695” and if used for further 
+  purposes, the article should be cited accordingly. The data set contains approximately 63 000 images 
+  belonging to 50 different classes, consisting mainly of phytoplankton. The images can be used to e.g. 
+  train a classifier to identify phytoplankton images.
+
+  The images were collected with an Imaging FlowCytobot (IFCB, McLane Research Laboratories, Inc., U.S., 
+  Olson and Sosik, 2007) from different locations in the Baltic Sea. In 2017 and 2018 the data were collected 
+  from a continuous deployment at the Utö Atmospheric and Marine Research Station (59°46.84' N, 21°22.13' E; 
+  Laakso et al., 2018; Kraft et al., 2021) operated by Finnish Environment Institute and Finnish Meteorological 
+  Institute (n=62). In 2016 and 2019 water samples were collected using the Alg@line ferrybox systems of M/S 
+  Finnmaid and Silja Serenade (Ruokanen et al., 2003; Kaitala et al., 2014) and manually ran in the laboratory 
+  (n=52). The images were manually annotated by expert taxonomists. The class list and labeled image set is a 
+  continuous work in progress, thus there may be a need for revision in future. The data set available with this 
+  doi will not be revised. More detailed explanation and example images can be found from the publication Kraft 
+  et al. 2022.
+
+  The zipped folder contains 50 different folders, and the images are located in the class-specific folders. The 
+  image names may refer to an old class (e.g. folder Cryptophyceae-Teleaulax contains images with names 
+  Cryptophyceae_drop, Cryptophyceae_small, Teleaulax sp.) that has been joined with another one / revised otherwise.
+
+  The work utilized SYKE and FMI marine research infrastructure as a part of the national FINMARI RI consortium. 
+  The work was partly funded by Tiina and Antti Herlin Foundation (personal grant for KK), Academy of Finland project 
+  FASTVISION (grant no. 321980), Academy of Finland project FASTVISION-plus (grant no. 339355), JERICO-S3 project, 
+  funded by the European Commission's H2020 Framework Programme under grant agreement No. 871153, and PHIDIAS project, 
+  funded by the European Union's Connecting Europe Facility under grant agreement INEA/CEF/ICT/A2018/1810854.
+download_uris: "https://b2share.eudat.eu/records/xvnrp-7ga56/files/phytoplankton_labeled.zip?download=1"
+source_url: "https://b2share.eudat.eu/records/abf913e5a6ad47e6baa273ae0ed6617a" 
+paperswithcode_id: "syke_ifcb_2022"
+citation_apa: |
+  Kraft, K., Velhonoja, O., Seppälä, J., Hällfors, H., Suikkanen, S., Ylöstalo, P., Anglès, S., Kielosto, S., Kuosa, H., 
+  Lehtinen, S., Oja, J., & Tamminen, T. (2022). SYKE-plankton_IFCB_2022 [Data set]. B2SHARE v2. 
+  https://doi.org/10.23728/b2share.abf913e5a6ad47e6baa273ae0ed6617a
+
+citation_bibtex: |
+  @dataset{dataset:sykezooscan2024,
+    author = {Kraft, Kaisa and Velhonoja, Olli and Seppälä, Jukka and Hällfors, Hanna and Suikkanen, 
+              Sanna and Ylöstalo, Petri and Anglès, Susana and Kielosto, Sami and Kuosa, Harri and 
+              Lehtinen, Sari and Oja, Jussi and Tamminen, Timo},
+    title = {SYKE-plankton_IFCB_2022}, 
+    howpublished = {\url{https://doi.org/10.23728/b2share.abf913e5a6ad47e6baa273ae0ed6617a}}, 
+    doi = {10.23728/b2share.abf913e5a6ad47e6baa273ae0ed6617a}
+    year = {2022}, 
+    note = {B2SHARE} 
+  }

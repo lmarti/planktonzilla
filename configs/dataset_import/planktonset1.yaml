@@ -1,0 +1,47 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.PlanktonSet1DatasetImporter
+hf_dataset_name: planktonset1.0
+push_to_hub: true
+
+human_readable_name: "PlanktonSet 1.0: Plankton imagery data collected from F.G. Walton Smith in Straits of Florida from 2014-06-03 to 2014-06-06 and used in the 2015 National Data Science Bowl (NCEI Accession 0127422)"
+license: cc-by-nc-4.0
+description: |
+  Data presented here are subset of a larger plankton imagery data set collected in the subtropical Straits of 
+  Florida from 2014-05-28 to 2014-06-14. Imagery data were collected using the In Situ Ichthyoplankton Imaging 
+  System (ISIIS-2) as part of a NSF-funded project to assess the biophysical drivers affecting fine-scale 
+  interactions between larval fish, their prey, and predators. This subset of images was used in the inaugural
+  National Data Science Bowl (www.datasciencebowl.com) hosted by Kaggle and sponsored by Booz Allen Hamilton. 
+  Data were originally collected to examine the biophysical drivers affecting fine-scale (spatial) interactions 
+  between larval fish, their prey, and predators in a subtropical pelagic marine ecosystem. Image segments 
+  extracted from the raw data were sorted into 121 plankton classes, split 50:50 into train and test data sets, 
+  and provided for a machine learning competition (the National Data Science Bowl). There was no hierarchical 
+  relationships explicit in the 121 plankton classes, though the class naming convention and a tree-like diagram 
+  (see file "Plankton Relationships.pdf") indicated relationships between classes, whether it was taxonomic or 
+  structural (size and shape). We intend for this dataset to be available to the machine learning and computer 
+  vision community as a standard machine learning benchmark. This ''Plankton 1.0'' dataset is a medium-size 
+  dataset with a fair amount of complexity where image classification improvements can still be made.
+
+download_uris: "https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/download/127422.2.3.tar.gz"
+source_url: "https://www.ncei.noaa.gov/archive/archive-management-system/OAS/bin/prd/jquery/accession/download/127422"
+paperswithcode_id: planktonset1
+citation_apa: |
+    Cowen, R. K., Sponaugle, S., Robinson, K. L., Luo, J., & Guigand, C. (2015). PlanktonSet 1.0: Plankton imagery data 
+    collected from F.G. Walton Smith in Straits of Florida from 2014-06-03 to 2014-06-06 and used in the 2015 National 
+    Data Science Bowl (NCEI Accession 0127422) [PlanktonSet 1.0 (Version 2.3)]. NOAA National Centers for Environmental Information. 
+    https://doi.org/10.7289/v5d21vjd
+
+citation_bibtex: |
+  @dataset{dataset:planktonset1.0,
+    author    = {Cowen, Robert K. and
+                 Sponaugle, Su and
+                 Robinson, Kelly L. and
+                 Luo, Jessica and
+                 Guigand, Cedric},
+    title     = {PlanktonSet 1.0: Plankton imagery data collected from F.G. Walton Smith in Straits of Florida from 2014-06-03 to 2014-06-06 and used in the 2015 National Data Science Bowl (NCEI Accession 0127422)},
+    year      = {2015},
+    publisher = {NOAA National Centers for Environmental Information},
+    doi       = {10.7289/v5d21vjd},
+    url       = {https://doi.org/10.7289/v5d21vjd}
+  }

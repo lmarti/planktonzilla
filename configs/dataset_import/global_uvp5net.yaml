@@ -1,0 +1,68 @@
+defaults:
+  - default.yaml
+
+_target_: planktonzilla.dataset_import.dataset_importer.GlobalUVP5NetDatasetImporter
+hf_dataset_name: globaluvp5net
+push_to_hub: true
+
+human_readable_name: "A global consistent database of plankton and detritus from in situ imaging by the Underwater Vision Profiler 5"
+license: "cc-by-nc-4.0"
+description: |
+  Plankton and detritus are essential components of the Earths oceans influencing biogeochemical 
+  cycles and carbon sequestration. Climate change impacts their composition and marine ecosystems as 
+  a whole. To improve our understanding of these changes, standardized observation methods and integrated 
+  global datasets are needed to enhance the accuracy of ecological and climate models. Here, we present a 
+  global dataset for plankton and detritus obtained by two versions of the Underwater Vision Profiler 5 (UVP5). 
+  This release contains the images classified in 33 homogenized categories, as well as the metadata associated 
+  with them, reaching 3,114 profiles and ca. 8 million objects acquired between 2008-2018 at global scale. 
+  The geographical distribution of the dataset is unbalanced, with the Equatorial region (30° S - 30° N) being 
+  the most represented, followed by the high latitudes in the northern hemisphere and lastly the high latitudes 
+  in the Southern Hemisphere. Detritus is the most abundant category in terms of concentration (90%) and 
+  biovolume (95%), although its classification in different morphotypes is still not well established. Copepoda 
+  was the most abundant taxa within the plankton, with Trichodesmium colonies being the second most abundant. 
+  The two versions of UVP5 (SD and HD) have different imagers, resulting in a different effective size range to 
+  analyse plankton and detritus from the images (HD objects >600 µm, SD objects >1 mm) and morphological 
+  properties (grey levels, etc.) presenting similar patterns, although the ranges may differ. A large number of 
+  images of plankton and detritus will be collected in the future by the UVP5, and the public availability of this 
+  dataset will help it being utilized as a training set for machine learning and being improved by the scientific 
+  community. This will reduce uncertainty by classifying previously unclassified objects and expand the 
+  classification categories, ultimately enhancing biodiversity quantification.
+
+download_uris: "https://www.seanoe.org/data/00964/107583/data/121258.zip"
+source_url: "https://www.seanoe.org/data/00964/107583/"
+paperswithcode_id: "globaluvp5net"
+citation_apa: |
+  Nocera Ariadna, Stemmann Lars, Babin Marcel, Biard Tristan, Coustenoble Julie, Carlotti François, Coppola Laurent, 
+  Courchet Lucas, Drago Laetitia, Elineau Amanda, Guidi Lionel, Hauss Helena, Jalabert Laëtitia, Karp-Boss Lee, 
+  Kiko Rainer, Laget Marion, Lombard Fabien, McDonnell Andrew, Merland Camille, Motreuil Solène, Panaïotis Thelma, 
+  Picheral Marc, Rogge Andreas, Waite Anya, Irisson Jean-Olivier (2025). A global consistent database of plankton 
+  and detritus from in situ imaging by the Underwater Vision Profiler 5. SEANOE. https://doi.org/10.17882/107583
+
+citation_bibtex: |
+  @article{dataset:globaluvp5net,
+    title      = {A global consistent database of plankton and detritus from in situ imaging by the Underwater Vision Profiler 5},
+    author     = {Nocera Ariadna and Stemmann Lars and Babin Marcel and Biard Tristan
+                  and Coustenoble Julie and Carlotti François and Coppola Laurent
+                  and Courchet Lucas and Drago Laetitia and Elineau Amanda
+                  and Guidi Lionel and Hauss Helena and Jalabert Laëtitia
+                  and Karp-Boss Lee and Kiko Rainer and Laget Marion
+                  and Lombard Fabien and McDonnell Andrew and Merland Camille
+                  and Motreuil Solène and Panaïotis Thelma and Picheral Marc
+                  and Rogge Andreas and Waite Anya and Irisson Jean-Olivier},
+    year       = 2025,
+    journal    = {SEANOE},
+    doi        = {10.17882/107583},
+    affiliation = {Centro para el Estudio de Sistemas Marinos, CCT-CENPAT-CONICET, U9120ACD, Puerto Madryn, Chubut, Argentina.
+    Sorbonne Université, CNRS, Laboratoire d'Océanographie de Villefranche, LOV, F-06230 Villefranche-sur-Mer, France.
+    Département de Biologie, Université Laval, Québec, Canada.
+    Laboratoire d'Océanologie et de Géosciences (LOG), Université du Littoral Côte d'Opale, Université Lille, CNRS, IRD, UMR 8187, Wimereux, France.
+    Mediterranean Institute of Oceanography, Aix-Marseille Université, Université de Toulon, CNRS, IRD, UMR 7294, Marseille, France.
+    Sorbonne Université, CNRS, OSU STAMAR, UAR2017, 4 Place Jussieu, 75252 Paris CEDEX 05, France.
+    Sorbonne Université, CNRS, Institut de la Mer de Villefranche, IMEV, F-06230 Villefranche-sur-Mer, France.
+    GEOMAR Helmholtz Centre for Ocean Research Kiel, Kiel, Germany.
+    NORCE Norwegian Research Centre, Bergen, Norway.
+    School of Marine Sciences, University of Maine, Orono, ME, USA.
+    College of Fisheries and Ocean Sciences, University of Alaska Fairbanks, Fairbanks, Alaska, USA.
+    Alfred-Wegener-Institut, Helmholtz-Zentrum für Polar- und Meeresforschung, Bremerhaven, Germany.
+    Department of Oceanography, Dalhousie University, Halifax, Nova Scotia, Canada.}
+  }
