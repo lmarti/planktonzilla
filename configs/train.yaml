@@ -45,7 +45,7 @@ resume_from_ckpt_path: null
 
 # Hugging Face hub config
 # hf_token: ${oc.env:HF_TOKEN, null}
-model_push_to_hub: true
+model_push_to_hub: false
 model_push_to_hub_org_name: project-oceania
 model_push_to_hub_repo_name_prefix: pz # names of uploaded models will have this prefix
 model_push_as_private: true
