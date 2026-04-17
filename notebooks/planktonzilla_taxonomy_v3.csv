@@ -1,0 +1,1486 @@
+Dataset;Raw_Labels;Kingdom;Phylum;Class;Order;Family;Genus;Species;proposed_label_right;plankton;living;root_class
+flowcamnet;Acantharia;chromista;radiozoa;acantharia;symphyacanthida;amphilithidae;amphibelone;;amphibelone;true;true;living
+flowcamnet;Amphorides;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;amphorides;;amphorides;true;true;living
+flowcamnet;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+flowcamnet;Asterolamprales;chromista;heterokontophyta;bacillariophyceae;asterolamprales;;;;asterolamprales;true;true;living
+flowcamnet;Bacillariophyceae;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+flowcamnet;Bacteriastrum;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;bacteriastrum;;bacteriastrum;true;true;living
+flowcamnet;Calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+flowcamnet;Ceratocorys;chromista;myzozoa;dinophyceae;gonyaulacales;ceratocoryaceae;ceratocorys;;ceratocorys;true;true;living
+flowcamnet;Chaetoceros;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+flowcamnet;Chaetoceros peruvianus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;peruvianus;chaetoceros peruvianus;true;true;living
+flowcamnet;chainlarge;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;;diatoma;true;true;living
+flowcamnet;chainthin;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;;diatoma;true;true;living
+flowcamnet;Ciliophora;chromista;ciliophora;;;;;;ciliophora;true;true;living
+flowcamnet;Cladopyxis;chromista;myzozoa;dinophyceae;gonyaulacales;cladopyxidaceae;cladopyxis;;cladopyxis;true;true;living
+flowcamnet;Climacodium;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;climacodium;;climacodium;true;true;living
+flowcamnet;Climacodium inter. Crocosphaera;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;climacodium;crocosphaera;climacodium crocosphaera;true;true;living
+flowcamnet;Codonaria;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;codonaria;;codonaria;true;true;living
+flowcamnet;Codonellopsis;chromista;ciliophora;oligotrichea;choreotrichida;codonellopsidae;codonellopsis;morchella;codonellopsis morchella;true;true;living
+flowcamnet;Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+flowcamnet;Coscinodiscaceae;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;coscinodiscaceae;;;coscinodiscaceae;true;true;living
+flowcamnet;cyano a;bacteria;cyanobacteria;;;;;;cyanobacteria;true;true;living
+flowcamnet;cyano b;bacteria;cyanobacteria;;;;;;cyanobacteria;true;true;living
+flowcamnet;Cyttarocylididae;chromista;ciliophora;oligotrichea;choreotrichida;epiplocylididae;epiplocylis;;epiplocylis;true;true;living
+flowcamnet;Dactyliosolen;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;dactyliosolen;;dactyliosolen;true;true;living
+flowcamnet;Dictyocysta;chromista;ciliophora;oligotrichea;choreotrichida;dictyocystidae;dictyocysta;;dictyocysta;true;true;living
+flowcamnet;Dinophyceae;chromista;myzozoa;dinophyceae;gonyaulacales;;;;gonyaulacales;true;true;living
+flowcamnet;Dinophysis;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;;dinophysis;true;true;living
+flowcamnet;Ditylum;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;ditylum;;ditylum;true;true;living
+flowcamnet;Eutintinnus;chromista;ciliophora;oligotrichea;choreotrichida;eutintinnidae;eutintinnus;;eutintinnus;true;true;living
+flowcamnet;Foraminifera;chromista;foraminifera;;;;;;foraminifera;true;true;living
+flowcamnet;Fragilariopsis;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;fragilariopsis;;fragilariopsis;true;true;living
+flowcamnet;Guinardia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;;guinardia;true;true;living
+flowcamnet;Gymnodiniales;chromista;myzozoa;dinophyceae;gymnodiniales;;;;gymnodiniales;true;true;living
+flowcamnet;Hemiaulus;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;hemiaulus;;hemiaulus;true;true;living
+flowcamnet;Katagnymene spiralis;bacteria;cyanobacteria;cyanophyceae;gomontiellales;gomontiellaceae;katagnymene;spiralis;katagnymene spiralis;true;true;living
+flowcamnet;Melosiraceae;chromista;heterokontophyta;bacillariophyceae;melosirales;melosiraceae;;;melosiraceae;true;true;living
+flowcamnet;Metacylis;chromista;ciliophora;oligotrichea;choreotrichida;metacylididae;metacylis;;metacylis;true;true;living
+flowcamnet;Nassellaria;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+flowcamnet;nauplii;animalia;arthropoda;;;;;;arthropoda;true;true;living
+flowcamnet;Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;neoceratium;;neoceratium;true;true;living
+flowcamnet;Neoceratium furca;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;furca;tripos furca;true;true;living
+flowcamnet;Neoceratium fusus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;fusus;tripos fusus;true;true;living
+flowcamnet;Neoceratium pentagonum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;pentagonus;tripos pentagonus;true;true;living
+flowcamnet;Nitzschia;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;nitzschia;;nitzschia;true;true;living
+flowcamnet;Odontella;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;;odontella;true;true;living
+flowcamnet;Oithonidae;animalia;arthropoda;copepoda;cyclopoida;oithonidae;;;oithonidae;true;true;living
+flowcamnet;Oncaeidae;animalia;arthropoda;copepoda;cyclopoida;oncaeidae;;;oncaeidae;true;true;living
+flowcamnet;Ornithocercus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;magnificus;ornithocercus magnificus;true;true;living
+flowcamnet;Oxytoxum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;;oxytoxum;true;true;living
+flowcamnet;pennate;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+flowcamnet;Planktoniella sol;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;planktoniella;sol;planktoniella sol;true;true;living
+flowcamnet;Podolampas;chromista;myzozoa;dinophyceae;peridiniales;podolampadaceae;podolampas;;podolampas;true;true;living
+flowcamnet;Poroecus;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;poroecus;;poroecus;true;true;living
+flowcamnet;Protoperidinium;chromista;myzozoa;dinophyceae;peridiniales;protoperidiniaceae;protoperidinium;;protoperidinium;true;true;living
+flowcamnet;Pseudo-Nitzschia chain;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;chain;pseudo-nitzschia chain;true;true;living
+flowcamnet;Pyrocystaceae;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;;;pyrocystaceae;true;true;living
+flowcamnet;Pyrophacus;chromista;myzozoa;dinophyceae;gonyaulacales;pyrophacaceae;pyrophacus;;pyrophacus;true;true;living
+flowcamnet;Retaria;chromista;;;;;;;chromista;true;true;living
+flowcamnet;Rhabdonellidae;chromista;ciliophora;oligotrichea;choreotrichida;rhabdonellidae;rhabdonella;;rhabdonella;true;true;living
+flowcamnet;Rhizosolenia inter. Richelia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;rhizosolenia;;rhizosolenia;true;true;living
+flowcamnet;Rhizosoleniaceae;;;;;;;;rhizosoleniaceae;true;true;living
+flowcamnet;Richelia;bacteria;cyanobacteria;cyanophyceae;nostocales;rivulariaceae;richelia;;richelia;true;true;living
+flowcamnet;Salpingella;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;salpingella;;salpingella;true;true;living
+flowcamnet;Spumellaria;chromista;radiozoa;polycystina;spumellaria;;;;spumellaria;true;true;living
+flowcamnet;Steenstrupiella;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;steenstrupiella;;steenstrupiella;true;true;living
+flowcamnet;Thalassionematales;chromista;heterokontophyta;bacillariophyceae;thalassionematales;;;;thalassionematales;true;true;living
+flowcamnet;Tintinnina;chromista;ciliophora;oligotrichea;choreotrichida;;;;choreotrichida;true;true;living
+flowcamnet;UCYNA like;bacteria;cyanobacteria;cyanophyceae;;;;;cyanophyceae;true;true;living
+flowcamnet;Undellidae;chromista;ciliophora;oligotrichea;choreotrichida;undellidae;;;undellidae;true;true;living
+flowcamnet;Xystonellidae;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;;;xystonellidae;true;true;living
+global_uvp5;Acantharea;;;;;;;;Acantharea;true;true;living
+global_uvp5;Acrocirridae;animalia;annelida;polychaeta;terebellida;acrocirridae;;;acrocirridae;true;true;living
+global_uvp5;Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+global_uvp5;actinula;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+global_uvp5;Aegina;animalia;cnidaria;hydrozoa;narcomedusae;aeginidae;aegina;;aegina;true;true;living
+global_uvp5;Aegina citrea;animalia;cnidaria;hydrozoa;narcomedusae;aeginidae;aegina;citrea;citrea;true;true;living
+global_uvp5;Aequorea;animalia;cnidaria;hydrozoa;leptothecata;aequoreidae;aequorea;;aequorea;true;true;living
+global_uvp5;Aequoreidae;animalia;cnidaria;hydrozoa;leptothecata;aequoreidae;;;aequoreidae;true;true;living
+global_uvp5;Aglantha;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;aglantha;;aglantha;true;true;living
+global_uvp5;Aglantha digitale;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;aglantha;digitale;digitale;true;true;living
+global_uvp5;Alciopidae;;;;;;;;Alciopidae;true;true;living
+global_uvp5;Amphipoda;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+global_uvp5;Annelida;animalia;annelida;;;;;;annelida;true;true;living
+global_uvp5;Anthoathecata;animalia;cnidaria;hydrozoa;anthoathecata;;;;anthoathecata;true;true;living
+global_uvp5;Aphanizomenon;bacteria;cyanobacteria;cyanophyceae;nostocales;aphanizomenonaceae;aphanizomenon;;aphanizomenon;true;true;living
+global_uvp5;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+global_uvp5;Atolla;animalia;cnidaria;scyphozoa;coronatae;atollidae;atolla;;atolla;true;true;living
+global_uvp5;Aulacantha;chromista;cercozoa;thecofilosea;phaeocystida;aulacanthidae;aulacantha;;aulacantha;true;true;living
+global_uvp5;Aulacanthidae;chromista;cercozoa;thecofilosea;phaeocystida;aulacanthidae;;;aulacanthidae;true;true;living
+global_uvp5;Aulatractus;chromista;cercozoa;thecofilosea;phaeosphaerida;aulosphaeridae;;;aulosphaeridae;true;true;living
+global_uvp5;Aulographis;chromista;cercozoa;thecofilosea;phaeocystida;aulacanthidae;aulographis;;aulographis;true;true;living
+global_uvp5;Aulosphaeridae;chromista;cercozoa;thecofilosea;phaeosphaerida;aulosphaeridae;;;aulosphaeridae;true;true;living
+global_uvp5;badfocus<Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;ball with spines;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Bassia bassensis;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;bassia;bassensis;bassensis;true;true;living
+global_uvp5;Beroe;animalia;ctenophora;nuda;beroida;beroidae;beroe;;beroe;true;true;living
+global_uvp5;Beroida;animalia;ctenophora;nuda;beroida;;;;beroida;true;true;living
+global_uvp5;body;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+global_uvp5;Botrynema brucei;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;botrynema;brucei;brucei;true;true;living
+global_uvp5;Bythotiaridae;animalia;cnidaria;hydrozoa;anthoathecata;bythotiaridae;;;bythotiaridae;true;true;living
+global_uvp5;Cannosphaeridae;chromista;cercozoa;thecofilosea;phaeosphaerida;cannosphaeridae;;;cannosphaeridae;true;true;living
+global_uvp5;Castanellidae;chromista;cercozoa;thecofilosea;phaeocalpida;castanellidae;;;castanellidae;true;true;living
+global_uvp5;Cavoliniidae;animalia;mollusca;gastropoda;pteropoda;cavoliniidae;;;cavoliniidae;true;true;living
+global_uvp5;Cephalopoda;animalia;mollusca;cephalopoda;;;;;cephalopoda;true;true;living
+global_uvp5;Ceriantharia;animalia;cnidaria;hexacorallia;ceriantharia;;;;ceriantharia;true;true;living
+global_uvp5;Cestidae;animalia;ctenophora;tentaculata;cestida;cestidae;;;cestidae;true;true;living
+global_uvp5;Chaeteessa;animalia;arthropoda;hexapoda;;;;;hexapoda;true;true;living
+global_uvp5;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+global_uvp5;chain;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+global_uvp5;Circoporidae;chromista;cercozoa;thecofilosea;phaeocalpida;circoporidae;;;circoporidae;true;true;living
+global_uvp5;Cladocera;animalia;arthropoda;branchiopoda;;;;;branchiopoda;true;true;living
+global_uvp5;Cnidaria<Hydrozoa;animalia;cnidaria;;;;;;cnidaria;true;true;living
+global_uvp5;Cnidaria<Metazoa;animalia;cnidaria;;;;;;cnidaria;true;true;living
+global_uvp5;Coelodendridae;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;;;coelodendridae;true;true;living
+global_uvp5;Coelodendrum;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;coelodendrum;;coelodendrum;true;true;living
+global_uvp5;Coelographis;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;;;coelodendridae;true;true;living
+global_uvp5;Collodaria;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+global_uvp5;colonial<Aulosphaeridae;chromista;cercozoa;thecofilosea;phaeosphaerida;aulosphaeridae;;;aulosphaeridae;true;true;living
+global_uvp5;colonial<Cannosphaeridae;chromista;cercozoa;thecofilosea;phaeosphaerida;cannosphaeridae;;;cannosphaeridae;true;true;living
+global_uvp5;colonial<Collodaria;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+global_uvp5;Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;copepoda eggs;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;Copepoda X;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;Coronatae;animalia;cnidaria;scyphozoa;coronatae;;;;coronatae;true;true;living
+global_uvp5;Coscinodiscus;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;coscinodiscaceae;coscinodiscus;;coscinodiscus;true;true;living
+global_uvp5;Creseidae;animalia;mollusca;gastropoda;pteropoda;creseidae;;;creseidae;true;true;living
+global_uvp5;Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+global_uvp5;Ctenocalanus;animalia;arthropoda;copepoda;calanoida;clausocalanidae;ctenocalanus;;ctenocalanus;true;true;living
+global_uvp5;Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+global_uvp5;Ctenophora XX;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+global_uvp5;Cubozoa;animalia;cnidaria;cubozoa;;;;;cubozoa;true;true;living
+global_uvp5;Cytocladus;chromista;radiozoa;polycystina;;;;;polycystina;true;true;living
+global_uvp5;Decapoda;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+global_uvp5;Diatoma;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;;diatoma;true;true;living
+global_uvp5;Dinophyceae;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+global_uvp5;Dolichospermum;bacteria;cyanobacteria;cyanophyceae;nostocales;aphanizomenonaceae;dolichospermum;;dolichospermum;true;true;living
+global_uvp5;Doliolida;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+global_uvp5;Echidnophaga;animalia;arthropoda;hexapoda;siphonaptera;pulicidae;echidnophaga;;echidnophaga;true;true;living
+global_uvp5;Echinodermata;animalia;echinodermata;;;;;;echinodermata;true;true;living
+global_uvp5;egg unkn temp<Engraulidae temp;animalia;chordata;teleostei;clupeiformes;engraulidae;;;engraulidae;true;true;living
+global_uvp5;egg unkn temp<Sardina temp;animalia;chordata;teleostei;clupeiformes;clupeidae;;;clupeidae;true;true;living
+global_uvp5;elongated star with ball;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Enteropneusta;animalia;hemichordata;enteropneusta;;;;;enteropneusta;true;true;living
+global_uvp5;Eucalanidae;animalia;arthropoda;copepoda;calanoida;eucalanidae;;;eucalanidae;true;true;living
+global_uvp5;Eukaryota;;;;;;;;Eukaryota;true;true;living
+global_uvp5;Eukrohnia;animalia;chaetognatha;sagittoidea;phragmophora;eukrohniidae;eukrohnia;;eukrohnia;true;true;living
+global_uvp5;Eumalacostraca;animalia;arthropoda;malacostraca;;;;;malacostraca;true;true;living
+global_uvp5;Euphausiacea;animalia;arthropoda;malacostraca;euphausiacea;;;;euphausiacea;true;true;living
+global_uvp5;Eurypharynx pelecanoides;animalia;chordata;teleostei;anguilliformes;eurypharyngidae;eurypharynx;pelecanoides;pelecanoides;true;true;living
+global_uvp5;Flota;animalia;annelida;polychaeta;terebellida;flabelligeridae;flota;;flota;true;true;living
+global_uvp5;Flota sp.;animalia;annelida;polychaeta;terebellida;flabelligeridae;flota;;flota;true;true;living
+global_uvp5;Foraminifera;chromista;foraminifera;;;;;;foraminifera;true;true;living
+global_uvp5;Fritillaria;animalia;chordata;appendicularia;copelata;fritillariidae;fritillaria;;fritillaria;true;true;living
+global_uvp5;Galatheidae;animalia;arthropoda;malacostraca;decapoda;galatheidae;;;galatheidae;true;true;living
+global_uvp5;Gnathostomata;animalia;chordata;;;;;;chordata;true;true;living
+global_uvp5;Gymnosomata;animalia;mollusca;gastropoda;pteropoda;;;;pteropoda;true;true;living
+global_uvp5;Halicreas;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;halicreas;;halicreas;true;true;living
+global_uvp5;Halicreas minimum;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;halicreas;minimum;minimum;true;true;living
+global_uvp5;Halicreatidae;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;;;halicreatidae;true;true;living
+global_uvp5;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+global_uvp5;helix;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Helix aspersa;animalia;mollusca;gastropoda;stylommatophora;helicidae;helix;aspersa;aspersa;true;true;living
+global_uvp5;house;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+global_uvp5;Hydrozoa;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+global_uvp5;juvenile;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+global_uvp5;larvae<Annelida;animalia;annelida;;;;;;annelida;true;true;living
+global_uvp5;larvae<Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+global_uvp5;Leptothecata;animalia;cnidaria;hydrozoa;leptothecata;;;;leptothecata;true;true;living
+global_uvp5;like<Acantharea;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+global_uvp5;like<colonial;chromista;cercozoa;thecofilosea;phaeosphaerida;aulosphaeridae;;;aulosphaeridae;true;true;living
+global_uvp5;like<Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;like<Limacinidae;animalia;mollusca;gastropoda;pteropoda;limacinidae;;;limacinidae;true;true;living
+global_uvp5;like<Ostracoda;animalia;arthropoda;ostracoda;;;;;ostracoda;true;true;living
+global_uvp5;like<Phaeodaria;chromista;cercozoa;thecofilosea;;;;;thecofilosea;true;true;living
+global_uvp5;like<Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+global_uvp5;like<Temoridae;animalia;arthropoda;copepoda;calanoida;temoridae;;;temoridae;true;true;living
+global_uvp5;like<Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+global_uvp5;Limacina;animalia;mollusca;gastropoda;pteropoda;limacinidae;limacina;;limacina;true;true;living
+global_uvp5;Limacina helicina;animalia;mollusca;gastropoda;pteropoda;limacinidae;limacina;helicina;helicina;true;true;living
+global_uvp5;Limacinidae;animalia;mollusca;gastropoda;pteropoda;limacinidae;;;limacinidae;true;true;living
+global_uvp5;Lobata;animalia;ctenophora;tentaculata;lobata;;;;lobata;true;true;living
+global_uvp5;Luciferidae;animalia;arthropoda;malacostraca;decapoda;luciferidae;;;luciferidae;true;true;living
+global_uvp5;Medusettidae;chromista;cercozoa;thecofilosea;phaeogromida;medusettidae;;;medusettidae;true;true;living
+global_uvp5;megalopa;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+global_uvp5;Melosira;chromista;heterokontophyta;bacillariophyceae;melosirales;melosiraceae;melosira;;melosira;true;true;living
+global_uvp5;Metazoa;animalia;chordata;ascidiacea;aplousobranchia;holozoidae;distaplia;;distaplia;true;true;living
+global_uvp5;Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+global_uvp5;Munnopsinae;animalia;arthropoda;malacostraca;isopoda;munnopsidae;;;munnopsidae;true;true;living
+global_uvp5;Munnopsis;animalia;arthropoda;malacostraca;isopoda;munnopsidae;munnopsis;;munnopsis;true;true;living
+global_uvp5;Narcomedusae;animalia;cnidaria;hydrozoa;narcomedusae;;;;narcomedusae;true;true;living
+global_uvp5;nauplii;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;Noctiluca sp.;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;;noctiluca;true;true;living
+global_uvp5;Nodularia;animalia;mollusca;bivalvia;unionida;unionidae;nodularia;;nodularia;true;true;living
+global_uvp5;nucleus with four arms;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Nudibranchia;animalia;mollusca;gastropoda;nudibranchia;;;;nudibranchia;true;true;living
+global_uvp5;Oithona;animalia;arthropoda;copepoda;cyclopoida;oithonidae;oithona;;oithona;true;true;living
+global_uvp5;Olindiidae;animalia;cnidaria;hydrozoa;limnomedusae;olindiidae;;;olindiidae;true;true;living
+global_uvp5;Orodaria;chromista;radiozoa;polycystina;;;;;polycystina;true;true;living
+global_uvp5;Ostracoda;animalia;arthropoda;ostracoda;;;;;ostracoda;true;true;living
+global_uvp5;ovigerous;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;Phaeodaria;chromista;cercozoa;thecofilosea;;;;;thecofilosea;true;true;living
+global_uvp5;Phyllodocida;animalia;annelida;polychaeta;phyllodocida;;;;phyllodocida;true;true;living
+global_uvp5;Phyllodocidae;animalia;annelida;polychaeta;phyllodocida;phyllodocidae;;;phyllodocidae;true;true;living
+global_uvp5;Platyhelminthes;animalia;platyhelminthes;;;;;;platyhelminthes;true;true;living
+global_uvp5;Pleuroncodes;animalia;arthropoda;malacostraca;decapoda;munididae;grimothea;;grimothea;true;true;living
+global_uvp5;pluteus;animalia;echinodermata;;;;;;echinodermata;true;true;living
+global_uvp5;Poeobius;animalia;annelida;polychaeta;terebellida;flabelligeridae;poeobius;;poeobius;true;true;living
+global_uvp5;protist with spike;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Pseudocalanus;animalia;arthropoda;copepoda;calanoida;clausocalanidae;pseudocalanus;;pseudocalanus;true;true;living
+global_uvp5;Pterotracheoidea;animalia;mollusca;gastropoda;littorinimorpha;;;;littorinimorpha;true;true;living
+global_uvp5;puff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+global_uvp5;Pyrosoma;animalia;chordata;thaliacea;pyrosomatida;pyrosomatidae;pyrosoma;;pyrosoma;true;true;living
+global_uvp5;Pyrosomatida;animalia;chordata;thaliacea;pyrosomatida;;;;pyrosomatida;true;true;living
+global_uvp5;Rhizaria;chromista;;;;;;;chromista;true;true;living
+global_uvp5;rhizaria like;chromista;;;;;;;chromista;true;true;living
+global_uvp5;rhizaria temporary;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Rhizostomeae;animalia;cnidaria;scyphozoa;rhizostomeae;;;;rhizostomeae;true;true;living
+global_uvp5;Rhopalonema;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;rhopalonema;;rhopalonema;true;true;living
+global_uvp5;Rhopalonema velatum;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;rhopalonema;velatum;velatum;true;true;living
+global_uvp5;Rhopalonematidae;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;;;rhopalonematidae;true;true;living
+global_uvp5;Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+global_uvp5;Salpidae;animalia;chordata;thaliacea;salpida;salpidae;;;salpidae;true;true;living
+global_uvp5;Sarsia;animalia;cnidaria;hydrozoa;anthoathecata;corynidae;sarsia;;sarsia;true;true;living
+global_uvp5;Scyphozoa;animalia;cnidaria;scyphozoa;;;;;scyphozoa;true;true;living
+global_uvp5;Semaeostomeae;animalia;cnidaria;scyphozoa;semaeostomeae;;;;semaeostomeae;true;true;living
+global_uvp5;side;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;Siphodera;animalia;platyhelminthes;trematoda;plagiorchiida;cryptogonimidae;siphodera;;siphodera;true;true;living
+global_uvp5;Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+global_uvp5;Sminthea;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;sminthea;;sminthea;true;true;living
+global_uvp5;solitaryblack;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+global_uvp5;solitaryglobule;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+global_uvp5;Solmaris;animalia;cnidaria;hydrozoa;narcomedusae;solmarisidae;solmaris;;solmaris;true;true;living
+global_uvp5;Solmarisidae;animalia;cnidaria;hydrozoa;narcomedusae;solmarisidae;;;solmarisidae;true;true;living
+global_uvp5;Solmundella bitentaculata;animalia;cnidaria;hydrozoa;narcomedusae;solmundaeginidae;solmundella;bitentaculata;bitentaculata;true;true;living
+global_uvp5;star with ball;chromista;;;;;;;chromista;true;true;living
+global_uvp5;Stegocephalus inflatus;animalia;arthropoda;malacostraca;amphipoda;stegocephalidae;stegocephalus;inflatus;inflatus;true;true;living
+global_uvp5;Swima;animalia;annelida;polychaeta;terebellida;acrocirridae;swima;;swima;true;true;living
+global_uvp5;Teleostei;animalia;chordata;teleostei;;;;;teleostei;true;true;living
+global_uvp5;Thaliacea;animalia;chordata;thaliacea;;;;;thaliacea;true;true;living
+global_uvp5;Thecosomata;animalia;mollusca;gastropoda;thecosomata;;;;thecosomata;true;true;living
+global_uvp5;Tomopteridae;animalia;annelida;polychaeta;phyllodocida;tomopteridae;;;tomopteridae;true;true;living
+global_uvp5;Tomopteris;animalia;annelida;polychaeta;phyllodocida;tomopteridae;tomopteris;;tomopteris;true;true;living
+global_uvp5;top-bottom;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+global_uvp5;tornaria larvae;animalia;hemichordata;enteropneusta;;;;;enteropneusta;true;true;living
+global_uvp5;Trachymedusae;animalia;cnidaria;hydrozoa;trachymedusae;;;;trachymedusae;true;true;living
+global_uvp5;Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+global_uvp5;Trochophora;animalia;chordata;ascidiacea;aplousobranchia;holozoidae;distaplia;;distaplia;true;true;living
+global_uvp5;trocophora;animalia;annelida;polychaeta;;;;;polychaeta;true;true;living
+global_uvp5;tuff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+global_uvp5;Tunicata;animalia;chordata;;;;;;chordata;true;true;living
+global_uvp5;Tuscaroridae;chromista;cercozoa;thecofilosea;phaeocalpida;tuscaroridae;;;tuscaroridae;true;true;living
+global_uvp5;unknown;chromista;cercozoa;thecofilosea;;;;;thecofilosea;true;true;living
+global_uvp5;veliger;animalia;mollusca;;;;;;mollusca;true;true;living
+global_uvp5;with-eggs;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+global_uvp5;Zoantharia;animalia;cnidaria;hexacorallia;zoantharia;;;;zoantharia;true;true;living
+isiisnet;Acantharea;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+isiisnet;Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+isiisnet;Annelida;animalia;annelida;;;;;;annelida;true;true;living
+isiisnet;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+isiisnet;Appendicularia_body;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+isiisnet;Appendicularia_like_body;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+isiisnet;Aulacanthidae;chromista;cercozoa;thecofilosea;phaeocystida;aulacanthidae;;;aulacanthidae;true;true;living
+isiisnet;Bacillariophyceae;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+isiisnet;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+isiisnet;Cnidaria;animalia;cnidaria;;;;;;cnidaria;true;true;living
+isiisnet;colonial_colodaria;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+isiisnet;Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+isiisnet;Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+isiisnet;Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+isiisnet;Doliolida;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+isiisnet;ephyra;animalia;cnidaria;scyphozoa;;;;;scyphozoa;true;true;living
+isiisnet;Eumalacostraca;animalia;arthropoda;malacostraca;;;;;malacostraca;true;true;living
+isiisnet;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+isiisnet;house;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+isiisnet;like_Acantharea;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+isiisnet;like_Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+isiisnet;Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+isiisnet;Pyrocystis;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;;pyrocystis;true;true;living
+isiisnet;Rhizaria;chromista;;;;;;;chromista;true;true;living
+isiisnet;Rhopalonematidae;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;;;rhopalonematidae;true;true;living
+isiisnet;Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+isiisnet;solitaryblack;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+jedioceans;LClass_26.Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+jedioceans;LClass_27.Hydrozoa;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+jedioceans;LClass_28.Larvacea;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+jedioceans;LClass_29.Polychaeta;animalia;annelida;polychaeta;;;;;polychaeta;true;true;living
+jedioceans;LClass_30.Benthic_algae;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_30.Bentic_algae;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_31.Polyp;animalia;cnidaria;;;;;;cnidaria;true;true;living
+jedioceans;LClass_appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+jedioceans;LClass_Ba.22.Cypris_larva;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+jedioceans;LClass_Ba.Barnacle_nauplius;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+jedioceans;LClass_barnacle;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+jedioceans;LClass_Barnacle_exuviae;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+jedioceans;LClass_Benthic_algae;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_bentic_algae;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_Bivalvia;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+jedioceans;LClass_carapace;animalia;arthropoda;;;;;;arthropoda;true;true;living
+jedioceans;LClass_CC.Copepod;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+jedioceans;LClass_chaetognata;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+jedioceans;LClass_Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+jedioceans;LClass_cilliate;chromista;ciliophora;;;;;;ciliophora;true;true;living
+jedioceans;LClass_cnidaria;animalia;cnidaria;;;;;;cnidaria;true;true;living
+jedioceans;LClass_Cr.16.Decapoda;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+jedioceans;LClass_Cr.Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+jedioceans;LClass_Crinoidea;animalia;echinodermata;crinoidea;;;;;crinoidea;true;true;living
+jedioceans;LClass_crus_doubt;animalia;arthropoda;;;;;;arthropoda;true;true;living
+jedioceans;LClass_Crust.+Decap;animalia;arthropoda;;;;;;arthropoda;true;true;living
+jedioceans;LClass_Cy.1.Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+jedioceans;LClass_Cy.1.Trichodesmium_spp;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+jedioceans;LClass_Cy.1.Trichodesmium_tuft;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+jedioceans;LClass_Cy.2.Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+jedioceans;LClass_Cy.Trichodesmium_;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+jedioceans;LClass_Df.02.Ceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;ceratium;;ceratium;true;true;living
+jedioceans;LClass_Df.03.Noctiluca_scintillans;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;scintillans;noctiluca scintillans;true;true;living
+jedioceans;LClass_Di.Diatom;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+jedioceans;LClass_dinoflagelate;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+jedioceans;LClass_Dinoflagellate;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+jedioceans;LClass_enteropneusta_larvae;animalia;hemichordata;enteropneusta;;;;;enteropneusta;true;true;living
+jedioceans;LClass_foraminifera;chromista;foraminifera;;;;;;foraminifera;true;true;living
+jedioceans;LClass_Foraminiferida;chromista;foraminifera;;;;;;foraminifera;true;true;living
+jedioceans;LClass_gastropoda;animalia;mollusca;gastropoda;;;;;gastropoda;true;true;living
+jedioceans;LClass_Halacaridae;animalia;arthropoda;arachnida;trombidiformes;halacaridae;;;halacaridae;true;true;living
+jedioceans;LClass_hydracarina;animalia;arthropoda;arachnida;trombidiformes;;;;trombidiformes;true;true;living
+jedioceans;LClass_hydracarina_;animalia;arthropoda;arachnida;trombidiformes;;;;trombidiformes;true;true;living
+jedioceans;LClass_Larvacea;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+jedioceans;LClass_Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+jedioceans;LClass_Noctiluca_eggs;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;;noctiluca;true;true;living
+jedioceans;LClass_Pa.37.Barnacle_exuviae;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+jedioceans;LClass_Pluteos;animalia;echinodermata;;;;;;echinodermata;true;true;living
+jedioceans;LClass_pluteus;animalia;echinodermata;;;;;;echinodermata;true;true;living
+jedioceans;LClass_pluteus_larvae;animalia;echinodermata;;;;;;echinodermata;true;true;living
+jedioceans;LClass_Polyp;animalia;cnidaria;;;;;;cnidaria;true;true;living
+jedioceans;LClass_Pteropod;animalia;mollusca;gastropoda;pteropoda;;;;pteropoda;true;true;living
+jedioceans;LClass_Ra.25.Radiolaria;chromista;radiozoa;;;;;;radiozoa;true;true;living
+jedioceans;LClass_Ra.25.Radiolaria_2;chromista;radiozoa;;;;;;radiozoa;true;true;living
+jedioceans;LClass_Ra.Radiolaria;chromista;radiozoa;;;;;;radiozoa;true;true;living
+jedioceans;LClass_rhizaria_other;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_Rhizaria_others;chromista;;;;;;;chromista;true;true;living
+jedioceans;LClass_salps;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+jedioceans;LClass_siphonophora;animalia;arthropoda;diplopoda;siphonophorida;siphonophoridae;siphonophora;;siphonophora;true;true;living
+jedioceans;LClass_Tintinnida;chromista;ciliophora;oligotrichea;choreotrichida;;;;choreotrichida;true;true;living
+lensless;ACTINOSPHAERIUM NUCLEOFILUM;chromista;ochrophyta;raphidophyceae;actinophryida;actinosphaeriidae;actinosphaerium;nucleofilum;actinosphaerium nucleofilum;true;true;living
+lensless;ARCELLA VULGARIS;protozoa;amoebozoa;tubulinea;arcellinida;arcellidae;arcella;vulgaris;arcella vulgaris;true;true;living
+lensless;BLEPHARISMA AMERICANUM;chromista;ciliophora;heterotrichea;heterotrichida;blepharismidae;blepharisma;americanum;blepharisma americanum;true;true;living
+lensless;DIDINIUM NASUTUM;chromista;ciliophora;litostomatea;haptorida;didiniidae;didinium;nasutum;didinium nasutum;true;true;living
+lensless;DILEPTUS;chromista;ciliophora;litostomatea;haptorida;tracheliidae;dileptus;;dileptus;true;true;living
+lensless;EUPLOTES EURYSTOMUS;chromista;ciliophora;spirotrichea;euplotida;euplotidae;euplotes;eurystomus;euplotes eurystomus;true;true;living
+lensless;PARAMECIUM  BURSARIA;chromista;ciliophora;oligohymenophorea;peniculida;parameciidae;paramecium;bursaria;paramecium bursaria;true;true;living
+lensless;SPIROSTOMUM AMBIGUUM;chromista;ciliophora;heterotrichea;heterotrichida;spirostomidae;spirostomum;ambiguum;spirostomum ambiguum;true;true;living
+lensless;STENTOR COERULEUS;chromista;ciliophora;heterotrichea;heterotrichida;stentoridae;stentor;coeruleus;stentor coeruleus;true;true;living
+lensless;VOLVOX;plantae;chlorophyta;chlorophyceae;chlamydomonadales;volvocaceae;volvox;;volvox;true;true;living
+medplanktonset;Akashiwo_sanguinea;chromista;myzozoa;dinophyceae;gymnodiniales;gymnodiniaceae;akashiwo;sanguinea;akashiwo sanguinea;true;true;living
+medplanktonset;Alexandrium_spp;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;alexandrium;;alexandrium;true;true;living
+medplanktonset;Amphidinium_spp;chromista;myzozoa;dinophyceae;amphidiniales;amphidiniaceae;amphidinium;;amphidinium;true;true;living
+medplanktonset;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+medplanktonset;Asterionellopsis_cf._glacialis;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionellopsis;glacialis;asterionellopsis glacialis;true;true;living
+medplanktonset;Asteromphalus_sarcophagus;chromista;heterokontophyta;bacillariophyceae;asterolamprales;asterolampraceae;asteromphalus;sarcophagus;asteromphalus sarcophagus;true;true;living
+medplanktonset;Asteromphalus_spp;chromista;heterokontophyta;bacillariophyceae;asterolamprales;asterolampraceae;asteromphalus;;asteromphalus;true;true;living
+medplanktonset;Azadinium_caudatum;chromista;myzozoa;dinophyceae;dinophyceae;amphidomataceae;azadinium;caudatum;azadinium caudatum;true;true;living
+medplanktonset;Bacteriastrum_spp;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;bacteriastrum;;bacteriastrum;true;true;living
+medplanktonset;Calciopappus_caudatus;chromista;haptophyta;coccolithophyceae;syracosphaerales;syracosphaeraceae;calciopappus;caudatus;calciopappus caudatus;true;true;living
+medplanktonset;Calciosolenia_brasiliensis;chromista;haptophyta;coccolithophyceae;syracosphaerales;calciosoleniaceae;calciosolenia;brasiliensis;calciosolenia brasiliensis;true;true;living
+medplanktonset;Centric_diatoms;chromista;heterokontophyta;bacillariophyceae;centrales;;;;centrales;true;true;living
+medplanktonset;Cerataulina_pelagica;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;cerataulina;pelagica;cerataulina pelagica;true;true;living
+medplanktonset;Ceratoperidinium_margalefii;chromista;myzozoa;dinophyceae;gymnodiniales;warnowiaceae;ceratoperidinium;margalefii;ceratoperidinium margalefii;true;true;living
+medplanktonset;Chaetoceros_anastomonsans;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;anastomonsans;chaetoceros anastomonsans;true;true;living
+medplanktonset;Chaetoceros_curvisetus_Chaetoceros_pseudocurvisetus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+medplanktonset;Chaetoceros_danicus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;danicus;chaetoceros danicus;true;true;living
+medplanktonset;Chaetoceros_decipiens;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;decipiens;chaetoceros decipiens;true;true;living
+medplanktonset;Chaetoceros_diversus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;diversus;chaetoceros diversus;true;true;living
+medplanktonset;Chaetoceros_peruvianus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;peruvianus;chaetoceros peruvianus;true;true;living
+medplanktonset;Chaetoceros_protuberans_Chaetoceros_didymus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+medplanktonset;Chaetoceros_socialis;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;socialis;chaetoceros socialis;true;true;living
+medplanktonset;Chaetoceros_spp;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+medplanktonset;Chaetoceros_tortissimus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;tortissimus;chaetoceros tortissimus;true;true;living
+medplanktonset;Chrysochromulina_lanceolata;chromista;haptophyta;coccolithophyceae;prymnesiales;chrysochromulinaceae;chrysochromulina;lanceolata;chrysochromulina lanceolata;true;true;living
+medplanktonset;Chrysochromulina_parkeae;chromista;haptophyta;coccolithophyceae;prymnesiales;chrysochromulinaceae;chrysochromulina;parkeae;chrysochromulina parkeae;true;true;living
+medplanktonset;Ciliates;chromista;ciliophora;;;;;;ciliophora;true;true;living
+medplanktonset;Cladopyxis_cf._brachiolata;chromista;myzozoa;dinophyceae;gonyaulacales;cladopyxidaceae;cladopyxis;brachiolata;cladopyxis brachiolata;true;true;living
+medplanktonset;Copepod_copepodites;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+medplanktonset;Copepod_eggs;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+medplanktonset;Copepod_nauplii;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+medplanktonset;Corythodinium_constrictum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;corythodinium;constrictum;corythodinium constrictum;true;true;living
+medplanktonset;Corythodinium_milneri;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;corythodinium;milneri;corythodinium milneri;true;true;living
+medplanktonset;Cryptophyceae;chromista;cryptophyta;cryptophyceae;;;;;cryptophyceae;true;true;living
+medplanktonset;Cylindrotheca_closterium-like;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;cylindrotheca;closterium;cylindrotheca closterium;true;true;living
+medplanktonset;Dactyliosolen_blavyanus;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;dactyliosolen;blavyanus;dactyliosolen blavyanus;true;true;living
+medplanktonset;Dactyliosolen_fragilissimus;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;dactyliosolen;fragilissimus;dactyliosolen fragilissimus;true;true;living
+medplanktonset;Dictyocha_fibula;chromista;ochrophyta;dictyochophyceae;dictyochales;dictyochaceae;dictyocha;fibula;dictyocha fibula;true;true;living
+medplanktonset;Dictyocysta_spp._Codonaria_spp;chromista;ciliophora;oligotrichea;choreotrichida;;;;choreotrichida;true;true;living
+medplanktonset;Dinobryon_coalescens;chromista;ochrophyta;chrysophyceae;chromulinales;dinobryaceae;dinobryon;coalescens;dinobryon coalescens;true;true;living
+medplanktonset;Dinophysis_caudata;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;caudata;dinophysis caudata;true;true;living
+medplanktonset;Dinophysis_parva;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;parva;dinophysis parva;true;true;living
+medplanktonset;Dinophysis_sacculus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;sacculus;dinophysis sacculus;true;true;living
+medplanktonset;Dinophysis_spp;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;;dinophysis;true;true;living
+medplanktonset;Dinophysis_tripos;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;tripos;dinophysis tripos;true;true;living
+medplanktonset;Discosphaera_tubifera;chromista;haptophyta;coccolithophyceae;syracosphaerales;rhabdosphaeraceae;discosphaera;tubifera;discosphaera tubifera;true;true;living
+medplanktonset;Eucampia_cornuta;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;eucampia;cornuta;eucampia cornuta;true;true;living
+medplanktonset;Euglenophyceae;protozoa;euglenozoa;euglenophyceae;;;;;euglenophyceae;true;true;living
+medplanktonset;Gonyaulax_polygramma;chromista;myzozoa;dinophyceae;gonyaulacales;gonyaulacaceae;gonyaulax;polygramma;gonyaulax polygramma;true;true;living
+medplanktonset;Gonyaulax_spp;chromista;myzozoa;dinophyceae;gonyaulacales;gonyaulacaceae;gonyaulax;;gonyaulax;true;true;living
+medplanktonset;Guinardia_flaccida;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;flaccida;guinardia flaccida;true;true;living
+medplanktonset;Guinardia_striata_Dactyliosolen_phuketensis;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;;;rhizosoleniaceae;true;true;living
+medplanktonset;Gyrodinium_spirale_Gyrodinium_fusiforme;chromista;myzozoa;dinophyceae;gymnodiniales;gyrodiniaceae;gyrodinium;;gyrodinium;true;true;living
+medplanktonset;Haslea_silbo;chromista;heterokontophyta;bacillariophyceae;naviculales;naviculaceae;haslea;silbo;haslea silbo;true;true;living
+medplanktonset;Helicotheca_tamesis;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;helicotheca;tamesis;helicotheca tamesis;true;true;living
+medplanktonset;Hemiaulus_hauckii_Hemiaulus_sinensis;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;hemiaulus;;hemiaulus;true;true;living
+medplanktonset;Heterocapsa_niei-like;chromista;myzozoa;dinophyceae;peridiniales;heterocapsaceae;heterocapsa;;heterocapsa;true;true;living
+medplanktonset;Kapelodinium_vestifici;chromista;myzozoa;dinophyceae;torodiniales;kapelodiniaceae;kapelodinium;vestifici;kapelodinium vestifici;true;true;living
+medplanktonset;Karenia_papilionacea;chromista;myzozoa;dinophyceae;gymnodiniales;kareniaceae;karenia;papilionacea;karenia papilionacea;true;true;living
+medplanktonset;Karenia_spp;chromista;myzozoa;dinophyceae;gymnodiniales;kareniaceae;karenia;spp;karenia spp;true;true;living
+medplanktonset;Lauderia_annulata;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;lauderiaceae;lauderia;annulata;lauderia annulata;true;true;living
+medplanktonset;Leptocylindrus_spp;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;leptocylindrus;;leptocylindrus;true;true;living
+medplanktonset;Licmophora_spp;chromista;heterokontophyta;bacillariophyceae;licmophorales;licmophoraceae;licmophora;;licmophora;true;true;living
+medplanktonset;Lioloma_pacificum;chromista;heterokontophyta;bacillariophyceae;thalassionematales;thalassionemataceae;lioloma;pacificum;lioloma pacificum;true;true;living
+medplanktonset;Lithodesmium_variabile;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;lithodesmium;variabile;lithodesmium variabile;true;true;living
+medplanktonset;Meringosphaera_mediterranea;chromista;ochrophyta;xanthophyceae;mischococcales;pleurochloridaceae;meringosphaera;mediterranea;meringosphaera mediterranea;true;true;living
+medplanktonset;Mesodinium_spp;chromista;ciliophora;litostomatea;cyclotrichiida;mesodiniidae;mesodinium;;mesodinium;true;true;living
+medplanktonset;Naked_dinoflagellates;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+medplanktonset;Neobrightwellia_alternans;chromista;heterokontophyta;bacillariophyceae;biddulphiales;biddulphiaceae;neobrightwellia;alternans;neobrightwellia alternans;true;true;living
+medplanktonset;Octactis_octonaria;chromista;ochrophyta;dictyochophyceae;dictyochales;dictyochaceae;octactis;octonaria;octactis octonaria;true;true;living
+medplanktonset;Oltmannsiellopsis_viridis;plantae;chlorophyta;ulvophyceae;oltmannsiellopsidales;oltmannsiellopsidaceae;oltmannsiellopsis;viridis;oltmannsiellopsis viridis;true;true;living
+medplanktonset;Ophiaster_spp;chromista;haptophyta;coccolithophyceae;syracosphaerales;syracosphaeraceae;ophiaster;;ophiaster;true;true;living
+medplanktonset;Ornithocercus_spp._Histioneis_spp;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;;;dinophysaceae;true;true;living
+medplanktonset;Oxytoxum_cf._caudatum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;caudatum;oxytoxum caudatum;true;true;living
+medplanktonset;Oxytoxum_cf._scolopax;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;scolopax;oxytoxum scolopax;true;true;living
+medplanktonset;Oxytoxum_cf._variabile;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;variabile;oxytoxum variabile;true;true;living
+medplanktonset;Oxytoxum_spp;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;;oxytoxum;true;true;living
+medplanktonset;Pennate_diatoms;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+medplanktonset;Phaeocystis_jahnii;chromista;haptophyta;coccolithophyceae;phaeocystales;phaeocystaceae;phaeocystis;jahnii;phaeocystis jahnii;true;true;living
+medplanktonset;Phalacroma_oxytoxoides;chromista;myzozoa;dinophyceae;dinophysales;oxyphysaceae;phalacroma;oxytoxoides;phalacroma oxytoxoides;true;true;living
+medplanktonset;Phalacroma_spp;chromista;myzozoa;dinophyceae;dinophysales;oxyphysaceae;phalacroma;;phalacroma;true;true;living
+medplanktonset;Plagiotropis_spp;chromista;heterokontophyta;bacillariophyceae;naviculales;plagiotropidaceae;plagiotropis;;plagiotropis;true;true;living
+medplanktonset;Pleurosigma spp._Gyrosigma_spp;chromista;heterokontophyta;bacillariophyceae;naviculales;pleurosigmataceae;;;pleurosigmataceae;true;true;living
+medplanktonset;Podolampas_palmipes;chromista;myzozoa;dinophyceae;peridiniales;podolampadaceae;podolampas;palmipes;podolampas palmipes;true;true;living
+medplanktonset;Polykrikos_kofoidii;chromista;myzozoa;dinophyceae;gymnodiniales;polykrikaceae;polykrikos;kofoidii;polykrikos kofoidii;true;true;living
+medplanktonset;Proboscia_spp._Rhizosolenia_spp;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;;;rhizosoleniaceae;true;true;living
+medplanktonset;Prorocentrum_cf._gracile;chromista;myzozoa;dinophyceae;prorocentrales;prorocentraceae;prorocentrum;gracile;prorocentrum gracile;true;true;living
+medplanktonset;Prorocentrum_redfieldii;chromista;myzozoa;dinophyceae;prorocentrales;prorocentraceae;prorocentrum;redfieldii;prorocentrum redfieldii;true;true;living
+medplanktonset;Protoceratium_reticulatum;chromista;myzozoa;dinophyceae;gonyaulacales;protoceratiaceae;protoceratium;reticulatum;protoceratium reticulatum;true;true;living
+medplanktonset;Protoperidinium_cf._divergens;chromista;myzozoa;dinophyceae;peridiniales;protoperidiniaceae;protoperidinium;divergens;protoperidinium divergens;true;true;living
+medplanktonset;Protoperidinium_diabolus;chromista;myzozoa;dinophyceae;peridiniales;protoperidiniaceae;protoperidinium;diabolus;protoperidinium diabolus;true;true;living
+medplanktonset;Pseliodinium_fusus;chromista;myzozoa;dinophyceae;peridiniales;ceratoperidiniaceae;pseliodinium;fusus;pseliodinium fusus;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._2_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._3_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._4_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._5_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._6_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._7_cells;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudo-nitzschia_spp._single_cell;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+medplanktonset;Pseudosolenia_calcar-avis;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;pseudosolenia;calcar-avis;pseudosolenia calcar-avis;true;true;living
+medplanktonset;Pterosperma_spp;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pterospermataceae;pterosperma;;pterosperma;true;true;living
+medplanktonset;Pyramimonas_spp;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;pyramimonas;;pyramimonas;true;true;living
+medplanktonset;Pyrocystis_cf._lunula;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;lunula;pyrocystis lunula;true;true;living
+medplanktonset;Pyrophacus_horologium;chromista;myzozoa;dinophyceae;gonyaulacales;pyrophacaceae;pyrophacus;horologium;pyrophacus horologium;true;true;living
+medplanktonset;Radiolaria;chromista;radiozoa;;;;;;radiozoa;true;true;living
+medplanktonset;Rhabdosphaera_clavigera;chromista;haptophyta;coccolithophyceae;syracosphaerales;rhabdosphaeraceae;rhabdosphaera;clavigera;rhabdosphaera clavigera;true;true;living
+medplanktonset;Scrippsiella_acuminata_like;chromista;myzozoa;dinophyceae;thoracosphaerales;thoracosphaeraceae;scrippsiella;;scrippsiella;true;true;living
+medplanktonset;Scyphosphaera_apsteinii;chromista;haptophyta;coccolithophyceae;zygodiscales;pontosphaeraceae;scyphosphaera;apsteinii;scyphosphaera apsteinii;true;true;living
+medplanktonset;Skeletonema_menzelii;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;skeletonemaceae;skeletonema;menzelii;skeletonema menzelii;true;true;living
+medplanktonset;Skeletonema_pseudocostatum_Skeletonema_tropicum;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;skeletonemaceae;skeletonema;;skeletonema;true;true;living
+medplanktonset;Sourniaea_diacantha;chromista;myzozoa;dinophyceae;gonyaulacales;lingulodiniaceae;sourniaea;diacantha;sourniaea diacantha;true;true;living
+medplanktonset;Syracosphaera_pulchra;chromista;haptophyta;coccolithophyceae;syracosphaerales;syracosphaeraceae;syracosphaera;pulchra;syracosphaera pulchra;true;true;living
+medplanktonset;Tenuicylindrus_belgicus;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;tenuicylindrus;belgicus;tenuicylindrus belgicus;true;true;living
+medplanktonset;Thalassionema_spp;chromista;heterokontophyta;bacillariophyceae;thalassionematales;thalassionemataceae;thalassionema;;thalassionema;true;true;living
+medplanktonset;Thalassiosira_gravida;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;thalassiosira;gravida;thalassiosira gravida;true;true;living
+medplanktonset;Thalassiosira_spp;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;thalassiosira;;thalassiosira;true;true;living
+medplanktonset;Tiarina_spp;chromista;ciliophora;prostomatea;prorodontida;colepidae;tiarina;;tiarina;true;true;living
+medplanktonset;Tintinnids;chromista;ciliophora;oligotrichea;choreotrichida;;;;choreotrichida;true;true;living
+medplanktonset;Torodinium_spp;chromista;myzozoa;dinophyceae;gymnodiniales;gymnodiniaceae;torodinium;;torodinium;true;true;living
+medplanktonset;Trachymedusae;animalia;cnidaria;hydrozoa;trachymedusae;;;;trachymedusae;true;true;living
+medplanktonset;Trieres_mobiliensis;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;trieres;mobiliensis;trieres mobiliensis;true;true;living
+medplanktonset;Tripos_arietinus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;arietinus;tripos arietinus;true;true;living
+medplanktonset;Tripos_azoricus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;azoricus;tripos azoricus;true;true;living
+medplanktonset;Tripos_cf._minutus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;minutus;tripos minutus;true;true;living
+medplanktonset;Tripos_concilians;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;concilians;tripos concilians;true;true;living
+medplanktonset;Tripos_contortus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;contortus;tripos contortus;true;true;living
+medplanktonset;Tripos_declinatus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;declinatus;tripos declinatus;true;true;living
+medplanktonset;Tripos_euarcuatus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;euarcuatus;tripos euarcuatus;true;true;living
+medplanktonset;Tripos_furca;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;furca;tripos furca;true;true;living
+medplanktonset;Tripos_fusus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;fusus;tripos fusus;true;true;living
+medplanktonset;Tripos_horridus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;horridus;tripos horridus;true;true;living
+medplanktonset;Tripos_macroceros;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;macroceros;tripos macroceros;true;true;living
+medplanktonset;Tripos_muelleri-like;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;;tripos;true;true;living
+medplanktonset;Tripos_pentagonus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;pentagonus;tripos pentagonus;true;true;living
+medplanktonset;Tripos_spp;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;;tripos;true;true;living
+medplanktonset;Tripos_symmetricus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;symmetricus;tripos symmetricus;true;true;living
+medplanktonset;Tripos_teres;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;teres;tripos teres;true;true;living
+medplanktonset;Umbilicosphaera_sibogae;chromista;haptophyta;coccolithophyceae;coccolithales;calcidiscaceae;umbilicosphaera;sibogae;umbilicosphaera sibogae;true;true;living
+medplanktonset;Warnowia_polyphemus;chromista;myzozoa;dinophyceae;gymnodiniales;warnowiaceae;warnowia;polyphemus;warnowia polyphemus;true;true;living
+planktonset1.0;acantharia_protist;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+planktonset1.0;acantharia_protist_big_center;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+planktonset1.0;acantharia_protist_halo;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+planktonset1.0;amphipods;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+planktonset1.0;appendicularian_fritillaridae;animalia;chordata;appendicularia;copelata;fritillariidae;;;fritillariidae;true;true;living
+planktonset1.0;appendicularian_s_shape;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+planktonset1.0;appendicularian_slight_curve;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+planktonset1.0;appendicularian_straight;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+planktonset1.0;chaetognath_non_sagitta;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+planktonset1.0;chaetognath_other;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+planktonset1.0;chaetognath_sagitta;animalia;chaetognatha;sagittoidea;aphragmophora;sagittidae;sagitta;;sagitta;true;true;living
+planktonset1.0;chordate_type1;animalia;chordata;;;;;;chordata;true;true;living
+planktonset1.0;copepod_calanoid;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_eggs;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_eucalanus;animalia;arthropoda;copepoda;calanoida;eucalanidae;eucalanus;;eucalanus;true;true;living
+planktonset1.0;copepod_calanoid_flatheads;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_frillyAntennae;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_large;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_large_side_antennatucked;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_octomoms;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_calanoid_small_longantennae;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktonset1.0;copepod_cyclopoid_copilia;animalia;arthropoda;copepoda;cyclopoida;sapphirinidae;copilia;;copilia;true;true;living
+planktonset1.0;copepod_cyclopoid_oithona;animalia;mollusca;gastropoda;nudibranchia;fionidae;oithona;;oithona;true;true;living
+planktonset1.0;copepod_cyclopoid_oithona_eggs;animalia;mollusca;gastropoda;nudibranchia;fionidae;oithona;;oithona;true;true;living
+planktonset1.0;copepod_other;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+planktonset1.0;crustacean_other;animalia;arthropoda;;;;;;arthropoda;true;true;living
+planktonset1.0;ctenophore_cestid;animalia;ctenophora;tentaculata;cestida;cestidae;;;cestidae;true;true;living
+planktonset1.0;ctenophore_cydippid_no_tentacles;animalia;ctenophora;tentaculata;cydippida;;;;cydippida;true;true;living
+planktonset1.0;ctenophore_cydippid_tentacles;animalia;ctenophora;tentaculata;cydippida;;;;cydippida;true;true;living
+planktonset1.0;ctenophore_lobate;animalia;ctenophora;tentaculata;lobata;;;;lobata;true;true;living
+planktonset1.0;decapods;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+planktonset1.0;diatom_chain_string;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktonset1.0;diatom_chain_tube;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktonset1.0;echinoderm_larva_pluteus_brittlestar;animalia;echinodermata;ophiuroidea;;;;;ophiuroidea;true;true;living
+planktonset1.0;echinoderm_larva_pluteus_early;animalia;echinodermata;;;;;;echinodermata;true;true;living
+planktonset1.0;echinoderm_larva_pluteus_typeC;animalia;echinodermata;;;;;;echinodermata;true;true;living
+planktonset1.0;echinoderm_larva_pluteus_urchin;animalia;echinodermata;echinoidea;;;;;echinoidea;true;true;living
+planktonset1.0;echinoderm_larva_seastar_bipinnaria;animalia;echinodermata;asteroidea;;;;;asteroidea;true;true;living
+planktonset1.0;echinoderm_larva_seastar_brachiolaria;animalia;echinodermata;asteroidea;;;;;asteroidea;true;true;living
+planktonset1.0;echinoderm_seacucumber_auricularia_larva;animalia;echinodermata;holothuroidea;;;;;holothuroidea;true;true;living
+planktonset1.0;echinopluteus;animalia;echinodermata;echinoidea;;;;;echinoidea;true;true;living
+planktonset1.0;ephyra;animalia;cnidaria;scyphozoa;;;;;scyphozoa;true;true;living
+planktonset1.0;euphausiids;animalia;arthropoda;malacostraca;euphausiacea;;;;euphausiacea;true;true;living
+planktonset1.0;euphausiids_young;animalia;arthropoda;malacostraca;euphausiacea;;;;euphausiacea;true;true;living
+planktonset1.0;heteropod;animalia;mollusca;gastropoda;littorinimorpha;;;;littorinimorpha;true;true;living
+planktonset1.0;hydromedusae_aglaura;animalia;annelida;polychaeta;eunicida;oenonidae;aglaura;;aglaura;true;true;living
+planktonset1.0;hydromedusae_bell_and_tentacles;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_h15;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_haliscera;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;haliscera;;haliscera;true;true;living
+planktonset1.0;hydromedusae_haliscera_small_sideview;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;haliscera;;haliscera;true;true;living
+planktonset1.0;hydromedusae_liriope;animalia;cnidaria;hydrozoa;limnomedusae;geryoniidae;liriope;;liriope;true;true;living
+planktonset1.0;hydromedusae_narco_dark;animalia;cnidaria;hydrozoa;narcomedusae;;;;narcomedusae;true;true;living
+planktonset1.0;hydromedusae_narco_young;animalia;cnidaria;hydrozoa;narcomedusae;;;;narcomedusae;true;true;living
+planktonset1.0;hydromedusae_narcomedusae;animalia;cnidaria;hydrozoa;narcomedusae;;;;narcomedusae;true;true;living
+planktonset1.0;hydromedusae_other;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_shapeA;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_shapeA_sideview_small;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_shapeB;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_sideview_big;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_solmaris;animalia;cnidaria;hydrozoa;narcomedusae;solmarisidae;solmaris;;solmaris;true;true;living
+planktonset1.0;hydromedusae_solmundella;animalia;cnidaria;hydrozoa;narcomedusae;solmundaeginidae;solmundella;;solmundella;true;true;living
+planktonset1.0;hydromedusae_typeD;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_typeD_bell_and_tentacles;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_typeE;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;hydromedusae_typeF;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+planktonset1.0;polychaete;animalia;annelida;polychaeta;;;;;polychaeta;true;true;living
+planktonset1.0;protist_dark_center;;;;;;;;protist_dark_center;true;true;living
+planktonset1.0;protist_fuzzy_olive;;;;;;;;protist_fuzzy_olive;true;true;living
+planktonset1.0;protist_noctiluca;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;;noctiluca;true;true;living
+planktonset1.0;protist_other;;;;;;;;protist_other;true;true;living
+planktonset1.0;protist_star;;;;;;;;protist_star;true;true;living
+planktonset1.0;pteropod_butterfly;animalia;mollusca;gastropoda;thecosomata;;;;thecosomata;true;true;living
+planktonset1.0;pteropod_theco_dev_seq;animalia;mollusca;gastropoda;thecosomata;;;;thecosomata;true;true;living
+planktonset1.0;pteropod_triangle;animalia;mollusca;gastropoda;pteropoda;;;;pteropoda;true;true;living
+planktonset1.0;radiolarian_chain;chromista;radiozoa;;;;;;radiozoa;true;true;living
+planktonset1.0;radiolarian_colony;chromista;radiozoa;;;;;;radiozoa;true;true;living
+planktonset1.0;shrimp_caridean;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+planktonset1.0;shrimp_sergestidae;animalia;arthropoda;malacostraca;decapoda;sergestidae;;;sergestidae;true;true;living
+planktonset1.0;shrimp_zoea;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+planktonset1.0;shrimp-like_other;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+planktonset1.0;siphonophore_calycophoran_abylidae;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;;;abylidae;true;true;living
+planktonset1.0;siphonophore_calycophoran_rocketship_adult;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+planktonset1.0;siphonophore_calycophoran_rocketship_young;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+planktonset1.0;siphonophore_calycophoran_sphaeronectes;animalia;cnidaria;hydrozoa;siphonophorae;sphaeronectidae;sphaeronectes;;sphaeronectes;true;true;living
+planktonset1.0;siphonophore_calycophoran_sphaeronectes_stem;animalia;cnidaria;hydrozoa;siphonophorae;sphaeronectidae;sphaeronectes;;sphaeronectes;true;true;living
+planktonset1.0;siphonophore_calycophoran_sphaeronectes_young;animalia;cnidaria;hydrozoa;siphonophorae;sphaeronectidae;sphaeronectes;;sphaeronectes;true;true;living
+planktonset1.0;siphonophore_physonect;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+planktonset1.0;siphonophore_physonect_young;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+planktonset1.0;stomatopod;animalia;arthropoda;malacostraca;stomatopoda;;;;stomatopoda;true;true;living
+planktonset1.0;tornaria_acorn_worm_larvae;animalia;hemichordata;enteropneusta;;;;;enteropneusta;true;true;living
+planktonset1.0;trichodesmium_bowtie;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktonset1.0;trichodesmium_multiple;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktonset1.0;trichodesmium_puff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktonset1.0;trichodesmium_tuft;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktonset1.0;trochophore_larvae;;;;;;;;trochophore_larvae;true;true;living
+planktonset1.0;tunicate_doliolid;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+planktonset1.0;tunicate_doliolid_nurse;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+planktonset1.0;tunicate_salp;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+planktonset1.0;tunicate_salp_chains;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+planktoscope;Acantharea;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+planktoscope;Acantharia;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+planktoscope;Acartiidae;animalia;arthropoda;copepoda;calanoida;acartiidae;;;acartiidae;true;true;living
+planktoscope;Actinommidae;chromista;radiozoa;polycystina;spumellaria;actinommidae;;;actinommidae;true;true;living
+planktoscope;aggregate<Radiolaria;chromista;radiozoa;;;;;;radiozoa;true;true;living
+planktoscope;Amphibelone;chromista;radiozoa;acantharia;symphyacanthida;amphilithidae;amphibelone;;amphibelone;true;true;living
+planktoscope;Amphisolenia;chromista;myzozoa;dinophyceae;dinophysales;amphisoleniaceae;amphisolenia;;amphisolenia;true;true;living
+planktoscope;Amphorellopsis;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;amphorellopsis;;amphorellopsis;true;true;living
+planktoscope;Amphorides<Tintinnidiidae;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;amphorides;;amphorides;true;true;living
+planktoscope;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+planktoscope;Asterionella;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionella;;asterionella;true;true;living
+planktoscope;Asterionellopsis;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionellopsis;;asterionellopsis;true;true;living
+planktoscope;Asterolamprales;chromista;heterokontophyta;bacillariophyceae;asterolamprales;;;;asterolamprales;true;true;living
+planktoscope;Bacillaria;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;bacillaria;;bacillaria;true;true;living
+planktoscope;Bacillariophyceae;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktoscope;Bacteriastrum<Chaetocerotales;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;bacteriastrum;;bacteriastrum;true;true;living
+planktoscope;Bacteriastrum<Mediophyceae;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;bacteriastrum;;bacteriastrum;true;true;living
+planktoscope;Bellerochea;chromista;heterokontophyta;bacillariophyceae;hemiaulales;bellerocheaceae;bellerochea;;bellerochea;true;true;living
+planktoscope;Biddulphia;chromista;heterokontophyta;bacillariophyceae;biddulphiales;biddulphiaceae;biddulphia;;biddulphia;true;true;living
+planktoscope;bipinnaria;animalia;echinodermata;asteroidea;;;;;asteroidea;true;true;living
+planktoscope;Bivalvia<Mollusca;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+planktoscope;Bleakeleya;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;bleakeleya;;bleakeleya;true;true;living
+planktoscope;Bleakeleya notata;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionella;bleakeleyi;asterionella bleakeleyi;true;true;living
+planktoscope;Calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+planktoscope;Callimitra;chromista;radiozoa;polycystina;nassellaria;plagiacanthidae;callimitra;;callimitra;true;true;living
+planktoscope;Calocalanus;animalia;arthropoda;copepoda;calanoida;paracalanidae;calocalanus;;calocalanus;true;true;living
+planktoscope;Centropages;animalia;arthropoda;copepoda;calanoida;centropagidae;centropages;;centropages;true;true;living
+planktoscope;Centropagidae;animalia;arthropoda;copepoda;calanoida;centropagidae;;;centropagidae;true;true;living
+planktoscope;Cerataulina;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;cerataulina;;cerataulina;true;true;living
+planktoscope;Ceratocorys;chromista;myzozoa;dinophyceae;gonyaulacales;ceratocoryaceae;ceratocorys;;ceratocorys;true;true;living
+planktoscope;Ceratocorys horrida;chromista;myzozoa;dinophyceae;gonyaulacales;ceratocoryaceae;ceratocorys;horrida;ceratocorys horrida;true;true;living
+planktoscope;Chaetoceros affinis;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;affinis;chaetoceros affinis;true;true;living
+planktoscope;Chaetoceros dadayi;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;dadayi;chaetoceros dadayi;true;true;living
+planktoscope;Chaetoceros danicus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;danicus;chaetoceros danicus;true;true;living
+planktoscope;Chaetoceros inter epibiont;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+planktoscope;Chaetoceros peruvianus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;peruvianus;chaetoceros peruvianus;true;true;living
+planktoscope;Chaetoceros<Mediophyceae;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+planktoscope;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+planktoscope;Challengeron;chromista;cercozoa;thecofilosea;phaeogromida;challengeridae;challengeron;;challengeron;true;true;living
+planktoscope;Ciliophora;chromista;ciliophora;;;;;;ciliophora;true;true;living
+planktoscope;Cladopyxis;chromista;myzozoa;dinophyceae;gonyaulacales;cladopyxidaceae;cladopyxis;;cladopyxis;true;true;living
+planktoscope;Climacocylis;chromista;ciliophora;oligotrichea;choreotrichida;metacylididae;climacocylis;;climacocylis;true;true;living
+planktoscope;Climacodium;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;climacodium;;climacodium;true;true;living
+planktoscope;Climacosphenia;chromista;heterokontophyta;bacillariophyceae;climacospheniales;climacospheniaceae;climacosphenia;;climacosphenia;true;true;living
+planktoscope;Coccodiscidae;chromista;radiozoa;polycystina;spumellaria;coccodiscidae;;;coccodiscidae;true;true;living
+planktoscope;Codonaria;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;codonaria;;codonaria;true;true;living
+planktoscope;Codonella;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;codonella;;codonella;true;true;living
+planktoscope;Codonella amphorella;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;codonella;amphorella;codonella amphorella;true;true;living
+planktoscope;Codonellopsis orthoceras;chromista;ciliophora;oligotrichea;choreotrichida;codonellopsidae;codonellopsis;orthoceras;codonellopsis orthoceras;true;true;living
+planktoscope;Codonellopsis<Tintinnidiidae;chromista;ciliophora;oligotrichea;choreotrichida;codonellopsidae;codonellopsis;;codonellopsis;true;true;living
+planktoscope;Collozoum;chromista;radiozoa;polycystina;nassellaria;collozoidae;collozoum;;collozoum;true;true;living
+planktoscope;Copepoda<Maxillopoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+planktoscope;copepoda-cut;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+planktoscope;Corethron;chromista;heterokontophyta;bacillariophyceae;corethrales;corethraceae;corethron;;corethron;true;true;living
+planktoscope;Corycaeidae;animalia;arthropoda;copepoda;cyclopoida;corycaeidae;;;corycaeidae;true;true;living
+planktoscope;Corythodinium;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;corythodinium;;corythodinium;true;true;living
+planktoscope;Corythodinium constrictum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;corythodinium;constrictum;corythodinium constrictum;true;true;living
+planktoscope;Corythodinium tesselatum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;corythodinium;tesselatum;corythodinium tesselatum;true;true;living
+planktoscope;Coscinodiscophycidae;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktoscope;Cyanobacteria<Bacteria;bacteria;cyanobacteria;;;;;;cyanobacteria;true;true;living
+planktoscope;cylindrotheca+nitzschia;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;;;bacillariaceae;true;true;living
+planktoscope;Cystidium;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+planktoscope;Cyttarocylis;chromista;ciliophora;oligotrichea;choreotrichida;cyttarocylididae;cyttarocylis;;cyttarocylis;true;true;living
+planktoscope;dactyliosolen guinardia mix;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;;;rhizosoleniaceae;true;true;living
+planktoscope;Dadayiella;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;dadayiella;;dadayiella;true;true;living
+planktoscope;Dictyocha;chromista;ochrophyta;dictyochophyceae;dictyochales;dictyochaceae;dictyocha;;dictyocha;true;true;living
+planktoscope;Dictyocysta;chromista;ciliophora;oligotrichea;choreotrichida;dictyocystidae;dictyocysta;;dictyocysta;true;true;living
+planktoscope;Dinobryon;chromista;ochrophyta;chrysophyceae;chromulinales;dinobryaceae;dinobryon;;dinobryon;true;true;living
+planktoscope;Dinophyceae;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+planktoscope;Dinophysis;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;;dinophysis;true;true;living
+planktoscope;Dinophysis caudata<Dinophysis;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;caudata;dinophysis caudata;true;true;living
+planktoscope;Dinophysis tripos;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;tripos;dinophysis tripos;true;true;living
+planktoscope;Ditylum;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;ditylum;;ditylum;true;true;living
+planktoscope;Doliolida;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+planktoscope;echinopluteus;animalia;echinodermata;echinoidea;;;;;echinoidea;true;true;living
+planktoscope;Entomoneis;chromista;heterokontophyta;bacillariophyceae;surirellales;entomoneidaceae;entomoneis;;entomoneis;true;true;living
+planktoscope;Epicancella;chromista;ciliophora;oligotrichea;choreotrichida;epiplocylididae;epicancella;;epicancella;true;true;living
+planktoscope;Epiplocylis;chromista;ciliophora;oligotrichea;choreotrichida;epiplocylididae;epiplocylis;;epiplocylis;true;true;living
+planktoscope;Ethmodiscus gazellae;chromista;heterokontophyta;bacillariophyceae;ethmodiscales;ethmodiscaceae;ethmodiscus;gazellae;ethmodiscus gazellae;true;true;living
+planktoscope;Eucampia;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;eucampia;;eucampia;true;true;living
+planktoscope;Eucampia cornuta;chromista;heterokontophyta;bacillariophyceae;bacillariophyceae;bacillariophyceae;neomoelleria;cornuta;neomoelleria cornuta;true;true;living
+planktoscope;Euphysetta;chromista;cercozoa;thecofilosea;phaeogromida;medusettidae;euphysetta;;euphysetta;true;true;living
+planktoscope;Euterpina;animalia;arthropoda;copepoda;harpacticoida;tachidiidae;euterpina;;euterpina;true;true;living
+planktoscope;Eutintinnus;chromista;ciliophora;oligotrichea;choreotrichida;eutintinnidae;eutintinnus;;eutintinnus;true;true;living
+planktoscope;Evadne;animalia;arthropoda;branchiopoda;onychopoda;podonidae;evadne;;evadne;true;true;living
+planktoscope;Favella;animalia;arthropoda;ostracoda;podocopida;hemicytheridae;favella;;favella;true;true;living
+planktoscope;Foraminifera;chromista;foraminifera;;;;;;foraminifera;true;true;living
+planktoscope;Fragilariaceae;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;;;fragilariaceae;true;true;living
+planktoscope;Fritillariidae;animalia;chordata;appendicularia;copelata;fritillariidae;;;fritillariidae;true;true;living
+planktoscope;frustule;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktoscope;Gastropoda<Mollusca;animalia;mollusca;gastropoda;;;;;gastropoda;true;true;living
+planktoscope;Gossleriella;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;gossleriellaceae;gossleriella;;gossleriella;true;true;living
+planktoscope;Guinardia flaccida;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;flaccida;guinardia flaccida;true;true;living
+planktoscope;Gyrodinium;chromista;myzozoa;dinophyceae;gymnodiniales;gyrodiniaceae;gyrodinium;;gyrodinium;true;true;living
+planktoscope;Halosphaera;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;halosphaera;;halosphaera;true;true;living
+planktoscope;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+planktoscope;head<Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+planktoscope;Helicotheca tamesis;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;helicotheca;tamesis;helicotheca tamesis;true;true;living
+planktoscope;Hemiaulus;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;hemiaulus;;hemiaulus;true;true;living
+planktoscope;Hemidiscus;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;hemidiscaceae;hemidiscus;;hemidiscus;true;true;living
+planktoscope;Isthmia;chromista;heterokontophyta;bacillariophyceae;biddulphiales;biddulphiaceae;isthmia;;isthmia;true;true;living
+planktoscope;larvae<Annelida;animalia;annelida;;;;;;annelida;true;true;living
+planktoscope;larvae<Gastropoda;animalia;mollusca;gastropoda;;;;;gastropoda;true;true;living
+planktoscope;Lauderia;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;lauderiaceae;lauderia;;lauderia;true;true;living
+planktoscope;Leprotintinnus;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidiidae;leprotintinnus;;leprotintinnus;true;true;living
+planktoscope;Leptocylindrus;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;leptocylindrus;;leptocylindrus;true;true;living
+planktoscope;Leptocylindrus mediterraneus;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;leptocylindrus;mediterraneus;leptocylindrus mediterraneus;true;true;living
+planktoscope;Licmophora;chromista;heterokontophyta;bacillariophyceae;licmophorales;licmophoraceae;licmophora;;licmophora;true;true;living
+planktoscope;Lioloma;chromista;heterokontophyta;bacillariophyceae;thalassionematales;thalassionemataceae;lioloma;;lioloma;true;true;living
+planktoscope;Lithodesmium;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;lithodesmium;;lithodesmium;true;true;living
+planktoscope;Lithoptera;chromista;radiozoa;acantharia;acantharia;;;;acantharia;true;true;living
+planktoscope;Mastogloia;chromista;heterokontophyta;bacillariophyceae;mastogloiales;mastogloiaceae;mastogloia;;mastogloia;true;true;living
+planktoscope;Mediopyxis;chromista;heterokontophyta;Bacillariophyceae;Lithodesmiales;Lithodesmiaceae;mediopyxis;;mediopyxis;true;true;living
+planktoscope;Microsetella;animalia;arthropoda;copepoda;harpacticoida;ectinosomatidae;microsetella;;microsetella;true;true;living
+planktoscope;multiple bacillariophyceae;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+planktoscope;Nassellaria<Polycystinea;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+planktoscope;nauplii<Cirripedia;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+planktoscope;nauplii<Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+planktoscope;nauplii<Temora;animalia;arthropoda;copepoda;calanoida;temoridae;temora;;temora;true;true;living
+planktoscope;Naviculales;chromista;heterokontophyta;bacillariophyceae;naviculales;;;;naviculales;true;true;living
+planktoscope;Nematoda;animalia;nematoda;;;;;;nematoda;true;true;living
+planktoscope;Neocalyptrella;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;neocalyptrella;;neocalyptrella;true;true;living
+planktoscope;Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;neoceratium;;neoceratium;true;true;living
+planktoscope;Neoceratium arietinum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;arietinus;tripos arietinus;true;true;living
+planktoscope;Neoceratium azoricum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;azoricus;tripos azoricus;true;true;living
+planktoscope;Neoceratium belone;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;belone;tripos belone;true;true;living
+planktoscope;Neoceratium breve;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;brevis;tripos brevis;true;true;living
+planktoscope;Neoceratium candelabrum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;candelabrum;tripos candelabrum;true;true;living
+planktoscope;Neoceratium contortum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;contortus;tripos contortus;true;true;living
+planktoscope;Neoceratium declinatum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;declinatus;tripos declinatus;true;true;living
+planktoscope;Neoceratium extensum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;extensus;tripos extensus;true;true;living
+planktoscope;neoceratium falcatum inflatum mix;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;;tripos;true;true;living
+planktoscope;Neoceratium furca<Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;furca;tripos furca;true;true;living
+planktoscope;Neoceratium fusus<Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;fusus;tripos fusus;true;true;living
+planktoscope;Neoceratium geniculatum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;geniculatus;tripos geniculatus;true;true;living
+planktoscope;neoceratium gibberum concilians mix;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;neoceratium;;neoceratium;true;true;living
+planktoscope;Neoceratium gravidum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;gravidum;tripos gravidum;true;true;living
+planktoscope;Neoceratium hexacanthum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;hexacanthus;tripos hexacanthus;true;true;living
+planktoscope;Neoceratium incisum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;incisus;tripos incisus;true;true;living
+planktoscope;Neoceratium limulus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;limulus;tripos limulus;true;true;living
+planktoscope;Neoceratium lineatum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;lineatus;tripos lineatus;true;true;living
+planktoscope;Neoceratium macroceros;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;macroceros;tripos macroceros;true;true;living
+planktoscope;Neoceratium massiliense;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;massiliensis;tripos massiliensis;true;true;living
+planktoscope;Neoceratium paradoxides;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;paradoxides;tripos paradoxides;true;true;living
+planktoscope;Neoceratium pentagonum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;pentagonus;tripos pentagonus;true;true;living
+planktoscope;Neoceratium petersii;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;petersii;tripos petersii;true;true;living
+planktoscope;Neoceratium platycorne;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;platycornis;tripos platycornis;true;true;living
+planktoscope;Neoceratium praeolongum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;ceratium;gravidum;ceratium gravidum;true;true;living
+planktoscope;Neoceratium pulchellum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;pulchellus;tripos pulchellus;true;true;living
+planktoscope;Neoceratium ranipes;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;ranipes;tripos ranipes;true;true;living
+planktoscope;Neoceratium symmetricum;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;symmetricus;tripos symmetricus;true;true;living
+planktoscope;Neoceratium teres;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;teres;tripos teres;true;true;living
+planktoscope;Neoceratium trichoceros;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;trichoceros;tripos trichoceros;true;true;living
+planktoscope;Octactis;chromista;ochrophyta;dictyochophyceae;dictyochales;dictyochaceae;octactis;;octactis;true;true;living
+planktoscope;Odontella mobiliensis;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;mobiliensis;odontella mobiliensis;true;true;living
+planktoscope;Odontella sinensis<Odontella;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;sinensis;odontella sinensis;true;true;living
+planktoscope;Odontella<Mediophyceae;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;;odontella;true;true;living
+planktoscope;Oikopleuridae;animalia;chordata;appendicularia;copelata;oikopleuridae;;;oikopleuridae;true;true;living
+planktoscope;Oithonidae;animalia;arthropoda;copepoda;cyclopoida;oithonidae;;;oithonidae;true;true;living
+planktoscope;Oncaeidae;animalia;arthropoda;copepoda;cyclopoida;oncaeidae;;;oncaeidae;true;true;living
+planktoscope;ophiopluteus;animalia;echinodermata;ophiuroidea;;;;;ophiuroidea;true;true;living
+planktoscope;Ornithocercus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;;ornithocercus;true;true;living
+planktoscope;Ornithocercus magnificus<Ornithocercus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;magnificus;ornithocercus magnificus;true;true;living
+planktoscope;Ornithocercus quadratus<Ornithocercus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;quadratus;ornithocercus quadratus;true;true;living
+planktoscope;Ornithocercus splendidus;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;splendidus;ornithocercus splendidus;true;true;living
+planktoscope;Ornithocercus steinii;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;ornithocercus;steinii;ornithocercus steinii;true;true;living
+planktoscope;Ostracoda;animalia;arthropoda;ostracoda;;;;;ostracoda;true;true;living
+planktoscope;Oxytoxum;chromista;myzozoa;dinophyceae;peridiniales;oxytoxaceae;oxytoxum;;oxytoxum;true;true;living
+planktoscope;Parafavella;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;parafavella;;parafavella;true;true;living
+planktoscope;Parundella<Xystonellidae;chromista;ciliophora;oligotrichea;choreotrichida;undellidae;parundella;;parundella;true;true;living
+planktoscope;Pediastrum;plantae;chlorophyta;chlorophyceae;sphaeropleales;hydrodictyaceae;pediastrum;;pediastrum;true;true;living
+planktoscope;Penilia;animalia;arthropoda;branchiopoda;ctenopoda;sididae;penilia;;penilia;true;true;living
+planktoscope;Phaeocystis;chromista;haptophyta;coccolithophyceae;phaeocystales;phaeocystaceae;phaeocystis;;phaeocystis;true;true;living
+planktoscope;Phaeodaria;chromista;cercozoa;thecofilosea;;;;;thecofilosea;true;true;living
+planktoscope;Phalacroma;chromista;myzozoa;dinophyceae;dinophysales;oxyphysaceae;phalacroma;;phalacroma;true;true;living
+planktoscope;Plagiacanthidae;chromista;radiozoa;polycystina;nassellaria;plagiacanthidae;;;plagiacanthidae;true;true;living
+planktoscope;Planktoniella sol;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;planktoniella;sol;planktoniella sol;true;true;living
+planktoscope;Pleurosigmataceae;chromista;heterokontophyta;bacillariophyceae;naviculales;pleurosigmataceae;;;pleurosigmataceae;true;true;living
+planktoscope;Podolampas bipes;chromista;myzozoa;dinophyceae;peridiniales;podolampadaceae;podolampas;bipes;podolampas bipes;true;true;living
+planktoscope;Podolampas<Podolampadaceae<Peridiniales<Dinophyceae;chromista;myzozoa;dinophyceae;peridiniales;podolampadaceae;podolampas;;podolampas;true;true;living
+planktoscope;Podon;animalia;arthropoda;branchiopoda;onychopoda;podonidae;podon;;podon;true;true;living
+planktoscope;polar view;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+planktoscope;Porifera spicule;animalia;porifera;;;;;;porifera;true;true;living
+planktoscope;Proboscia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;proboscia;;proboscia;true;true;living
+planktoscope;Proplectella;chromista;ciliophora;oligotrichea;choreotrichida;undellidae;proplectella;;proplectella;true;true;living
+planktoscope;Protoperidinium;chromista;myzozoa;dinophyceae;peridiniales;protoperidiniaceae;protoperidinium;;protoperidinium;true;true;living
+planktoscope;Pseudo-Nitzschia chain;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;chain;pseudo-nitzschia chain;true;true;living
+planktoscope;Pseudosolenia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;pseudosolenia;;pseudosolenia;true;true;living
+planktoscope;Pterosperma;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pterospermataceae;pterosperma;;pterosperma;true;true;living
+planktoscope;Ptychocylis;chromista;ciliophora;oligotrichea;choreotrichida;ptychocylididae;ptychocylis;;ptychocylis;true;true;living
+planktoscope;puff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktoscope;Pyrocystis;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;;pyrocystis;true;true;living
+planktoscope;Pyrocystis fusiformis;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;fusiformis;pyrocystis fusiformis;true;true;living
+planktoscope;Pyrocystis hamulus;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;hamulus;pyrocystis hamulus;true;true;living
+planktoscope;Pyrocystis lunula;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;lunula;pyrocystis lunula;true;true;living
+planktoscope;Pyrocystis noctiluca;chromista;myzozoa;dinophyceae;gonyaulacales;pyrocystaceae;pyrocystis;pseudonoctiluca;pyrocystis pseudonoctiluca;true;true;living
+planktoscope;Pyrophacus;chromista;myzozoa;dinophyceae;gonyaulacales;pyrophacaceae;pyrophacus;;pyrophacus;true;true;living
+planktoscope;Rhabdonella;chromista;ciliophora;oligotrichea;choreotrichida;rhabdonellidae;rhabdonella;;rhabdonella;true;true;living
+planktoscope;Rhabdonellopsis;chromista;ciliophora;oligotrichea;choreotrichida;rhabdonellidae;rhabdonellopsis;;rhabdonellopsis;true;true;living
+planktoscope;Rhizaria;chromista;;;;;;;chromista;true;true;living
+planktoscope;Rhizosolenia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;rhizosolenia;;rhizosolenia;true;true;living
+planktoscope;Rhizosolenia bergonii;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;rhizosolenia;bergonii;rhizosolenia bergonii;true;true;living
+planktoscope;Rhizosolenia inter. Richelia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;rhizosolenia;;rhizosolenia;true;true;living
+planktoscope;Rotifera;animalia;rotifera;;;;;;rotifera;true;true;living
+planktoscope;Salpingella<Tintinnidiidae;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;salpingella;;salpingella;true;true;living
+planktoscope;Scyphosphaera apsteinii;chromista;haptophyta;coccolithophyceae;zygodiscales;pontosphaeraceae;scyphosphaera;apsteinii;scyphosphaera apsteinii;true;true;living
+planktoscope;setae<Chaetoceros;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+planktoscope;Skeletonema;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;skeletonemaceae;skeletonema;;skeletonema;true;true;living
+planktoscope;Spongodiscidae;chromista;radiozoa;polycystina;spumellaria;spongodiscidae;;;spongodiscidae;true;true;living
+planktoscope;Spumellaria;chromista;radiozoa;polycystina;spumellaria;;;;spumellaria;true;true;living
+planktoscope;Steenstrupiella;chromista;ciliophora;oligotrichea;choreotrichida;tintinnidae;steenstrupiella;;steenstrupiella;true;true;living
+planktoscope;Sticholonche;chromista;radiozoa;sticholonchea;sticholonchida;;;;sticholonchida;true;true;living
+planktoscope;Striatella;chromista;heterokontophyta;bacillariophyceae;striatellales;striatellaceae;striatella;;striatella;true;true;living
+planktoscope;Temora;animalia;arthropoda;copepoda;calanoida;temoridae;temora;;temora;true;true;living
+planktoscope;Thalassionematales;chromista;heterokontophyta;bacillariophyceae;thalassionematales;;;;thalassionematales;true;true;living
+planktoscope;Thalassiosirales;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;;;;thalassiosirales;true;true;living
+planktoscope;Tiarina;chromista;ciliophora;prostomatea;prorodontida;colepidae;tiarina;;tiarina;true;true;living
+planktoscope;Tintinnina;chromista;ciliophora;oligotrichea;choreotrichida;;;;choreotrichida;true;true;living
+planktoscope;Tintinnopsis;chromista;ciliophora;oligotrichea;choreotrichida;codonellidae;tintinnopsis;;tintinnopsis;true;true;living
+planktoscope;Triceratium;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;triceratium;;triceratium;true;true;living
+planktoscope;Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+planktoscope;Trigonium;chromista;heterokontophyta;bacillariophyceae;biddulphiales;biddulphiaceae;trigonium;;trigonium;true;true;living
+planktoscope;Tripos arcticus;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;arcticus;tripos arcticus;true;true;living
+planktoscope;Triposolenia<Amphisoleniaceae<Dinophysiales;chromista;myzozoa;dinophyceae;dinophysales;amphisoleniaceae;triposolenia;;triposolenia;true;true;living
+planktoscope;Undellidae;chromista;ciliophora;oligotrichea;choreotrichida;undellidae;;;undellidae;true;true;living
+planktoscope;veliger<Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+planktoscope;Xystonella;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;xystonella;;xystonella;true;true;living
+planktoscope;Xystonellidae;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;;;xystonellidae;true;true;living
+planktoscope;Xystonellopsis;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;xystonellopsis;;xystonellopsis;true;true;living
+planktoscope;Xystonellopsis paradoxa;chromista;ciliophora;oligotrichea;choreotrichida;xystonellidae;xystonellopsis;paradoxa;xystonellopsis paradoxa;true;true;living
+planktoscope;zoea<Decapoda;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+planktoscope;Zoothamniidae;chromista;ciliophora;oligohymenophorea;sessilida;zoothamniidae;;;zoothamniidae;true;true;living
+syke_ifcb_2022;Amylax_triacantha;chromista;myzozoa;dinophyceae;gonyaulacales;gonyaulacaceae;amylax;triacantha;triacantha;true;true;living
+syke_ifcb_2022;Aphanizomenon_flosaquae;bacteria;cyanobacteria;cyanophyceae;nostocales;aphanizomenonaceae;aphanizomenon;;aphanizomenon;true;true;living
+syke_ifcb_2022;Aphanothece_paralleliformis;bacteria;cyanobacteria;cyanophyceae;chroococcales;microcystaceae;aphanothece;paralleliformis;paralleliformis;true;true;living
+syke_ifcb_2022;Centrales_sp;chromista;heterokontophyta;bacillariophyceae;centrales;;;;centrales;true;true;living
+syke_ifcb_2022;Ceratoneis_closterium;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ceratoneis;closterium;closterium;true;true;living
+syke_ifcb_2022;Chaetoceros_sp;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae incertae sedis;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+syke_ifcb_2022;Chaetoceros_sp_single;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae incertae sedis;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+syke_ifcb_2022;Chlorococcales;plantae;chlorophyta;chlorophyceae;chlorococcales;;;;chlorococcales;true;true;living
+syke_ifcb_2022;Chroococcales;bacteria;cyanobacteria;cyanophyceae;chroococcales;;;;chroococcales;true;true;living
+syke_ifcb_2022;Chroococcus_small;bacteria;cyanobacteria;cyanophyceae;chroococcales;chroococcaceae;chroococcus;;chroococcus;true;true;living
+syke_ifcb_2022;Ciliata;chromista;ciliophora;;;;;;ciliophora;true;true;living
+syke_ifcb_2022;Cryptomonadales;chromista;cryptophyta;cryptophyceae;cryptomonadales;;;;cryptomonadales;true;true;living
+syke_ifcb_2022;Cryptophyceae-Teleaulax;chromista;cryptophyta;cryptophyceae;pyrenomonadales;geminigeraceae;teleaulax;;teleaulax;true;true;living
+syke_ifcb_2022;Cyclotella_choctawhatcheeana;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;stephanodiscaceae;cyclotella;choctawhatcheeana;choctawhatcheeana;true;true;living
+syke_ifcb_2022;Cymbomonas_tetramitiformis;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;cymbomonas;tetramitiformis;tetramitiformis;true;true;living
+syke_ifcb_2022;Dinophyceae;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+syke_ifcb_2022;Dinophysis_acuminata;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;acuminata;acuminata;true;true;living
+syke_ifcb_2022;Dolichospermum-Anabaenopsis;bacteria;cyanobacteria;cyanophyceae;nostocales;nodulariaceae;anabaenopsis;;anabaenopsis;true;true;living
+syke_ifcb_2022;Dolichospermum-Anabaenopsis-coiled;bacteria;cyanobacteria;cyanophyceae;nostocales;nodulariaceae;anabaenopsis;;anabaenopsis;true;true;living
+syke_ifcb_2022;Euglenophyceae;protozoa;euglenozoa;euglenophyceae;;;;;euglenophyceae;true;true;living
+syke_ifcb_2022;Eutreptiella_sp;protozoa;euglenozoa;euglenophyceae;eutreptiales;eutreptiaceae;eutreptiella;;eutreptiella;true;true;living
+syke_ifcb_2022;Gonyaulax_verior;chromista;myzozoa;dinophyceae;gonyaulacales;gonyaulacaceae;gonyaulax;verior;verior;true;true;living
+syke_ifcb_2022;Gymnodiniales;chromista;myzozoa;dinophyceae;gymnodiniales;;;;gymnodiniales;true;true;living
+syke_ifcb_2022;Gymnodinium_like;chromista;myzozoa;dinophyceae;gymnodiniales;gymnodiniaceae;gymnodinium;;gymnodinium;true;true;living
+syke_ifcb_2022;Heterocapsa_rotundata;chromista;myzozoa;dinophyceae;peridiniales;heterocapsaceae;heterocapsa;rotundata;rotundata;true;true;living
+syke_ifcb_2022;Heterocapsa_triquetra;chromista;myzozoa;dinophyceae;peridiniales;heterocapsaceae;heterocapsa;triquetra;triquetra;true;true;living
+syke_ifcb_2022;Heterocyte;bacteria;cyanobacteria;;;;;;cyanobacteria;true;true;living
+syke_ifcb_2022;Katablepharis_remigera;chromista;cryptophyta;cryptophyta incertae sedis;;katablepharidaceae;katablepharis;remigera;remigera;true;true;living
+syke_ifcb_2022;Licmophora_sp;chromista;heterokontophyta;bacillariophyceae;licmophorales;licmophoraceae;licmophora;;licmophora;true;true;living
+syke_ifcb_2022;Melosira_arctica;chromista;heterokontophyta;bacillariophyceae;melosirales;melosiraceae;melosira;arctica;arctica;true;true;living
+syke_ifcb_2022;Merismopedia_sp;bacteria;cyanobacteria;cyanophyceae;chroococcales;microcystaceae;merismopedia;;merismopedia;true;true;living
+syke_ifcb_2022;Mesodinium_rubrum;chromista;ciliophora;litostomatea;cyclotrichiida;mesodiniidae;mesodinium;rubrum;rubrum;true;true;living
+syke_ifcb_2022;Monoraphidium_contortum;plantae;chlorophyta;chlorophyceae;sphaeropleales;selenastraceae;monoraphidium;contortum;contortum;true;true;living
+syke_ifcb_2022;Nitzschia_paleacea;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;nitzschia;paleacea;paleacea;true;true;living
+syke_ifcb_2022;Nodularia_spumigena;bacteria;cyanobacteria;cyanophyceae;nostocales;nodulariaceae;nodularia;spumigena;spumigena;true;true;living
+syke_ifcb_2022;Oocystis_sp;plantae;chlorophyta;trebouxiophyceae;chlorellales;oocystaceae;oocystis;;oocystis;true;true;living
+syke_ifcb_2022;Oscillatoriales;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;;;;oscillatoriales;true;true;living
+syke_ifcb_2022;Pauliella_taeniata;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;pauliella;taeniata;taeniata;true;true;living
+syke_ifcb_2022;Pennales_sp_thick;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+syke_ifcb_2022;Pennales_sp_thin;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+syke_ifcb_2022;Peridiniella_catenata_chain;chromista;myzozoa;dinophyceae;gonyaulacales;cladopyxidaceae;peridiniella;catenata;catenata;true;true;living
+syke_ifcb_2022;Peridiniella_catenata_single;chromista;myzozoa;dinophyceae;gonyaulacales;cladopyxidaceae;peridiniella;catenata;catenata;true;true;living
+syke_ifcb_2022;Prorocentrum_cordatum;chromista;myzozoa;dinophyceae;prorocentrales;prorocentraceae;prorocentrum;cordatum;cordatum;true;true;living
+syke_ifcb_2022;Pseudopedinella_sp;chromista;ochrophyta;dictyochophyceae;pedinellales;actinomonadaceae;pseudopedinella;;pseudopedinella;true;true;living
+syke_ifcb_2022;Pyramimonas_sp;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;pyramimonas;;pyramimonas;true;true;living
+syke_ifcb_2022;Skeletonema_marinoi;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;skeletonemaceae;skeletonema;marinoi;marinoi;true;true;living
+syke_ifcb_2022;Snowella-Woronichinia;bacteria;cyanobacteria;cyanophyceae;synechococcales;coelosphaeriaceae;woronichinia;;woronichinia;true;true;living
+syke_ifcb_2022;Thalassiosira_levanderi;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;thalassiosira;levanderi;levanderi;true;true;living
+syke_ifcb_2022;Uroglenopsis_sp;chromista;ochrophyta;chrysophyceae;ochromonadales;ochromonadaceae;uroglenopsis;;uroglenopsis;true;true;living
+sykezooscan2024;Bivalvia;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+sykezooscan2024;Bivalvia_multiple;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+sykezooscan2024;Bosmina_sp;animalia;arthropoda;branchiopoda;anomopoda;bosminidae;bosmina;;bosmina;true;true;living
+sykezooscan2024;Ceriodaphnia_sp;animalia;arthropoda;branchiopoda;anomopoda;daphniidae;ceriodaphnia;;ceriodaphnia;true;true;living
+sykezooscan2024;Copepoda_calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+sykezooscan2024;Copepoda_cyclopoida;animalia;arthropoda;copepoda;cyclopoida;;;;cyclopoida;true;true;living
+sykezooscan2024;Copepoda_nauplius;animalia;arthropoda;copepoda;cyclopoida;cyclopidae;cyclops;;cyclops;true;true;living
+sykezooscan2024;Daphnia_sp;animalia;arthropoda;branchiopoda;anomopoda;daphniidae;daphnia;;daphnia;true;true;living
+sykezooscan2024;Evadne_sp;animalia;arthropoda;branchiopoda;onychopoda;podonidae;evadne;;evadne;true;true;living
+sykezooscan2024;Gastropoda;animalia;mollusca;gastropoda;;;;;gastropoda;true;true;living
+sykezooscan2024;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+sykezooscan2024;Mysis_sp;animalia;arthropoda;malacostraca;mysida;mysidae;mysis;;mysis;true;true;living
+sykezooscan2024;Podon_sp;animalia;arthropoda;branchiopoda;onychopoda;podonidae;podon;;podon;true;true;living
+sykezooscan2024;Polychaeta;animalia;annelida;polychaeta;;;;;polychaeta;true;true;living
+sykezooscan2024;Sessilia;animalia;arthropoda;thecostraca;sessilia;;;;sessilia;true;true;living
+sykezooscan2024;Synchaeta_sp;animalia;rotifera;eurotatoria;ploima;synchaetidae;synchaeta;;synchaeta;true;true;living
+uvp6net;Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+uvp6net;Amphipoda;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+uvp6net;Annelida;animalia;annelida;polychaeta;terebellida;flabelligeridae;poeobius;;poeobius;true;true;living
+uvp6net;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+uvp6net;Aulacanthidae;chromista;cercozoa;thecofilosea;phaeocystida;aulacanthidae;;;aulacanthidae;true;true;living
+uvp6net;Aulatractus;;;;;;;;aulatractus;true;true;living
+uvp6net;Aulosphaeridae;chromista;cercozoa;thecofilosea;phaeosphaerida;aulosphaeridae;;;aulosphaeridae;true;true;living
+uvp6net;Calanidae;animalia;arthropoda;copepoda;calanoida;calanidae;;;calanidae;true;true;living
+uvp6net;Calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+uvp6net;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+uvp6net;chain<Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+uvp6net;cloud;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+uvp6net;Coelodendridae;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;;;coelodendridae;true;true;living
+uvp6net;Collodaria;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+uvp6net;Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+uvp6net;copepoda_eggs;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+uvp6net;Creseis acicula;animalia;mollusca;gastropoda;pteropoda;creseidae;creseis;acicula;creseis acicula;true;true;living
+uvp6net;Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+uvp6net;dead<house;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+uvp6net;Echinodermata;animalia;echinodermata;;;;;;echinodermata;true;true;living
+uvp6net;Eumalacostraca;animalia;arthropoda;malacostraca;;;;;malacostraca;true;true;living
+uvp6net;Foraminifera;chromista;foraminifera;;;;;;foraminifera;true;true;living
+uvp6net;fuzzy;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+uvp6net;Hyperiidea;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+uvp6net;like<Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+uvp6net;like<Rhizaria;chromista;;;;;;;chromista;true;true;living
+uvp6net;Narcomedusae;animalia;cnidaria;hydrozoa;narcomedusae;;;;narcomedusae;true;true;living
+uvp6net;Ostracoda;animalia;arthropoda;ostracoda;;;;;ostracoda;true;true;living
+uvp6net;other<Cnidaria;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+uvp6net;Phyllodocida;animalia;annelida;polychaeta;phyllodocida;;;;phyllodocida;true;true;living
+uvp6net;puff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+uvp6net;Rhizaria;chromista;;;;;;;chromista;true;true;living
+uvp6net;Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+uvp6net;Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+uvp6net;small<Cnidaria;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+uvp6net;solitaryblack;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+uvp6net;solitaryglobule;chromista;radiozoa;polycystina;nassellaria;;;;nassellaria;true;true;living
+uvp6net;spiky<Acantharia;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+uvp6net;spiky<Coelodendridae;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;;;coelodendridae;true;true;living
+uvp6net;star<Acantharia;chromista;radiozoa;acantharia;;;;;acantharia;true;true;living
+uvp6net;Swima;animalia;annelida;polychaeta;terebellida;acrocirridae;swima;;swima;true;true;living
+uvp6net;Thecosomata;animalia;mollusca;gastropoda;pteropoda;cavoliniidae;cavolinia;inflexa;cavolinia inflexa;true;true;living
+uvp6net;Trachymedusae;animalia;cnidaria;hydrozoa;trachymedusae;halicreatidae;botrynema;;botrynema;true;true;living
+uvp6net;tuff;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+whoi;Akashiwo;chromista;myzozoa;dinophyceae;gymnodiniales;gymnodiniaceae;akashiwo;;akashiwo;true;true;living
+whoi;amoeba;protozoa;amoebozoa;tubulinea;euamoebida;amoebidae;amoeba;;amoeba;true;true;living
+whoi;Amphidinium_sp;chromista;myzozoa;dinophyceae;amphidiniales;amphidiniaceae;amphidinium;;amphidinium;true;true;living
+whoi;Asterionellopsis;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionellopsis;;asterionellopsis;true;true;living
+whoi;Bacillaria;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;bacillaria;;bacillaria;true;true;living
+whoi;Bidulphia;chromista;heterokontophyta;bacillariophyceae;biddulphiales;biddulphiaceae;biddulphia;;biddulphia;true;true;living
+whoi;Cerataulina;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;cerataulina;;cerataulina;true;true;living
+whoi;Cerataulina_flagellate;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;cerataulina;;cerataulina;true;true;living
+whoi;Ceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;ceratium;;ceratium;true;true;living
+whoi;Chaetoceros;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+whoi;Chaetoceros_didymus;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;didymus;chaetoceros didymus;true;true;living
+whoi;Chaetoceros_didymus_flagellate;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;didymus;chaetoceros didymus;true;true;living
+whoi;Chaetoceros_flagellate;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+whoi;Chaetoceros_other;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+whoi;Chaetoceros_pennate;chromista;heterokontophyta;bacillariophyceae;chaetocerotanae;chaetocerotaceae;chaetoceros;;chaetoceros;true;true;living
+whoi;Chrysochromulina;chromista;haptophyta;coccolithophyceae;prymnesiales;chrysochromulinaceae;chrysochromulina;;chrysochromulina;true;true;living
+whoi;Ciliate_mix;chromista;ciliophora;;;;;;ciliophora;true;true;living
+whoi;clusterflagellate;protozoa;choanozoa;choanoflagellatea;;;;;choanoflagellatea;true;true;living
+whoi;Cochlodinium;chromista;myzozoa;dinophyceae;gymnodiniales;gymnodiniaceae;cochlodinium;;cochlodinium;true;true;living
+whoi;Corethron;chromista;heterokontophyta;bacillariophyceae;corethrales;corethraceae;corethron;;corethron;true;true;living
+whoi;Coscinodiscus;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;coscinodiscaceae;coscinodiscus;;coscinodiscus;true;true;living
+whoi;Cylindrotheca;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;cylindrotheca;;cylindrotheca;true;true;living
+whoi;DactFragCerataul;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;cerataulina;;cerataulina;true;true;living
+whoi;Dactyliosolen;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;dactyliosolen;;dactyliosolen;true;true;living
+whoi;Delphineis;chromista;heterokontophyta;bacillariophyceae;rhaponeidales;rhaphoneidaceae;delphineis;;delphineis;true;true;living
+whoi;diatom_flagellate;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+whoi;Dictyocha;chromista;ochrophyta;dictyochophyceae;dictyochales;dictyochaceae;dictyocha;;dictyocha;true;true;living
+whoi;Didinium_sp;chromista;ciliophora;litostomatea;haptorida;didiniidae;didinium;;didinium;true;true;living
+whoi;dino_large1;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+whoi;dino30;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+whoi;Dinobryon;chromista;ochrophyta;chrysophyceae;chromulinales;dinobryaceae;dinobryon;;dinobryon;true;true;living
+whoi;Dinophysis;chromista;myzozoa;dinophyceae;dinophysales;dinophysaceae;dinophysis;;dinophysis;true;true;living
+whoi;Ditylum;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;ditylum;;ditylum;true;true;living
+whoi;Ditylum_parasite;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;ditylum;;ditylum;true;true;living
+whoi;Emiliania_huxleyi;chromista;haptophyta;coccolithophyceae;isochrysidales;noelaerhabdaceae;gephyrocapsa;huxleyi;gephyrocapsa huxleyi;true;true;living
+whoi;Ephemera;animalia;arthropoda;hexapoda;ephemeroptera;ephemeridae;ephemera;;ephemera;true;true;living
+whoi;Eucampia;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;eucampia;;eucampia;true;true;living
+whoi;Euglena;protozoa;euglenozoa;euglenophyceae;euglenales;euglenaceae;euglena;;euglena;true;true;living
+whoi;Euplotes_sp;chromista;ciliophora;spirotrichea;euplotida;euplotidae;euplotes;;euplotes;true;true;living
+whoi;flagellate_sp3;protozoa;choanozoa;choanoflagellatea;;;;;choanoflagellatea;true;true;living
+whoi;G_delicatula_external_parasite;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;delicatula;guinardia delicatula;true;true;living
+whoi;G_delicatula_parasite;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;delicatula;guinardia delicatula;true;true;living
+whoi;Gonyaulax;chromista;myzozoa;dinophyceae;gonyaulacales;gonyaulacaceae;gonyaulax;;gonyaulax;true;true;living
+whoi;Guinardia_delicatula;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;delicatula;guinardia delicatula;true;true;living
+whoi;Guinardia_flaccida;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;flaccida;guinardia flaccida;true;true;living
+whoi;Guinardia_striata;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;striata;guinardia striata;true;true;living
+whoi;Gyrodinium;chromista;myzozoa;dinophyceae;gymnodiniales;gyrodiniaceae;gyrodinium;;gyrodinium;true;true;living
+whoi;Hemiaulus;chromista;heterokontophyta;bacillariophyceae;hemiaulales;hemiaulaceae;hemiaulus;;hemiaulus;true;true;living
+whoi;Heterocapsa_triquetra;chromista;myzozoa;dinophyceae;peridiniales;peridiniaceae;kryptoperidinium;triquetrum;kryptoperidinium triquetrum;true;true;living
+whoi;Karenia;chromista;myzozoa;dinophyceae;gymnodiniales;kareniaceae;karenia;;karenia;true;true;living
+whoi;Katodinium_or_Torodinium;chromista;myzozoa;dinophyceae;;;;;dinophyceae;true;true;living
+whoi;kiteflagellates;protozoa;euglenozoa;kinetoplastea;bodonida;;;;bodonida;true;true;living
+whoi;Laboea_strobila;chromista;ciliophora;oligotrichea;oligotrichida;tontoniidae;laboea;strobila;laboea strobila;true;true;living
+whoi;Lauderia;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;lauderiaceae;lauderia;;lauderia;true;true;living
+whoi;Leegaardiella_ovalis;chromista;ciliophora;oligotrichea;choreotrichida;leegaardiellidae;leegaardiella;ovalis;leegaardiella ovalis;true;true;living
+whoi;Leptocylindrus;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;leptocylindrus;;leptocylindrus;true;true;living
+whoi;Leptocylindrus_mediterraneus;chromista;heterokontophyta;bacillariophyceae;leptocylindrales;leptocylindraceae;leptocylindrus;mediterraneus;leptocylindrus mediterraneus;true;true;living
+whoi;Licmophora;chromista;heterokontophyta;bacillariophyceae;licmophorales;licmophoraceae;licmophora;;licmophora;true;true;living
+whoi;Mesodinium_sp;chromista;ciliophora;litostomatea;cyclotrichiida;mesodiniidae;mesodinium;;mesodinium;true;true;living
+whoi;Odontella;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;;odontella;true;true;living
+whoi;Paralia;chromista;heterokontophyta;bacillariophyceae;paraliales;paraliaceae;paralia;;paralia;true;true;living
+whoi;Parvicorbicula_socialis;protozoa;choanozoa;choanoflagellatea;acanthoecida;acanthoecidae;parvicorbicula;socialis;parvicorbicula socialis;true;true;living
+whoi;pennate;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+whoi;pennate_morphotype1;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+whoi;pennates_on_diatoms;chromista;heterokontophyta;bacillariophyceae;pennales;;;;pennales;true;true;living
+whoi;Phaeocystis;chromista;haptophyta;coccolithophyceae;phaeocystales;phaeocystaceae;phaeocystis;;phaeocystis;true;true;living
+whoi;Pleuronema_sp;chromista;ciliophora;oligohymenophorea;pleuronematida;pleuronematidae;pleuronema;;pleuronema;true;true;living
+whoi;Pleurosigma;chromista;heterokontophyta;bacillariophyceae;naviculales;pleurosigmataceae;pleurosigma;;pleurosigma;true;true;living
+whoi;Prorocentrum;chromista;myzozoa;dinophyceae;prorocentrales;prorocentraceae;prorocentrum;;prorocentrum;true;true;living
+whoi;Proterythropsis_sp;chromista;myzozoa;dinophyceae;gymnodiniales;warnowiaceae;proterythropsis;;proterythropsis;true;true;living
+whoi;Protoperidinium;chromista;myzozoa;dinophyceae;peridiniales;protoperidiniaceae;protoperidinium;;protoperidinium;true;true;living
+whoi;Pseudochattonella_farcimen;chromista;ochrophyta;dictyochophyceae;florenciellales;florenciellales;pseudochattonella;farcimen;pseudochattonella farcimen;true;true;living
+whoi;Pseudonitzschia;chromista;heterokontophyta;bacillariophyceae;bacillariales;bacillariaceae;pseudo-nitzschia;;pseudo-nitzschia;true;true;living
+whoi;Pyramimonas_longicauda;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;pyramimonas;longicauda;pyramimonas longicauda;true;true;living
+whoi;Rhizosolenia;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;rhizosolenia;;rhizosolenia;true;true;living
+whoi;Skeletonema;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;skeletonemaceae;skeletonema;;skeletonema;true;true;living
+whoi;spore;;;;;;;;spore;true;true;living
+whoi;Stephanopyxis;chromista;heterokontophyta;bacillariophyceae;melosirales;stephanopyxidaceae;stephanopyxis;;stephanopyxis;true;true;living
+whoi;Strobilidium_morphotype1;chromista;ciliophora;oligotrichea;choreotrichida;strobilidiidae;strobilidium;;strobilidium;true;true;living
+whoi;Strombidium_capitatum;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;capitatum;strombidium capitatum;true;true;living
+whoi;Strombidium_conicum;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;conicum;strombidium conicum;true;true;living
+whoi;Strombidium_inclinatum;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;inclinatum;strombidium inclinatum;true;true;living
+whoi;Strombidium_morphotype1;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;;strombidium;true;true;living
+whoi;Strombidium_morphotype2;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;;strombidium;true;true;living
+whoi;Strombidium_oculatum;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;oculatum;strombidium oculatum;true;true;living
+whoi;Strombidium_wulffi;chromista;ciliophora;oligotrichea;oligotrichida;strombidiidae;strombidium;wulffi;strombidium wulffi;true;true;living
+whoi;Thalassionema;chromista;heterokontophyta;bacillariophyceae;thalassionematales;thalassionemataceae;thalassionema;;thalassionema;true;true;living
+whoi;Thalassiosira;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;thalassiosira;;thalassiosira;true;true;living
+whoi;Thalassiosira_dirty;chromista;heterokontophyta;bacillariophyceae;thalassiosirales;thalassiosiraceae;thalassiosira;;thalassiosira;true;true;living
+whoi;Tiarina_fusus;chromista;ciliophora;prostomatea;prorodontida;colepidae;tiarina;fusus;tiarina fusus;true;true;living
+whoi;Tintinnid;chromista;ciliophora;spirotrichea;tintinnida;;;;tintinnida;true;true;living
+whoi;Tontonia_appendiculariformis;chromista;ciliophora;oligotrichea;oligotrichida;tontoniidae;tontonia;appendiculariformis;tontonia appendiculariformis;true;true;living
+whoi;Tontonia_gracillima;chromista;ciliophora;oligotrichea;oligotrichida;tontoniidae;tontonia;gracillima;tontonia gracillima;true;true;living
+whoi;zooplankton;protozoa;;;;;;;protozoa;true;true;living
+zoocamnet;Acartiidae;animalia;arthropoda;copepoda;calanoida;acartiidae;;;acartiidae;true;true;living
+zoocamnet;Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+zoocamnet;Amphipoda;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+zoocamnet;Annelida;animalia;annelida;;;;;;annelida;true;true;living
+zoocamnet;Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+zoocamnet;Bivalvia;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+zoocamnet;bract_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zoocamnet;Calanidae;animalia;arthropoda;copepoda;calanoida;calanidae;;;calanidae;true;true;living
+zoocamnet;Calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+zoocamnet;Calocalanus;animalia;arthropoda;copepoda;calanoida;paracalanidae;calocalanus;;calocalanus;true;true;living
+zoocamnet;Candaciidae;animalia;arthropoda;copepoda;calanoida;candaciidae;;;candaciidae;true;true;living
+zoocamnet;Cavoliniidae;animalia;mollusca;gastropoda;pteropoda;cavoliniidae;;;cavoliniidae;true;true;living
+zoocamnet;Centropagidae;animalia;arthropoda;copepoda;calanoida;centropagidae;;;centropagidae;true;true;living
+zoocamnet;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+zoocamnet;chainlarge;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;;diatoma;true;true;living
+zoocamnet;Ciripedia;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+zoocamnet;Cladocera;animalia;mollusca;bivalvia;pteriida;inoceramidae;cladoceramus;;cladoceramus;true;true;living
+zoocamnet;Cnidaria;;;;;;;;cnidaria;true;true;living
+zoocamnet;comb_Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+zoocamnet;Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+zoocamnet;Corycaeidae;animalia;arthropoda;copepoda;cyclopoida;corycaeidae;;;corycaeidae;true;true;living
+zoocamnet;Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+zoocamnet;Cyclopoida;animalia;arthropoda;copepoda;cyclopoida;;;;cyclopoida;true;true;living
+zoocamnet;cyphonaute;animalia;bryozoa;;;;;;bryozoa;true;true;living
+zoocamnet;Decapoda;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+zoocamnet;Diatoma;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;;diatoma;true;true;living
+zoocamnet;Diatoma tenuis;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;diatoma;tenuis;diatoma tenuis;true;true;living
+zoocamnet;Doliolida;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+zoocamnet;egg_Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+zoocamnet;egg_Engraudilae;animalia;chordata;teleostei;clupeiformes;;;;clupeiformes;true;true;living
+zoocamnet;egg_Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+zoocamnet;empty_Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+zoocamnet;empty_Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+zoocamnet;Euchaeta;animalia;arthropoda;copepoda;calanoida;euchaetidae;euchaeta;;euchaeta;true;true;living
+zoocamnet;eudoxie_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zoocamnet;Euterpina;animalia;arthropoda;copepoda;harpacticoida;tachidiidae;euterpina;;euterpina;true;true;living
+zoocamnet;Evadne;animalia;arthropoda;branchiopoda;onychopoda;podonidae;evadne;;evadne;true;true;living
+zoocamnet;Gastropoda;animalia;mollusca;gastropoda;;;;;gastropoda;true;true;living
+zoocamnet;gonophore_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zoocamnet;Halosphaera;plantae;chlorophyta;pyramimonadophyceae;pyramimonadales;pyramimonadaceae;halosphaera;;halosphaera;true;true;living
+zoocamnet;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;;;;harpacticoida;true;true;living
+zoocamnet;Hydrozoa;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+zoocamnet;Isias;animalia;arthropoda;copepoda;calanoida;centropagidae;isias;;isias;true;true;living
+zoocamnet;larvae_Annelida;animalia;annelida;;;;;;annelida;true;true;living
+zoocamnet;larvae_Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+zoocamnet;larvae_Echinodermata;animalia;echinodermata;;;;;;echinodermata;true;true;living
+zoocamnet;Limacinidae;animalia;mollusca;gastropoda;pteropoda;limacinidae;;;limacinidae;true;true;living
+zoocamnet;Luidiidae;animalia;echinodermata;asteroidea;paxillosida;luidiidae;;;luidiidae;true;true;living
+zoocamnet;megalopa;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+zoocamnet;Metrinidae;animalia;arthropoda;copepoda;calanoida;metrinidae;;;metrinidae;true;true;living
+zoocamnet;Microstella;animalia;mollusca;gastropoda;pylopulmonata;pyramidellidae;microstellaria;;microstellaria;true;true;living
+zoocamnet;multiple_Copepoda;animalia;arthropoda;copepoda;;;;;copepoda;true;true;living
+zoocamnet;Nannosquillidae;animalia;arthropoda;malacostraca;stomatopoda;nannosquillidae;;;nannosquillidae;true;true;living
+zoocamnet;nauplii_Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+zoocamnet;nectophore_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zoocamnet;Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;neoceratium;;neoceratium;true;true;living
+zoocamnet;Noctiluca;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;;noctiluca;true;true;living
+zoocamnet;Obelia;animalia;cnidaria;hydrozoa;leptothecata;campanulariidae;obelia;;obelia;true;true;living
+zoocamnet;Oncaea;animalia;arthropoda;copepoda;cyclopoida;oncaeidae;oncaea;;oncaea;true;true;living
+zoocamnet;other_Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+zoocamnet;other_Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+zoocamnet;Penilia;animalia;arthropoda;branchiopoda;ctenopoda;sididae;penilia;;penilia;true;true;living
+zoocamnet;Phoronida;animalia;phoronida;;;;;;phoronida;true;true;living
+zoocamnet;Physonectae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+zoocamnet;pluteus_Echinodermata;animalia;echinodermata;;;;;;echinodermata;true;true;living
+zoocamnet;Podon;animalia;arthropoda;branchiopoda;onychopoda;podonidae;podon;;podon;true;true;living
+zoocamnet;Poecilostomatoida;;;;;;;;poecilostomatoida;true;true;living
+zoocamnet;Pontellidae;animalia;arthropoda;copepoda;calanoida;pontellidae;;;pontellidae;true;true;living
+zoocamnet;Porcellanidae;animalia;arthropoda;malacostraca;decapoda;porcellanidae;;;porcellanidae;true;true;living
+zoocamnet;Rhizaria;chromista;;;;;;;chromista;true;true;living
+zoocamnet;Rhizosolenids;;;;;;;;rhizosolenids;true;true;living
+zoocamnet;shrimp_like;animalia;arthropoda;malacostraca;;;;;malacostraca;true;true;living
+zoocamnet;tail_Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+zoocamnet;Temoridae;animalia;arthropoda;copepoda;calanoida;temoridae;;;temoridae;true;true;living
+zoocamnet;Thalassionema;chromista;heterokontophyta;bacillariophyceae;thalassionematales;thalassionemataceae;thalassionema;;thalassionema;true;true;living
+zoocamnet;Thaliacea;animalia;chordata;thaliacea;;;;;thaliacea;true;true;living
+zoocamnet;Trichodesmium;bacteria;cyanobacteria;cyanophyceae;oscillatoriales;microcoleaceae;trichodesmium;;trichodesmium;true;true;living
+zoocamnet;veliger;animalia;mollusca;;;;;;mollusca;true;true;living
+zoocamnet;zoea_brachyura;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+zoolake;aphanizomenon;bacteria;cyanobacteria;cyanophyceae;nostocales;aphanizomenonaceae;aphanizomenon;;aphanizomenon;true;true;living
+zoolake;asplanchna;animalia;rotifera;eurotatoria;ploima;asplanchnidae;asplanchna;;asplanchna;true;true;living
+zoolake;asterionella;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;asterionella;;asterionella;true;true;living
+zoolake;bosmina;animalia;arthropoda;branchiopoda;anomopoda;bosminidae;bosmina;;bosmina;true;true;living
+zoolake;brachionus;animalia;rotifera;eurotatoria;ploima;brachionidae;brachionus;;brachionus;true;true;living
+zoolake;ceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;ceratium;;ceratium;true;true;living
+zoolake;chaoborus;animalia;arthropoda;insecta;diptera;chaoboridae;chaoborus;;chaoborus;true;true;living
+zoolake;conochilus;animalia;rotifera;eurotatoria;flosculariaceae;conochilidae;conochilus;;conochilus;true;true;living
+zoolake;cyclops;animalia;arthropoda;copepoda;cyclopoida;cyclopidae;cyclops;;cyclops;true;true;living
+zoolake;daphnia;animalia;arthropoda;branchiopoda;anomopoda;daphniidae;daphnia;;daphnia;true;true;living
+zoolake;daphnia_skins;animalia;arthropoda;branchiopoda;anomopoda;daphniidae;daphnia;;daphnia;true;true;living
+zoolake;diaphanosoma;animalia;arthropoda;branchiopoda;ctenopoda;sididae;diaphanosoma;;diaphanosoma;true;true;living
+zoolake;diatom_chain;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;true;true;living
+zoolake;dinobryon;chromista;ochrophyta;chrysophyceae;chromulinales;dinobryaceae;dinobryon;;dinobryon;true;true;living
+zoolake;eudiaptomus;animalia;arthropoda;copepoda;calanoida;diaptomidae;eudiaptomus;;eudiaptomus;true;true;living
+zoolake;filament;bacteria;cyanobacteria;cyanophyceae;;;;;cyanophyceae;true;true;living
+zoolake;fragilaria;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;fragilaria;;fragilaria;true;true;living
+zoolake;hydra;animalia;cnidaria;hydrozoa;anthoathecata;hydridae;hydra;;hydra;true;true;living
+zoolake;kellicottia;animalia;rotifera;eurotatoria;ploima;brachionidae;kellicottia;;kellicottia;true;true;living
+zoolake;keratella_cochlearis;animalia;rotifera;eurotatoria;ploima;brachionidae;keratella;cochlearis;keratella cochlearis;true;true;living
+zoolake;keratella_quadrata;animalia;rotifera;eurotatoria;ploima;brachionidae;keratella;quadrata;keratella quadrata;true;true;living
+zoolake;leptodora;animalia;arthropoda;branchiopoda;haplopoda;leptodoridae;leptodora;;leptodora;true;true;living
+zoolake;maybe_cyano;bacteria;cyanobacteria;cyanophyceae;;;;;cyanophyceae;true;true;living
+zoolake;nauplius;animalia;arthropoda;copepoda;cyclopoida;cyclopidae;cyclops;;cyclops;true;true;living
+zoolake;paradileptus;chromista;ciliophora;litostomatea;haptorida;tracheliidae;paradileptus;;paradileptus;true;true;living
+zoolake;polyarthra;animalia;rotifera;eurotatoria;ploima;synchaetidae;polyarthra;;polyarthra;true;true;living
+zoolake;rotifers;animalia;rotifera;;;;;;rotifera;true;true;living
+zoolake;synchaeta;animalia;rotifera;eurotatoria;ploima;synchaetidae;synchaeta;;synchaeta;true;true;living
+zoolake;trichocerca;animalia;rotifera;eurotatoria;ploima;trichocercidae;trichocerca;;trichocerca;true;true;living
+zoolake;unknown_plankton;;;;;;;;unknown;true;true;living
+zoolake;uroglena;chromista;ochrophyta;chrysophyceae;ochromonadales;ochromonadaceae;uroglena;;uroglena;true;true;living
+zooscan;Acartiidae;animalia;arthropoda;copepoda;calanoida;acartiidae;;;acartiidae;true;true;living
+zooscan;Actiniaria;animalia;cnidaria;hexacorallia;actiniaria;;;;actiniaria;true;true;living
+zooscan;Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+zooscan;actinula;animalia;cnidaria;hydrozoa;narcomedusae;solmundaeginidae;solmundella;bitentaculata;solmundella bitentaculata;true;true;living
+zooscan;Aglaura;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;aglaura;hemistoma;aglaura hemistoma;true;true;living
+zooscan;Amphipoda;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+zooscan;Annelida;animalia;annelida;;;;;;annelida;true;true;living
+zooscan;Atlanta;animalia;mollusca;gastropoda;littorinimorpha;atlantidae;;;atlantidae;true;true;living
+zooscan;Bassia;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;bassia;bassensis;bassia bassensis;true;true;living
+zooscan;Bivalvia;animalia;mollusca;bivalvia;;;;;bivalvia;true;true;living
+zooscan;bract_Abylopsis tetragona;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;abylopsis;tetragona;abylopsis tetragona;true;true;living
+zooscan;bract_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zooscan;Calanidae;animalia;arthropoda;copepoda;calanoida;calanidae;;;calanidae;true;true;living
+zooscan;Calanoida;animalia;arthropoda;copepoda;calanoida;;;;calanoida;true;true;living
+zooscan;Calocalanus pavo;animalia;arthropoda;copepoda;calanoida;paracalanidae;calocalanus;pavo;calocalanus pavo;true;true;living
+zooscan;calyptopsis;animalia;arthropoda;malacostraca;euphausiacea;;;;euphausiacea;true;true;living
+zooscan;Candaciidae;animalia;arthropoda;copepoda;calanoida;candaciidae;;;candaciidae;true;true;living
+zooscan;Cavolinia inflexa;animalia;mollusca;gastropoda;pteropoda;cavoliniidae;cavolinia;inflexa;cavolinia inflexa;true;true;living
+zooscan;Centropagidae;animalia;arthropoda;copepoda;calanoida;centropagidae;;;centropagidae;true;true;living
+zooscan;Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+zooscan;cirrus;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+zooscan;Copilia;animalia;arthropoda;copepoda;cyclopoida;sapphirinidae;copilia;;copilia;true;true;living
+zooscan;Corycaeidae;animalia;arthropoda;copepoda;cyclopoida;corycaeidae;;;corycaeidae;true;true;living
+zooscan;Coscinodiscus;chromista;heterokontophyta;bacillariophyceae;coscinodiscales;coscinodiscaceae;coscinodiscus;;coscinodiscus;true;true;living
+zooscan;Creseidae;animalia;mollusca;gastropoda;pteropoda;cliidae;clio;pyramidata;clio pyramidata;true;true;living
+zooscan;Creseidae acicula;animalia;mollusca;gastropoda;pteropoda;creseidae;creseis;acicula;creseis acicula;true;true;living
+zooscan;Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;true;true;living
+zooscan;Cumacea;animalia;arthropoda;malacostraca;cumacea;;;;cumacea;true;true;living
+zooscan;Cymbulia peroni;animalia;mollusca;gastropoda;pteropoda;cymbuliidae;cymbulia;peroni;cymbulia peroni;true;true;living
+zooscan;cyphonaute;animalia;bryozoa;;;;;;bryozoa;true;true;living
+zooscan;cypris;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+zooscan;Doliolida;animalia;chordata;thaliacea;doliolida;;;;doliolida;true;true;living
+zooscan;egg_Actinopterygii;animalia;chordata;;;;;;chordata;true;true;living
+zooscan;egg_Mollusca;animalia;mollusca;;;;;;mollusca;true;true;living
+zooscan;endostyle;animalia;chordata;thaliacea;salpida;salpidae;;;salpidae;true;true;living
+zooscan;ephyra;animalia;cnidaria;scyphozoa;;;;;scyphozoa;true;true;living
+zooscan;Eucalanidae;animalia;arthropoda;copepoda;calanoida;eucalanidae;;;eucalanidae;true;true;living
+zooscan;Euchaetidae;animalia;arthropoda;copepoda;calanoida;euchaetidae;;;euchaetidae;true;true;living
+zooscan;eudoxie_Abylopsis tetragona;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;abylopsis;;abylopsis;true;true;living
+zooscan;eudoxie_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zooscan;Eumalacostraca;animalia;arthropoda;malacostraca;;;;;malacostraca;true;true;living
+zooscan;Evadne;animalia;arthropoda;branchiopoda;onychopoda;podonidae;evadne;;evadne;true;true;living
+zooscan;Foraminifera;chromista;foraminifera;globothalamea;rotaliida;globigerinidae;;;globigerinidae;true;true;living
+zooscan;Fritillariidae;animalia;chordata;appendicularia;copelata;fritillariidae;;;fritillariidae;true;true;living
+zooscan;gonophore_Abylopsis tetragona;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;abylopsis;tetragona;abylopsis tetragona;true;true;living
+zooscan;gonophore_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zooscan;Gymnosomata;animalia;mollusca;gastropoda;pteropoda;;;;pteropoda;true;true;living
+zooscan;Haloptilus;animalia;arthropoda;copepoda;calanoida;augaptilidae;haloptilus;;haloptilus;true;true;living
+zooscan;Harosa;chromista;;;;;;;chromista;true;true;living
+zooscan;Harpacticoida;animalia;arthropoda;copepoda;harpacticoida;tachidiidae;euterpina;;euterpina;true;true;living
+zooscan;head_Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+zooscan;Heterorhabdidae;animalia;arthropoda;copepoda;calanoida;heterorhabdidae;;;heterorhabdidae;true;true;living
+zooscan;Hydrozoa;animalia;cnidaria;hydrozoa;;;;;hydrozoa;true;true;living
+zooscan;Hyperiidea;animalia;arthropoda;malacostraca;amphipoda;;;;amphipoda;true;true;living
+zooscan;Isopoda;animalia;arthropoda;malacostraca;isopoda;cirolanidae;eurydice;;eurydice;true;true;living
+zooscan;juvenile_Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+zooscan;larvae_Annelida;animalia;annelida;;;;;;annelida;true;true;living
+zooscan;larvae_Echinodermata;animalia;echinodermata;;;;;;echinodermata;true;true;living
+zooscan;larvae_Luciferidae;animalia;arthropoda;malacostraca;decapoda;luciferidae;;;luciferidae;true;true;living
+zooscan;larvae_Mysida;animalia;arthropoda;malacostraca;mysida;;;;mysida;true;true;living
+zooscan;larvae_Porcellanidae;animalia;arthropoda;malacostraca;decapoda;porcellanidae;;;porcellanidae;true;true;living
+zooscan;larvae_Stomatopoda;animalia;arthropoda;malacostraca;stomatopoda;;;;stomatopoda;true;true;living
+zooscan;Limacinidae;animalia;mollusca;gastropoda;pteropoda;limacinidae;;;limacinidae;true;true;living
+zooscan;Liriope;animalia;cnidaria;hydrozoa;limnomedusae;geryoniidae;liriope;;liriope;true;true;living
+zooscan;megalopa;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+zooscan;metanauplii_Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+zooscan;Metridinidae;animalia;arthropoda;copepoda;calanoida;metridinidae;pleuromamma;abdominalis;pleuromamma abdominalis;true;true;living
+zooscan;Mysida;animalia;arthropoda;malacostraca;mysida;;;;mysida;true;true;living
+zooscan;nauplii_Cirripedia;animalia;arthropoda;thecostraca;;;;;thecostraca;true;true;living
+zooscan;nauplii_Crustacea;animalia;arthropoda;;;;;;arthropoda;true;true;living
+zooscan;nectophore_Abylopsis tetragona;animalia;cnidaria;hydrozoa;siphonophorae;abylidae;abylopsis;tetragona;abylopsis tetragona;true;true;living
+zooscan;nectophore_Diphyidae;animalia;cnidaria;hydrozoa;siphonophorae;diphyidae;;;diphyidae;true;true;living
+zooscan;nectophore_Hippopodiidae;animalia;cnidaria;hydrozoa;siphonophorae;hippopodiidae;;;hippopodiidae;true;true;living
+zooscan;nectophore_Physonectae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+zooscan;Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;tripos;;tripos;true;true;living
+zooscan;Noctiluca;chromista;myzozoa;dinophyceae;noctilucales;noctilucaceae;noctiluca;;noctiluca;true;true;living
+zooscan;nucleus;animalia;chordata;thaliacea;salpida;salpidae;;;salpidae;true;true;living
+zooscan;Obelia;animalia;cnidaria;hydrozoa;leptothecata;campanulariidae;obelia;;obelia;true;true;living
+zooscan;Oikopleuridae;animalia;chordata;appendicularia;copelata;oikopleuridae;;;oikopleuridae;true;true;living
+zooscan;Oithonidae;animalia;arthropoda;copepoda;cyclopoida;oithonidae;;;oithonidae;true;true;living
+zooscan;Oncaeidae;animalia;arthropoda;copepoda;cyclopoida;oncaeidae;;;oncaeidae;true;true;living
+zooscan;Ostracoda;animalia;arthropoda;ostracoda;;;;;ostracoda;true;true;living
+zooscan;Penilia;animalia;arthropoda;branchiopoda;ctenopoda;sididae;penilia;avirostris;penilia avirostris;true;true;living
+zooscan;Phaeodaria;chromista;cercozoa;thecofilosea;;;;;thecofilosea;true;true;living
+zooscan;Physonectae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+zooscan;pluteus_Echinoidea;animalia;echinodermata;echinoidea;;;;;echinoidea;true;true;living
+zooscan;pluteus_Ophiuroidea;animalia;echinodermata;ophiuroidea;;;;;ophiuroidea;true;true;living
+zooscan;Podon;animalia;arthropoda;branchiopoda;onychopoda;podonidae;podon;;podon;true;true;living
+zooscan;Pontellidae;animalia;arthropoda;copepoda;calanoida;pontellidae;;;pontellidae;true;true;living
+zooscan;protozoea_Eumalacostraca;animalia;arthropoda;malacostraca;mysida;;;;mysida;true;true;living
+zooscan;protozoea_Penaeidae;animalia;arthropoda;malacostraca;decapoda;penaeidae;;;penaeidae;true;true;living
+zooscan;protozoea_Sergestidae;animalia;arthropoda;malacostraca;decapoda;sergestidae;;;sergestidae;true;true;living
+zooscan;Pyrosomatida;animalia;chordata;thaliacea;pyrosomatida;;;;pyrosomatida;true;true;living
+zooscan;Rhincalanidae;animalia;arthropoda;copepoda;calanoida;rhincalanidae;;;rhincalanidae;true;true;living
+zooscan;Rhopalonema velatum;animalia;cnidaria;hydrozoa;trachymedusae;rhopalonematidae;rhopalonema;velatum;rhopalonema velatum;true;true;living
+zooscan;Salpida;animalia;chordata;thaliacea;salpida;;;;salpida;true;true;living
+zooscan;Sapphirinidae;animalia;arthropoda;copepoda;cyclopoida;sapphirinidae;;;sapphirinidae;true;true;living
+zooscan;siphonula;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;true;true;living
+zooscan;Solmundella bitentaculata;animalia;cnidaria;hydrozoa;narcomedusae;solmundaeginidae;solmundella;bitentaculata;solmundella bitentaculata;true;true;living
+zooscan;tail_Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;true;true;living
+zooscan;tail_Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;true;true;living
+zooscan;Temoridae;animalia;arthropoda;copepoda;calanoida;temoridae;;;temoridae;true;true;living
+zooscan;Tomopteridae;animalia;annelida;polychaeta;phyllodocida;tomopteridae;;;tomopteridae;true;true;living
+zooscan;trunk_Appendicularia;animalia;chordata;appendicularia;copelata;oikopleuridae;;;oikopleuridae;true;true;living
+zooscan;zoea_Brachyura;animalia;arthropoda;malacostraca;decapoda;;;;decapoda;true;true;living
+zooscan;zoea_Galatheidae;animalia;arthropoda;malacostraca;decapoda;galatheidae;;;galatheidae;true;true;living
+flowcamnet;other_egg;;;;;;;;egg;false;true;living
+flowcamnet;other_living;;;;;;;;other;false;true;living
+global_uvp5;egg;;;;;;;;egg;false;true;living
+global_uvp5;egg 1 temp;animalia;chordata;teleostei;clupeiformes;engraulidae;;;engraulidae;false;true;living
+global_uvp5;like<egg;;;;;;;;egg;false;true;living
+global_uvp5;living;;;;;;;;other;false;true;living
+global_uvp5;multiple organisms;;;;;;;;mix;false;true;living
+global_uvp5;other<living;;;;;;;;other;false;true;living
+isiisnet;other_living;;;;;;;;other;false;true;living
+jedioceans;LClass_32.1Adult_Fish;animalia;chordata;;;;;;chordata;false;true;living
+jedioceans;LClass_egg;;;;;;;;egg;false;true;living
+jedioceans;LClass_eggs;;;;;;;;egg;false;true;living
+jedioceans;LClass_Fish_larvae;animalia;chordata;;;;;;chordata;false;true;living
+jedioceans;LClass_fish_lavae;animalia;chordata;;;;;;chordata;false;true;living
+jedioceans;LClass_multiple;;;;;;;;mix;false;true;living
+jedioceans;LClass_Multiple_organisms;;;;;;;;mix;false;true;living
+jedioceans;LClass_shell;animalia;arthropoda;diplopoda;polydesmida;paradoxosomatidae;shelleyomorpha;;shelleyomorpha;false;true;living
+planktonset1.0;fish_larvae_deep_body;animalia;chordata;teleostei;;;;;fish_larvae;false;true;living
+planktonset1.0;fish_larvae_leptocephali;animalia;chordata;teleostei;anguilliformes;nettastomatidae;leptocephalus;;leptocephalus;false;true;living
+planktonset1.0;fish_larvae_medium_body;animalia;chordata;teleostei;;;;;fish_larvae;false;true;living
+planktonset1.0;fish_larvae_myctophids;animalia;chordata;teleostei;myctophiformes;myctophidae;;;myctophidae;false;true;living
+planktonset1.0;fish_larvae_thin_body;animalia;chordata;teleostei;;;;;fish_larvae;false;true;living
+planktonset1.0;fish_larvae_very_thin_body;animalia;chordata;teleostei;;;;;fish_larvae;false;true;living
+planktonset1.0;invertebrate_larvae_other_A;;;;;;;;invertebrate_larvae;false;true;living
+planktonset1.0;invertebrate_larvae_other_B;;;;;;;;invertebrate_larvae;false;true;living
+planktoscope;egg sac<egg;;;;;;;;egg;false;true;living
+planktoscope;egg<other;;;;;;;;egg;false;true;living
+planktoscope;other<living;;;;;;;;other;false;true;living
+planktoscope;pollen;;;;;;;;pollen;false;true;living
+planktoscope;seaweed;;;;;;;;seaweed;false;true;living
+sykezooscan2024;Eggs;;;;;;;;egg;false;true;living
+sykezooscan2024;Fish_eggs;;;;;;;;fish egg;false;true;living
+uvp6net;other<living;;;;;;;;other;false;true;living
+whoi;pollen;;;;;;;;pollen;false;true;living
+zoocamnet;egg_other;;;;;;;;egg;false;true;living
+zoocamnet;egg_Sardina;animalia;chordata;teleostei;clupeiformes;;;;clupeiformes;false;true;living
+zoocamnet;other_living;;;;;;;;other;false;true;living
+zoolake;fish;animalia;chordata;;;;;;chordata;false;true;living
+zooscan;Insecta;animalia;arthropoda;hexapoda;;;;;hexapoda;false;true;living
+zooscan;other_egg;;;;;;;;egg;false;true;living
+zooscan;other_living;animalia;arthropoda;copepoda;monstrilloida;;;;monstrilloida;false;true;living
+zooscan;seaweed;;;;;;;;seaweed;false;true;living
+global_uvp5;spiky caps;chromista;;;;;;;chromista;false;false;detritus
+whoi;G_delicatula_detritus;chromista;heterokontophyta;bacillariophyceae;rhizosoleniales;rhizosoleniaceae;guinardia;delicatula;guinardia delicatula;true;false;detritus
+zoolake;copepod_skins;animalia;arthropoda;copepoda;;;;;copepoda;true;false;detritus
+flowcamnet;detritus;;;;;;;;detritus;false;false;detritus
+flowcamnet;fiber;;;;;;;;fiber;false;false;detritus
+flowcamnet;part_Ciliophora;chromista;ciliophora;;;;;;ciliophora;false;false;detritus
+flowcamnet;part_Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+flowcamnet;part_Ditylum;chromista;heterokontophyta;bacillariophyceae;lithodesmiales;lithodesmiaceae;ditylum;;ditylum;false;false;detritus
+flowcamnet;part_Odontella;chromista;heterokontophyta;bacillariophyceae;triceratiales;triceratiaceae;odontella;;odontella;false;false;detritus
+flowcamnet;artefact;;;;;;;;artefact;false;false;invalid
+flowcamnet;badfocus;;;;;;;;bad focus;false;false;invalid
+flowcamnet;ball_bearing_like;;;;;;;;shape;false;false;invalid
+flowcamnet;bubble;;;;;;;;bubble;false;false;invalid
+flowcamnet;contrasted_blob;;;;;;;;shape;false;false;invalid
+flowcamnet;crumple sphere;;;;;;;;shape;false;false;invalid
+flowcamnet;dark;;;;;;;;other;false;false;invalid
+flowcamnet;darkrods;;;;;;;;shape;false;false;invalid
+flowcamnet;darksphere;;;;;;;;shape;false;false;invalid
+flowcamnet;dinophyceae_shape;;;;;;;;shape;false;false;invalid
+flowcamnet;light;animalia;mollusca;gastropoda;neogastropoda;fasciolariidae;lightbournus;;other;false;false;invalid
+flowcamnet;lightrods;;;;;;;;shape;false;false;invalid
+flowcamnet;lightsphere;;;;;;;;shape;false;false;invalid
+flowcamnet;polar_view;chromista;myzozoa;dinophyceae;;;;;dinophyceae;false;false;invalid
+flowcamnet;transparent_u;;;;;;;;shape;false;false;invalid
+global_uvp5;artefact;;;;;;;;artefact;false;false;invalid
+global_uvp5;badfocus<artefact;;;;;;;;bad focus;false;false;invalid
+global_uvp5;beanlike;;;;;;;;shape;false;false;invalid
+global_uvp5;bubble;;;;;;;;bubble;false;false;invalid
+global_uvp5;caps with filament;;;;;;;;other;false;false;invalid
+global_uvp5;compact;;;;;;;;other;false;false;invalid
+global_uvp5;dark<detritus;;;;;;;;detritus;false;false;detritus
+global_uvp5;dark<fluffy;;;;;;;;other;false;false;invalid
+global_uvp5;dark<sphere;;;;;;;;shape;false;false;invalid
+global_uvp5;darkrods;;;;;;;;other;false;false;invalid
+global_uvp5;detritus;;;;;;;;detritus;false;false;detritus
+global_uvp5;double;;;;;;;;error;false;false;invalid
+global_uvp5;double sphere;chromista;;;;;;;chromista;false;false;detritus
+global_uvp5;double spike;chromista;;;;;;;chromista;false;false;detritus
+global_uvp5;duplicate;;;;;;;;error;false;false;invalid
+global_uvp5;elongated stick;;;;;;;;elongated stick;false;false;detritus
+global_uvp5;fecal pellets;;;;;;;;feces;false;false;detritus
+global_uvp5;feces;;;;;;;;feces;false;false;detritus
+global_uvp5;fiber;;;;;;;;fiber;false;false;detritus
+global_uvp5;filament;;;;;;;;filament;false;false;detritus
+global_uvp5;fluffy<detritus;;;;;;;;detritus;false;false;detritus
+global_uvp5;fluffy<fiber;;;;;;;;fiber;false;false;detritus
+global_uvp5;gelatinous;;;;;;;;other;false;false;invalid
+global_uvp5;hairy capsule;chromista;;;;;;;chromista;false;false;detritus
+global_uvp5;head<Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;false;false;detritus
+global_uvp5;head<Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+global_uvp5;leg<Coelodendridae;chromista;cercozoa;thecofilosea;phaeodendrida;coelodendridae;;;coelodendridae;false;false;detritus
+global_uvp5;leg<Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+global_uvp5;light aggregates;;;;;;;;mix;false;false;invalid
+global_uvp5;light<detritus;;;;;;;;detritus;false;false;detritus
+global_uvp5;light<fluffy;;;;;;;;other;false;false;invalid
+global_uvp5;light<sphere;;;;;;;;shape;false;false;invalid
+global_uvp5;molt;;;;;;;;molt;false;false;detritus
+global_uvp5;other<plastic;;;;;;;;plastic;false;false;inert
+global_uvp5;othertocheck;;;;;;;;other;false;false;invalid
+global_uvp5;ovoid;;;;;;;;shape;false;false;invalid
+global_uvp5;part<Cnidaria;animalia;cnidaria;;;;;;cnidaria;false;false;detritus
+global_uvp5;part<Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+global_uvp5;part<other;;;;;;;;other;false;false;detritus
+global_uvp5;part<Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;false;false;detritus
+global_uvp5;sphere<detritus;;;;;;;;detritus;false;false;detritus
+global_uvp5;sphere<othertocheck;;;;;;;;shape;false;false;invalid
+global_uvp5;t001;;;;;;;;unknown;false;false;invalid
+global_uvp5;t002;;;;;;;;unknown;false;false;invalid
+global_uvp5;t003;;;;;;;;unknown;false;false;invalid
+global_uvp5;t004;;;;;;;;unknown;false;false;invalid
+global_uvp5;t006;;;;;;;;unknown;false;false;invalid
+global_uvp5;t007;;;;;;;;unknown;false;false;invalid
+global_uvp5;t010;;;;;;;;unknown;false;false;invalid
+global_uvp5;t011;;;;;;;;unknown;false;false;invalid
+global_uvp5;t013;;;;;;;;unknown;false;false;invalid
+global_uvp5;t018;;;;;;;;unknown;false;false;invalid
+global_uvp5;t019;;;;;;;;unknown;false;false;invalid
+global_uvp5;tail<Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;false;false;detritus
+global_uvp5;tail<Chaetognatha;animalia;chaetognatha;;;;;;chaetognatha;false;false;detritus
+global_uvp5;tail<Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+global_uvp5;temp cross;;;;;;;;other;false;false;invalid
+global_uvp5;tentacle<Cnidaria;animalia;cnidaria;;;;;;cnidaria;false;false;detritus
+global_uvp5;tentacle<Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;false;false;detritus
+global_uvp5;tentacle<gelatinous;;;;;;;;other;false;false;detritus
+global_uvp5;tentacle<Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;false;false;detritus
+global_uvp5;turbid;;;;;;;;other;false;false;invalid
+isiisnet;detritus;;;;;;;;detritus;false;false;detritus
+isiisnet;part_Cnidaria;animalia;cnidaria;;;;;;cnidaria;false;false;detritus
+isiisnet;streak;;;;;;;;other;false;false;invalid
+isiisnet;vertical line;;;;;;;;shape;false;false;invalid
+jedioceans;LClass_Detritus;;;;;;;;detritus;false;false;detritus
+jedioceans;LClass_Detritus_dot;;;;;;;;detritus;false;false;detritus
+jedioceans;LClass_Detritus_stickers;;;;;;;;detritus;false;false;detritus
+jedioceans;LClass_organism_border;;;;;;;;other;false;false;detritus
+jedioceans;LClass_Organism_parts_general;;;;;;;;other;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_aggregate_large;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_aggregate_medium;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_aggregate_small;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_com_large;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_com_medium;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_com_small;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.35.Marine_snow_stick;;;;;;;;marine snow;false;false;detritus
+jedioceans;LClass_Pa.36.Fecal_pellets;;;;;;;;feces;false;false;detritus
+jedioceans;LClass_Pa.36.Fecal_pellets_New;;;;;;;;feces;false;false;detritus
+jedioceans;LClass_Pa.Other_exuviae;;;;;;;;other;false;false;detritus
+jedioceans;LClass_partCrustaceo;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+jedioceans;LClass_Pa.39.Mineral;;;;;;;;mineral;false;false;inert
+jedioceans;LClass_Pa.Mineral;;;;;;;;mineral;false;false;inert
+jedioceans;LClass_33.Air_bubble;;;;;;;;bubble;false;false;invalid
+jedioceans;LClass_doubt;;;;;;;;unknown;false;false;invalid
+jedioceans;LClass_Doubts;;;;;;;;unknown;false;false;invalid
+jedioceans;LClass_Doutbs;;;;;;;;unknown;false;false;invalid
+jedioceans;LClass_Unfocussed;;;;;;;;bad focus;false;false;invalid
+jedioceans;LClass_unknown;;;;;;;;unknown;false;false;invalid
+jedioceans;LClass_Unkown;;;;;;;;unknown;false;false;invalid
+jedioceans;LRaw;;;;;;;;other;false;false;invalid
+planktonset1.0;artifacts;;;;;;;;artefact;false;false;invalid
+planktonset1.0;artifacts_edge;;;;;;;;artefact;false;false;invalid
+planktonset1.0;detritus_blob;;;;;;;;detritus;false;false;detritus
+planktonset1.0;detritus_filamentous;;;;;;;;detritus;false;false;detritus
+planktonset1.0;detritus_other;;;;;;;;detritus;false;false;detritus
+planktonset1.0;fecal_pellet;;;;;;;;feces;false;false;detritus
+planktonset1.0;hydromedusae_partial_dark;animalia;cnidaria;hydrozoa;;;;;hydrozoa;false;false;detritus
+planktonset1.0;jellies_tentacles;animalia;cnidaria;;;;;;cnidaria;false;false;detritus
+planktonset1.0;siphonophore_other_parts;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;false;false;detritus
+planktonset1.0;siphonophore_partial;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;false;false;detritus
+planktonset1.0;tunicate_partial;animalia;chordata;;;;;;chordata;false;false;detritus
+planktonset1.0;unknown_blobs_and_smudges;;;;;;;;unknown;false;false;invalid
+planktonset1.0;unknown_sticks;;;;;;;;unknown;false;false;invalid
+planktonset1.0;unknown_unclassified;;;;;;;;unknown;false;false;invalid
+planktoscope;dark<detritus;;;;;;;;detritus;false;false;detritus
+planktoscope;detritus;;;;;;;;detritus;false;false;detritus
+planktoscope;fecal pellets;;;;;;;;feces;false;false;detritus
+planktoscope;fiber<detritus;;;;;;;;detritus;false;false;detritus
+planktoscope;light<detritus;;;;;;;;detritus;false;false;detritus
+planktoscope;molt;;;;;;;;molt;false;false;detritus
+planktoscope;part<Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+planktoscope;part<Ctenophora;chromista;heterokontophyta;bacillariophyceae;fragilariales;fragilariaceae;ctenophora;;ctenophora;false;false;detritus
+planktoscope;part<Neoceratium;chromista;myzozoa;dinophyceae;gonyaulacales;ceratiaceae;neoceratium;;neoceratium;false;false;detritus
+planktoscope;sphere<detritus;;;;;;;;detritus;false;false;detritus
+planktoscope;stellate hairs;;;;;;;;stellate hairs;false;false;detritus
+planktoscope;tail<Appendicularia;animalia;chordata;appendicularia;;;;;appendicularia;false;false;detritus
+planktoscope;cristal;;;;;;;;crystal;false;false;inert
+planktoscope;fiber<plastic;;;;;;;;plastic fiber;false;false;inert
+planktoscope;sand;;;;;;;;sand;false;false;inert
+planktoscope;aggregates;;;;;;;;other;false;false;invalid
+planktoscope;artefact;;;;;;;;artefact;false;false;invalid
+planktoscope;badfocus<artefact;;;;;;;;bad focus;false;false;invalid
+planktoscope;badfocus<other;;;;;;;;bad focus;false;false;invalid
+planktoscope;bubble;;;;;;;;bubble;false;false;invalid
+planktoscope;crumple sphere;;;;;;;;shape;false;false;invalid
+planktoscope;dark<sphere;;;;;;;;shape;false;false;invalid
+planktoscope;dry;;;;;;;;other;false;false;invalid
+planktoscope;ghost;;;;;;;;other;false;false;invalid
+planktoscope;moving;;;;;;;;moving;false;false;invalid
+planktoscope;multiple<other;;;;;;;;other;false;false;invalid
+planktoscope;othertocheck;;;;;;;;other;false;false;invalid
+planktoscope;rods<othertocheck;;;;;;;;other;false;false;invalid
+planktoscope;ushape;;;;;;;;shape;false;false;invalid
+syke_ifcb_2022;Beads;;;;;;;;bead;false;false;inert
+sykezooscan2024;Fibers_etc;;;;;;;;fiber;false;false;detritus
+sykezooscan2024;Bubbles;;;;;;;;bubble;false;false;invalid
+uvp6net;detritus;;;;;;;;detritus;false;false;detritus
+uvp6net;fiber;;;;;;;;fiber;false;false;detritus
+uvp6net;filament;;;;;;;;filament;false;false;detritus
+uvp6net;crystal;chromista;heterokontophyta;bacillariophyceae;;;;;bacillariophyceae;false;false;inert
+uvp6net;artefact;;;;;;;;artefact;false;false;invalid
+uvp6net;darksphere;;;;;;;;shape;false;false;invalid
+uvp6net;reflection;;;;;;;;reflection;false;false;invalid
+uvp6net;t004;;;;;;;;unknown;false;false;invalid
+uvp6net;t011;;;;;;;;unknown;false;false;invalid
+whoi;detritus;;;;;;;;detritus;false;false;detritus
+whoi;mix;;;;;;;;mix;false;false;detritus
+whoi;mix_elongated;;;;;;;;mix;false;false;detritus
+whoi;other_interaction;;;;;;;;other;false;false;detritus
+whoi;bead;;;;;;;;bead;false;false;inert
+whoi;bad;;;;;;;;other;false;false;invalid
+whoi;bubble;;;;;;;;bubble;false;false;invalid
+zoocamnet;detritus;;;;;;;;detritus;false;false;detritus
+zoocamnet;feces;;;;;;;;feces;false;false;detritus
+zoocamnet;fiber_detritus;;;;;;;;fiber;false;false;detritus
+zoocamnet;light_detritus;;;;;;;;detritus;false;false;detritus
+zoocamnet;medium_detritus;;;;;;;;detritus;false;false;detritus
+zoocamnet;part_Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+zoocamnet;fiber_plastic;;;;;;;;plastic fiber;false;false;inert
+zoocamnet;other_plastic;;;;;;;;other plastic;false;false;inert
+zoocamnet;artefact;;;;;;;;artefact;false;false;invalid
+zoocamnet;bubble;;;;;;;;bubble;false;false;invalid
+zoocamnet;gelatinous;;;;;;;;other;false;false;invalid
+zoolake;dirt;;;;;;;;dirt;false;false;inert
+zoolake;unknown;;;;;;;;unknown;false;false;invalid
+zooscan;detritus;;;;;;;;detritus;false;false;detritus
+zooscan;fiber;;;;;;;;fiber;false;false;detritus
+zooscan;part_Annelida;animalia;annelida;;;;;;annelida;false;false;detritus
+zooscan;part_Cnidaria;animalia;cnidaria;;;;;;cnidaria;false;false;detritus
+zooscan;part_Crustacea;animalia;arthropoda;;;;;;arthropoda;false;false;detritus
+zooscan;part_Mollusca;animalia;mollusca;;;;;;mollusca;false;false;detritus
+zooscan;part_Siphonophorae;animalia;cnidaria;hydrozoa;siphonophorae;;;;siphonophorae;false;false;detritus
+zooscan;artefact;;;;;;;;artefact;false;false;invalid
+zooscan;badfocus;;;;;;;;bad focus;false;false;invalid
+zooscan;bubble;;;;;;;;bubble;false;false;invalid
