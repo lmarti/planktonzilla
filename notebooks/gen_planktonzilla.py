@@ -710,7 +710,7 @@ def main():
     print(f"Saving concatenated dataset to: {output_path}")
     ds.save_to_disk(output_path)
     
-    print(f"\n✓ Process completed successfully!")
+    print(f"\n Process completed successfully!")
 
 
 if __name__ == "__main__":
