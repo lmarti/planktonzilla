@@ -6,12 +6,16 @@ import os
 import re
 import shutil
 import stat
+import gzip
+import csv
 from dataclasses import dataclass
 from multiprocessing import cpu_count
 from pathlib import Path
 from shutil import copy2, copytree, move, rmtree
 from typing import ClassVar, Dict, Final, Optional, Union
 from zipfile import ZipFile
+
+import concurrent.futures
 
 import aiohttp
 import numpy as np
@@ -85,6 +89,13 @@ def strip_ansi_codes(text):
     reaesc = re.compile(r"\x1b[^m]*m")
     return reaesc.sub("", text)
 
+def copytree_filtered(src: Path, dst: Path):
+    copytree(
+        src,
+        dst,
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns("._*", ".DS_Store"),
+    )
 
 def report_dataset_content(huggingface_dataset: Dataset | DatasetDict) -> str:
     def report_split(dataset: Dataset, split_name: str) -> str:
@@ -309,21 +320,41 @@ class DatasetImporter:
             if self.raw_dir and self.raw_dir.exists():
                 rmtree(self.raw_dir, ignore_errors=True)
 
-            if self.imagefolder_dir and self.imagefolder_dir.exists():
-                rmtree(self.imagefolder_dir, ignore_errors=True)
+            # if self.imagefolder_dir and self.imagefolder_dir.exists():
+            #    rmtree(self.imagefolder_dir, ignore_errors=True)
         else:
             logger.info("Keeping downloaded and intermediate files, set cleanup_after_processing=True to change this.")
 
     def import_dataset(self) -> Union[Dataset, DatasetDict]:
-        self._download_and_extract()
 
-        if not self.force_imagefolder_preparation and not is_dir_empty(self.imagefolder_dir):
-            logger.info(
-                f"ImageFolder dir {self.imagefolder_dir} is not empty, using its content as dataset. Set force_imagefolder_preparation=True to change this."  # noqa: E501
-            )
-        else:
+        imagefolder_exists = not is_dir_empty(self.imagefolder_dir)
+        raw_exists = self.raw_dir.exists() and bool(os.listdir(self.raw_dir))
+
+        need_to_build_imagefolder = not imagefolder_exists or self.force_imagefolder_preparation
+
+        if need_to_build_imagefolder:
+            if raw_exists:
+                logger.info(f"Raw data already exists at {self.raw_dir}, resolving extracted paths from cache.")
+            else:
+                logger.info("Downloading and extracting dataset.")
+            
+            # Si los archivos ya están en el raw_dir,
+            # no los descargará de nuevo; solo leerá la caché y asignará la ruta
+            self._download_and_extract()
+
+            if getattr(self, "extracted_dirs", None) is None:
+                raise RuntimeError(
+                    "Cannot prepare imagefolder: extraction failed or raw data is unavailable."
+                )
+
             logger.info(f"Preparing dataset as imagefolder in {self.imagefolder_dir}")
             self._prepare_imagefolder()
+            
+        else:
+            logger.info(
+                f"Using existing imagefolder at {self.imagefolder_dir}. "
+                "Set force_imagefolder_preparation=True to rebuild."
+            )
 
         if self.check_image_file_integrity:
             for class_dir in tqdm(
@@ -342,16 +373,42 @@ class DatasetImporter:
                         os.remove(self.imagefolder_dir / class_dir / file)
 
         logger.info(f"Loading imagefolder in {self.imagefolder_dir} as HuggingFace dataset.")
+
+        root = Path(self.imagefolder_dir)
+
+        split_aliases = {
+            "train": ["train"],
+            "validation": ["validation", "val"],
+            "test": ["test"],
+        }
+
+        data_files = {}
+
+        for canonical_split, aliases in split_aliases.items():
+            for alias in aliases:
+                split_path = root / alias
+                if split_path.exists():
+                    data_files[canonical_split] = str(split_path / "*/[!._]*")
+                    break
+
+        # fallback: dataset sin splits
+        if not data_files:
+            data_files = {
+                "train": str(root / "*/*[!._]*")
+            }
+
         self.hf_dataset = load_dataset(
             "imagefolder",
-            data_dir=self.imagefolder_dir,
+            data_files=data_files,
             name=self.hf_dataset_name,
             save_infos=True,
             token=self.hf_token,
             num_proc=self.num_proc,
         )
+
         self._push_to_hub()
         self.cleanup()
+
 
 
 class LenslessDatasetImporter(DatasetImporter):
@@ -433,7 +490,7 @@ class ZooScanNetDatasetImporter(DatasetImporter):
             leave=False,
             disable=not self.show_progress,
         ):
-            copytree(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
 
 
 class WHOIPlanktonDatasetImporter(DatasetImporter):
@@ -516,7 +573,7 @@ class UVP6NetDatasetImporter(DatasetImporter):
             leave=False,
             disable=not self.show_progress,
         ):
-            copytree(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
 
 
 class ZooCAMNetDatasetImporter(DatasetImporter):
@@ -527,7 +584,7 @@ class ZooCAMNetDatasetImporter(DatasetImporter):
             leave=False,
             disable=not self.show_progress,
         ):
-            copytree(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
 
 
 class FlowCAMNetDatasetImporter(DatasetImporter):
@@ -538,7 +595,7 @@ class FlowCAMNetDatasetImporter(DatasetImporter):
             leave=False,
             disable=not self.show_progress,
         ):
-            copytree(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
 
 
 class ISIISNetDatasetImporter(DatasetImporter):
@@ -549,4 +606,172 @@ class ISIISNetDatasetImporter(DatasetImporter):
             leave=False,
             disable=not self.show_progress,
         ):
-            copytree(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+
+class PlanktoScopeDatasetImporter(DatasetImporter): 
+    def _prepare_imagefolder(self): 
+        for plankton_class_dir in tqdm(
+            (Path(self.extracted_dirs) / "Planktoscope_reference" / "imgs").iterdir(),
+            desc="Progress",
+            leave=False,
+            disable=not self.show_progress,
+        ):
+            if (
+                not plankton_class_dir.is_dir()
+                or plankton_class_dir.name.startswith("._")
+                or plankton_class_dir.name == ".DS_Store"
+            ):
+                continue
+
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+
+
+
+class GlobalUVP5NetDatasetImporter(DatasetImporter):
+    OBJECTS_URL = "https://www.seanoe.org/data/00964/107583/data/120871.zip"
+
+    def _prepare_imagefolder(self):
+        aux_dir = self.data_dir / "global_uvp5_aux"
+        aux_dir.mkdir(parents=True, exist_ok=True)
+
+        # --- Metadata (obj_id to taxo) ---
+        dm = DownloadManager(
+            base_path=aux_dir,
+            data_dir=aux_dir,
+            download_config=DownloadConfig(
+                cache_dir=aux_dir,
+                force_download=self.force_download,
+                resume_download=self.resume_download,
+                max_retries=self.max_download_retries,
+                num_proc=self.num_proc,
+                disable_tqdm=not self.show_progress,
+                storage_options={
+                    "client_kwargs": {
+                        "timeout": aiohttp.ClientTimeout(total=self.http_timeout)
+                    }
+                },
+            ),
+        )
+
+        logger.info("Downloading objects metadata.")
+        zip_path = dm.download(self.OBJECTS_URL)
+
+        # --- Mapping ---
+        mapping = {}
+        logger.info("Parsing metadata directly from ZIP...")
+        with ZipFile(zip_path, "r") as z:
+            tsv_filename = next((name for name in z.namelist() if name.endswith("objects.tsv.gz")), None)
+            if not tsv_filename:
+                raise RuntimeError("objects.tsv.gz not found in zip")
+
+            with z.open(tsv_filename) as gz_fileobj:
+                with gzip.open(gz_fileobj, "rt", encoding="utf-8") as f:
+                    reader = csv.reader(f, delimiter="\t")
+                    header = next(reader)
+                    
+                    try:
+                        obj_idx = header.index("object_id")
+                        taxon_idx = header.index("taxon")
+                    except ValueError:
+                        raise RuntimeError("Columns 'object_id' or 'taxon' missing in TSV.")
+
+                    for row in reader:
+                        mapping[row[obj_idx]] = row[taxon_idx]
+
+        logger.info("Creating target directories...")
+        unique_taxa = set(mapping.values())
+        for taxon in unique_taxa:
+            (self.imagefolder_dir / taxon).mkdir(parents=True, exist_ok=True)
+
+        images_root = Path(self.extracted_dirs) / "images"
+        copy_tasks = []
+
+        logger.info("Mapping files to their target directories...")
+        
+        try:
+            sample_dirs = [entry.path for entry in os.scandir(images_root) if entry.is_dir()]
+        except FileNotFoundError:
+            raise RuntimeError(f"Directory not found: {images_root}. Check your extracted_dirs path.")
+
+        for sample_dir_path in tqdm(
+            sample_dirs, 
+            desc="Scanning directories", 
+            leave=False, 
+            disable=not self.show_progress
+        ):
+            for entry in os.scandir(sample_dir_path):
+                if not entry.is_file():
+                    continue
+
+                object_id = entry.name.rsplit('.', 1)[0]
+                taxon = mapping.get(object_id)
+
+
+                dst = self.imagefolder_dir / taxon / entry.name
+                
+                copy_tasks.append((entry.path, dst))
+
+        # --- MultiThread ---
+        def copy_worker(task):
+            src, dst = task
+            if not dst.exists():
+                try:
+                    copy2(src, dst)
+                except OSError as e:
+                    logger.warning(f"Failed to copy {src}: {e}")
+
+        if copy_tasks:
+            max_threads = min(16, self.num_proc) 
+            logger.info(f"Starting multi-threaded copy with {max_threads} workers...")
+            
+            with concurrent.futures.ThreadPoolExecutor(max_workers=max_threads) as executor:
+                list(tqdm(
+                    executor.map(copy_worker, copy_tasks),
+                    total=len(copy_tasks),
+                    desc="Copying images",
+                    disable=not self.show_progress,
+                    leave=False
+                ))
+        else:
+            logger.info("No new images to copy.")
+
+class PlanktonSet1DatasetImporter(DatasetImporter):
+    def _prepare_imagefolder(self):
+        for plankton_class_dir in tqdm(
+            (Path(self.extracted_dirs) / "0127422" / "2.3" / "data" / "0-data" / "FINAL_Plankton_Segments_12082014").glob("*"),
+            desc="Progress",
+            leave=False,
+            disable=not self.show_progress,
+        ):
+
+            if (
+                not plankton_class_dir.is_dir()
+                or plankton_class_dir.name.startswith(".")
+                or plankton_class_dir.name.startswith("._")
+                or plankton_class_dir.name == ".DS_Store"
+            ):
+                continue
+
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+
+
+class SYKEIFCB2022DatasetImporter(DatasetImporter):
+    def _prepare_imagefolder(self):
+        for plankton_class_dir in tqdm(
+            (Path(self.extracted_dirs) / "labeled_20201020").glob("*"),
+            desc="Progress",
+            leave=False,
+            disable=not self.show_progress,
+        ):
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)
+
+
+class SYKEZooScan2024DatasetImporter(DatasetImporter):
+    def _prepare_imagefolder(self):
+        for plankton_class_dir in tqdm(
+            (Path(self.extracted_dirs) / "0127422" / "2.3" / "data" / "FINAL_Plankton_Segments_12082014").glob("*"),
+            desc="Progress",
+            leave=False,
+            disable=not self.show_progress,
+        ):
+            copytree_filtered(plankton_class_dir, self.imagefolder_dir / plankton_class_dir.name)

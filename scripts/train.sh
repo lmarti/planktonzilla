@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=96
 #SBATCH --gres=gpu:4
 #SBATCH --hint=nomultithread
-#SBATCH --time=20:00:00
+#SBATCH --time=4:00:00
 #SBATCH --output=logs/%x_%j.out  
 
 # === Preparación del entorno ===

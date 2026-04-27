@@ -1,5 +1,5 @@
 # @package _global_
 
-custom_loss: null
-
-
+custom_loss:
+  _target_: planktonzilla.loss.CrossEntropyLossHF
+  weight: null

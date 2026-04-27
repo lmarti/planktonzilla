@@ -1,50 +1,30 @@
 import os
-import sys
-import shutil
-import subprocess
 from pathlib import Path
-from shutil import rmtree
 import numpy as np
 import requests
-import time
 import json
-
+from multiprocessing import cpu_count
+from functools import partial
 
 import hydra
-from hydra.core.global_hydra import GlobalHydra
-from omegaconf import OmegaConf
 import pyrootutils
 import polars as pl
 from tqdm import tqdm
 import concurrent.futures
+import orjson
 
 from datasets import (
-    ClassLabel,
-    Dataset,
-    DatasetDict,
-    Features,
     Image,
-    Sequence,
     Value,
     concatenate_datasets,
     load_dataset,
-    load_from_disk
 )
 
 from planktonzilla.utils.logger import get_pylogger
-from planktonzilla.dataset_import.dataset_importer import (
-    DatasetImporter,
-    is_dir_empty,
-    is_valid_image_file,
-)
 
-import json
-from datasets import Value
-
-from multiprocessing import cpu_count
-num_proc = min(cpu_count(), 32)
-
-
+# =============================================================================
+# CONFIGURATION
+# =============================================================================
 root = pyrootutils.setup_root(
     search_from=".",  
     indicator=[".git", "pyproject.toml"],
@@ -53,78 +33,15 @@ root = pyrootutils.setup_root(
 )
 
 logger = get_pylogger(__name__)
+num_proc = int(cpu_count() / 2)
 
 
-# ============= GENERATING IMAGEFOLDERS ============= #
-def custom_cleanup(self):
-    if self.cleanup_after_processing:
-        logger.info("Removing downloaded and intermediate files.")
-        if self.download_manager:
-            self.download_manager.delete_extracted_files()
-
-        if self.raw_dir and self.raw_dir.exists():
-            rmtree(self.raw_dir, ignore_errors=True)
-
-    else:
-        logger.info("Keeping downloaded and intermediate files, set cleanup_after_processing=True to change this.")
-
-
-def custom_import_dataset(self):
-    """
-    Versión modificada de import_dataset que NO carga HF ni sube al Hub.
-    """
-    self._download_and_extract()
-
-    if not self.force_imagefolder_preparation and not is_dir_empty(self.imagefolder_dir):
-        logger.info(
-            f"ImageFolder dir {self.imagefolder_dir} is not empty, using its content as dataset. Set force_imagefolder_preparation=True to change this."
-        )
-    else:
-        logger.info(f"Preparing dataset as imagefolder in {self.imagefolder_dir}")
-        self._prepare_imagefolder()
-
-    if self.check_image_file_integrity:
-        for class_dir in tqdm(
-            os.listdir(self.imagefolder_dir),
-            desc="Validating classes.",
-            disable=not self.show_progress,
-            leave=False,
-        ):
-            for file in tqdm(
-                os.listdir(self.imagefolder_dir / class_dir),
-                disable=not self.show_progress,
-                leave=False,
-            ):
-                if not is_valid_image_file(self.imagefolder_dir / class_dir / file):
-                    logger.warning(f"Invalid file {file} in class {class_dir} detected. Removing it from dataset.")
-                    os.remove(self.imagefolder_dir / class_dir / file)
-    
-    self.cleanup()
-
-
-DatasetImporter.import_dataset = custom_import_dataset
-DatasetImporter.cleanup = custom_cleanup
-
-# ============= GENERATING IMAGEFOLDERS ============= #
-
-
-# ============= GENERATING HF DATASETS WITH METADATA ============= #
-
-
-def cast_metadata_json(ds):
-    # 1. Convert dict → JSON string
-    def to_json(example):
-        return {"metadata": json.dumps(example["metadata"])}
-
-    ds = ds.map(to_json, desc="Serializing metadata")
-
-    # 2. Cast feature
-    features = ds.features.copy()
-    features["metadata"] = Value("string")
-    return ds.cast(features)
-
+# =============================================================================
+# METADATA RETRIEVAL FUNCTIONS
+# =============================================================================
 
 def retrieve_whoi_metadata(bin_id, session=None):
+    """Retrieve metadata from WHOI API for a given bin_id."""
     api_url = f"https://ifcb-data.whoi.edu/api/bin/{bin_id}"
     hdr_url = f"https://ifcb-data.whoi.edu/mvco/{bin_id}.hdr"
 
@@ -178,6 +95,7 @@ def retrieve_whoi_metadata(bin_id, session=None):
 
 
 def retrieve_ecotaxa_metadata(obj_id, session=None):
+    """Retrieve metadata from EcoTaxa API for a given object_id."""
     api_url = f"https://ecotaxa.obs-vlfr.fr/api/object/{obj_id}"
 
     info = {
@@ -212,27 +130,94 @@ def retrieve_ecotaxa_metadata(obj_id, session=None):
     return info
 
 
-class RedefineDataset:
-    def __init__(self, csv_taxonomies_path):
+# =============================================================================
+# REDEFINER CLASSES FOR TAXONOMY AND METADATA PROCESSING
+# =============================================================================
 
+class RedefineDataset:
+    """Base class for redefining datasets with taxonomy and metadata."""
+    
+    def __init__(self, csv_taxonomies_path):
         self.csv_tax = pl.read_csv(csv_taxonomies_path).fill_null("")
 
+        # Taxonomy columns
         self.taxonomy_cols = [
             "Kingdom", "Phylum", "Class",
             "Order", "Family", "Genus", "Species"
         ]
-        self.extra_cols = ["proposed_label", "plankton", "living"]
+        
+        # Extra columns (including new ones: root_class, qualifier)
+        self.extra_cols = ["proposed_label", "plankton", "root_class", "qualifier"]
         self.all_cols = self.taxonomy_cols + self.extra_cols
 
+        # Create lookup dictionary from CSV
         keys = zip(self.csv_tax["Dataset"], self.csv_tax["Raw_Labels"])
         values = self.csv_tax.select(self.all_cols).to_dicts()
         self.lookup = dict(zip(keys, values))
 
+        # Metadata column names that will be extracted from JSON
+        self.metadata_cols_final = [
+            "Latitude", "Humidity", "Temperature", "Longitude",
+            "ObjID", "Depth_max", "Depth_min"
+        ]
+
     def _add_metadata(self, processed_ds):
+        """Add metadata to dataset. Must be implemented by subclasses."""
         raise NotImplementedError()
 
-    def redefine(self, hf_dataset, dataset_name, num_proc):
+    def _flatten_metadata(self, processed_ds):
+        """
+        Convert metadata JSON string to flattened columns.
+        Integrates the transformation logic from update_dataset.ipynb
+        """
+        def extract_metadata_fields(example):
+            # Parse JSON metadata
+            try:
+                md = orjson.loads(example["metadata"]) if example["metadata"] else {}
+            except Exception:
+                md = {}
+            
+            # Initialize all metadata columns
+            for col in self.metadata_cols_final:
+                example[col] = None
+            
+            # Extract ObjID (prioritize ObjID, fallback to BinID)
+            obj_val = md.get("ObjID") if md.get("ObjID") is not None else md.get("BinID")
+            example["ObjID"] = str(obj_val) if obj_val not in (None, "") else None
+            
+            # Extract Depth
+            depth_val = md.get("Depth")
+            if depth_val not in (None, ""):
+                example["Depth_max"] = np.float32(depth_val)
+                example["Depth_min"] = np.float32(depth_val)
+            else:
+                d_max = md.get("Depth_max")
+                d_min = md.get("Depth_min")
+                example["Depth_max"] = np.float32(d_max) if d_max not in (None, "") else None
+                example["Depth_min"] = np.float32(d_min) if d_min not in (None, "") else None
+            
+            # Extract other numeric metadata
+            for col in ["Latitude", "Humidity", "Temperature", "Longitude"]:
+                val = md.get(col)
+                example[col] = np.float32(val) if val not in (None, "") else None
+            
+            return example
+        
+        # Apply flattening
+        processed_ds = processed_ds.map(
+            extract_metadata_fields,
+            desc="Flattening metadata from JSON",
+            num_proc=num_proc,
+        )
+        
+        # Remove original metadata column
+        processed_ds = processed_ds.remove_columns("metadata")
+        
+        return processed_ds
 
+    def redefine(self, hf_dataset, dataset_name, num_proc):
+        """Main method to redefine dataset with taxonomy and metadata."""
+        
         ds_list = []
         n_splits = len(hf_dataset)
 
@@ -240,7 +225,6 @@ class RedefineDataset:
             ds = hf_dataset[split]
             class_names = ds.features["label"].names
 
-            # ⬅️ critical optimization
             ds = ds.cast_column("image", Image(decode=False))
 
             def process_row(example):
@@ -254,6 +238,7 @@ class RedefineDataset:
                     else "/" + "/".join(parts[-2:])
                 )
 
+                # Lookup taxonomy from CSV
                 tax_data = self.lookup.get(
                     (dataset_name, label_str),
                     {col: None for col in self.all_cols},
@@ -274,59 +259,94 @@ class RedefineDataset:
                 num_proc=num_proc,
             )
 
+            # Add metadata (specific to dataset type)
             processed_ds = self._add_metadata(processed_ds)
 
+            # Flatten metadata from JSON to independent columns
+            processed_ds = self._flatten_metadata(processed_ds)
+
+            # Remove original label column
             if "label" in processed_ds.column_names:
                 processed_ds = processed_ds.remove_columns("label")
 
+            # Decode images
             processed_ds = processed_ds.cast_column("image", Image(decode=True))
 
             ds_list.append(processed_ds)
 
         return concatenate_datasets(ds_list)
-    
+
 
 class EcoTaxaRedefiner(RedefineDataset):
+    """Redefiner for EcoTaxa-sourced datasets (e.g., flowcamnet, uvp6net, zooscan)."""
 
     def _add_metadata(self, processed_ds):
-
+        """Retrieve metadata from EcoTaxa API."""
+        
         ids = [
             path.split("/")[-1].split(".")[0]
             for path in processed_ds["original_path"]
         ]
 
-        from functools import partial
-        import concurrent.futures
-
-            
+        # Parallel retrieval from EcoTaxa API
         with requests.Session() as session:
             func = partial(retrieve_ecotaxa_metadata, session=session)
-            with concurrent.futures.ThreadPoolExecutor(max_workers=32) as executor:
-                raw = list(tqdm(executor.map(func, ids), total=len(ids)))
+            with concurrent.futures.ThreadPoolExecutor(max_workers=num_proc) as executor:
+                raw = list(tqdm(executor.map(func, ids), total=len(ids), desc="Retrieving EcoTaxa metadata"))
 
-
+        # Normalize metadata dicts to strings
         def normalize_metadata(md: dict | None) -> dict:
             if not md:
                 return {}
             return {str(k): str(v) for k, v in md.items() if v is not None}
-            
+
         metadata = [normalize_metadata(r) for r in raw]
 
+        # Add as JSON string column
         processed_ds = processed_ds.add_column("metadata", metadata)
-        return cast_metadata_json(processed_ds)
+        
+        # Serialize to JSON string
+        def to_json(example):
+            return {"metadata": json.dumps(example["metadata"])}
+        
+        processed_ds = processed_ds.map(to_json, desc="Serializing metadata", num_proc=num_proc)
+        
+        # Cast to string type
+        features = processed_ds.features.copy()
+        features["metadata"] = Value("string")
+        processed_ds = processed_ds.cast(features)
+        
+        return processed_ds
+
 
 class NoMetadataRedefiner(RedefineDataset):
+    """Redefiner for datasets without external metadata (e.g., lensless, medplanktonset, zoolake)."""
 
     def _add_metadata(self, processed_ds):
+        """Add empty metadata column."""
         n = len(processed_ds)
         processed_ds = processed_ds.add_column("metadata", [{}] * n)
-        return cast_metadata_json(processed_ds)
+        
+        # Serialize to JSON string
+        def to_json(example):
+            return {"metadata": json.dumps(example["metadata"])}
+        
+        processed_ds = processed_ds.map(to_json, desc="Serializing metadata", num_proc=num_proc)
+        
+        # Cast to string type
+        features = processed_ds.features.copy()
+        features["metadata"] = Value("string")
+        processed_ds = processed_ds.cast(features)
+        
+        return processed_ds
 
 
 class WHOIRedefiner(RedefineDataset):
+    """Redefiner for WHOI-sourced datasets."""
 
     def _add_metadata(self, processed_ds):
-
+        """Retrieve metadata from WHOI API based on bin_id."""
+        
         def extract_bin_id(example):
             fname = example["original_path"].split("/")[-1]
             parts = fname.split(".")[0].split("_")[:-1]
@@ -342,8 +362,9 @@ class WHOIRedefiner(RedefineDataset):
 
         bin_id_lookup = {}
 
+        # Parallel retrieval from WHOI API
         with requests.Session() as session:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            with concurrent.futures.ThreadPoolExecutor(max_workers=num_proc) as executor:
                 futures = {
                     executor.submit(retrieve_whoi_metadata, bin_id, session): bin_id
                     for bin_id in bin_ids
@@ -366,7 +387,6 @@ class WHOIRedefiner(RedefineDataset):
                         bin_id_lookup[bin_id] = {}
 
         def add_metadata(example):
-            print()
             return {"metadata": bin_id_lookup.get(example["bin_id"], {})}
 
         processed_ds = processed_ds.map(
@@ -375,13 +395,28 @@ class WHOIRedefiner(RedefineDataset):
         )
 
         processed_ds = processed_ds.remove_columns("bin_id")
-        return cast_metadata_json(processed_ds)
+        
+        # Serialize to JSON string
+        def to_json(example):
+            return {"metadata": json.dumps(example["metadata"])}
+        
+        processed_ds = processed_ds.map(to_json, desc="Serializing metadata", num_proc=num_proc)
+        
+        # Cast to string type
+        features = processed_ds.features.copy()
+        features["metadata"] = Value("string")
+        processed_ds = processed_ds.cast(features)
+        
+        return processed_ds
 
 
 class JediRedefiner(RedefineDataset):
+    """Redefiner for JEDI Oceans dataset with fixed metadata."""
+    
     def __init__(self, csv_taxonomies_path: str):
         super().__init__(csv_taxonomies_path)
-
+        
+        # Static metadata for JEDI dataset
         self.metadata = {
             "Latitude": "34.682718",
             "Longitude": "139.444779",
@@ -390,142 +425,211 @@ class JediRedefiner(RedefineDataset):
         }
 
     def _add_metadata(self, processed_ds):
+        """Add fixed metadata for JEDI dataset."""
         metadata_column = [self.metadata] * len(processed_ds)
         processed_ds = processed_ds.add_column("metadata", metadata_column)
+        
+        # Serialize to JSON string
+        def to_json(example):
+            return {"metadata": json.dumps(example["metadata"])}
+        
+        processed_ds = processed_ds.map(to_json, desc="Serializing metadata", num_proc=num_proc)
+        
+        # Cast to string type
+        features = processed_ds.features.copy()
+        features["metadata"] = Value("string")
+        processed_ds = processed_ds.cast(features)
+        
+        return processed_ds
 
-        return cast_metadata_json(processed_ds)
 
-# ============= GENERATING HF DATASETS WITH METADATA ============= #
-
+# =============================================================================
+# MAIN FUNCTION AND DATASET CONFIGURATION
+# =============================================================================
 
 def main():
+    """
+    Generate imagefolders for all datasets and create HuggingFace datasets
+    with taxonomies and metadata.
+    
+    Note: The Zoolake and SYKE Zooscan 2024 datasets have anti-bot protection
+    on their download URLs. You must manually download the .zip files and 
+    provide their file paths:
+    
+    - Zoolake: https://opendata.eawag.ch/dataset/52b6ba86-5ecb-448c-8c01-eec7cb209dc7/resource/1cc785fa-36c2-447d-bb11-92ce1d1f3f2d/download/data.zip
+    - SYKE Zooscan 2024: https://etsin.fairdata.fi/dataset/6fa42787-9772-41a5-a6fc-0dde489ed908/data
+    """
 
-    # Note: the Zoolake and SYKE Zooscan 2024 URL has an anti-bot protection, so it cannot be downloaded using Python libraries. 
-    # Therefore, you must manually download the .zip file, add it to the repository, and provide the file path.
-    # zoolake url: https://opendata.eawag.ch/dataset/52b6ba86-5ecb-448c-8c01-eec7cb209dc7/resource/1cc785fa-36c2-447d-bb11-92ce1d1f3f2d/download/data.zip
-    # SYKE Zooscan 2024 url: https://etsin.fairdata.fi/dataset/6fa42787-9772-41a5-a6fc-0dde489ed908/data
+    # =================================================================
+    # CONFIGURATION PATHS
+    # =================================================================
+    DATA_ROOT = Path("/lustre/fsn1/projects/rech/tec/uod68bo/data").resolve()
+    
+    # Path to taxonomy CSV
+    taxo_csv_path = "/lustre/fswork/projects/rech/tec/uod68bo/am/planktonzilla/notebooks/planktonzilla_taxo.csv"
 
-    DATA_ROOT = Path("/planktonzilla/data").resolve()
+    # Paths for manually downloaded datasets (comment out if files are not available)
+    # path_zip_jedi = DATA_ROOT / "CPICS_Validated.zip"
+    # path_zip_zoolake = DATA_ROOT / "zoolake_data.zip"
+    # path_zip_syze_zooscan2024 = DATA_ROOT / "SYKE-plankton_ZooScan_2024.zip"
 
-    path_zip_zoolake = DATA_ROOT / "data.zip"
-    path_zip_syze_zooscan2024 = DATA_ROOT / "SYKE-plankton_ZooScan_2024.zip"
-    path_zip_jedi = DATA_ROOT / "CPICS_Validated.zip"
-
-    taxo_csv_path = DATA_ROOT / "planktonzilla_taxonomy.csv"
-
+    # For now, these are undefined. Uncomment above and use them in overrides below
+    path_zip_jedi = None
+    path_zip_zoolake = None
+    path_zip_syze_zooscan2024 = None
+    
     datasets_configs = {
         "isiisnet": {
             "overrides": [
                 "dataset_import=isiisnet",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
         "whoi": {
             "overrides": [
                 "dataset_import=whoi-plankton",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": WHOIRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": WHOIRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
         "flowcamnet": {
             "overrides": [
                 "dataset_import=flowcamnet",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
-        "jedi_oceans_cpics": {
-            "overrides": [
-                "dataset_import=jedi",
-                "dataset_import.cleanup_after_processing=True",
-                f"dataset_import.data_dir={DATA_ROOT}",
-                f"dataset_import.manual_download_local_file_names={path_zip_jedi}"
-            ],
-            "redefiner": JediRedefiner(csv_taxonomies_path = taxo_csv_path)
-
-        },
+        # "jedi_oceans_cpics": {
+        #     "overrides": [
+        #         "dataset_import=jedi",
+        #         "dataset_import.cleanup_after_processing=True",
+        #         "dataset_import.push_to_hub=False",
+        #         f"dataset_import.data_dir={DATA_ROOT}",
+        #         f"dataset_import.manual_download_local_file_names={path_zip_jedi}"
+        #     ],
+        #     "redefiner": JediRedefiner(csv_taxonomies_path=taxo_csv_path),
+        # },
 
         "lensless": {
             "overrides": [
                 "dataset_import=lensless",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
         "medplanktonset": {
             "overrides": [
                 "dataset_import=medplanktonset",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
-        "sykezooscan2024": {
-            "overrides": [
-                "dataset_import=sykezooscan2024",
-                "dataset_import.cleanup_after_processing=True",
-                f"dataset_import.data_dir={DATA_ROOT}",
-                f"dataset_import.manual_download_local_file_names={path_zip_syze_zooscan2024}"
-
-            ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
-        },
+        # "sykezooscan2024": {
+        #     "overrides": [
+        #         "dataset_import=sykezooscan2024",
+        #         "dataset_import.cleanup_after_processing=True",
+        #         "dataset_import.push_to_hub=False",
+        #         f"dataset_import.data_dir={DATA_ROOT}",
+        #         f"dataset_import.manual_download_local_file_names={path_zip_syze_zooscan2024}"
+        #     ],
+        #     "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
+        # },
 
         "uvp6net": {
             "overrides": [
                 "dataset_import=uvp6net",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
         "zoocamnet": {
             "overrides": [
                 "dataset_import=zoocamnet",
                 "dataset_import.cleanup_after_processing=True",
+                "dataset_import.push_to_hub=False",
                 f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
 
-        "zoolake": {
-            "overrides": [
-                "dataset_import=zoolake",
-                "dataset_import.cleanup_after_processing=True",
-                f"dataset_import.data_dir={DATA_ROOT}",
-                f"dataset_import.manual_download_local_file_names={path_zip_zoolake}"
-            ],
-            "redefiner": NoMetadataRedefiner(csv_taxonomies_path = taxo_csv_path)
-
-        },
+        # "zoolake": {
+        #     "overrides": [
+        #         "dataset_import=zoolake",
+        #         "dataset_import.cleanup_after_processing=True",
+        #         "dataset_import.push_to_hub=False",
+        #         f"dataset_import.data_dir={DATA_ROOT}",
+        #         f"dataset_import.manual_download_local_file_names={path_zip_zoolake}"
+        #     ],
+        #     "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
+        # },
 
         "zooscan": {
             "overrides": [
                 "dataset_import=zooscannet",
                 "dataset_import.cleanup_after_processing=True",
-                "dataset_import.data_dir=/lustre/fsn1/projects/rech/tec/uod68bo/data/",
+                "dataset_import.push_to_hub=False",
+                f"dataset_import.data_dir={DATA_ROOT}",
             ],
-            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path = taxo_csv_path)
+            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path=taxo_csv_path),
+        },
 
+        "planktonset1.0": {
+            "overrides": [
+                "dataset_import=planktonset1",
+                "dataset_import.cleanup_after_processing=False",
+                "dataset_import.push_to_hub=False",
+                f"dataset_import.data_dir={DATA_ROOT}",
+            ],
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
+        },
+
+        "syke_ifcb_2022": {
+            "overrides": [
+                "dataset_import=syke_ifcb_2022",
+                "dataset_import.cleanup_after_processing=False",
+                "dataset_import.push_to_hub=False",
+                f"dataset_import.data_dir={DATA_ROOT}",
+            ],
+            "redefiner": NoMetadataRedefiner(csv_taxonomies_path=taxo_csv_path),
+        },
+
+        "planktoscope": {
+            "overrides": [
+                "dataset_import=planktoscope",
+                "dataset_import.cleanup_after_processing=False",
+                "dataset_import.push_to_hub=False",
+                f"dataset_import.data_dir={DATA_ROOT}",
+            ],
+            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path=taxo_csv_path),
+        },
+
+        "global_uvp5": {
+            "overrides": [
+                "dataset_import=global_uvp5net",
+                "dataset_import.cleanup_after_processing=False",
+                "dataset_import.push_to_hub=False",
+                f"dataset_import.data_dir={DATA_ROOT}",
+            ],
+            "redefiner": EcoTaxaRedefiner(csv_taxonomies_path=taxo_csv_path),
         },
     }
 
@@ -542,20 +646,72 @@ def main():
             )
 
             dataset_importer = hydra.utils.instantiate(cfg.dataset_import)
-            dataset_importer.import_dataset()
+            imagefolder_dir = Path(dataset_importer.imagefolder_dir)
 
-            dataset = load_dataset("imagefolder", data_dir=dataset_importer.imagefolder_dir)
+            has_content = imagefolder_dir.exists() and bool(os.listdir(imagefolder_dir))
 
+            if has_content:
+                num_items = len(os.listdir(imagefolder_dir))
+                print(f" Using existing imagefolder with {num_items} categories at:")
+                print(f" {imagefolder_dir}")
+            else:
+                print(f" Building imagefolder from raw data...")
+                dataset_importer.import_dataset()
+
+            # Determine data files for HuggingFace dataset
+            split_aliases = {
+                "train": ["train"],
+                "validation": ["validation", "val"],
+                "test": ["test"],
+            }
+
+            data_files = {}
+
+            for canonical_split, aliases in split_aliases.items():
+                for alias in aliases:
+                    split_path = root / alias
+                    if split_path.exists():
+                        data_files[canonical_split] = str(split_path / "*/[!._]*")
+                        break
+
+            # Fallback: no splits
+            if not data_files:
+                data_files = {
+                    "train": str(dataset_importer.imagefolder_dir / "*/*[!._]*")
+                }
+
+            # Load dataset with HuggingFace imagefolder loader
+            print(f"Loading dataset with imagefolder loader...")
+            dataset = load_dataset(
+                "imagefolder",
+                data_files=data_files,
+            )
+
+            # Redefine with taxonomy and metadata
+            print(f"Adding taxonomy and metadata...")
             dataset = ds_cfg["redefiner"].redefine(
                 hf_dataset=dataset,
                 dataset_name=dataset_name,
                 num_proc=num_proc
             )
 
+            # Save individual dataset
+            # output_path = DATA_ROOT / f"{dataset_name}_hf"
+            # print(f"Saving dataset to: {output_path}")
+            # dataset.save_to_disk(output_path)
+
             ds.append(dataset)
 
+    # Concatenate all datasets
     ds = concatenate_datasets(ds)
-    ds.save_to_disk(DATA_ROOT / "planktonzilla")
+    
+    # Save concatenated dataset
+    output_path = DATA_ROOT / "planktonzilla_others"
+    print(f"Saving concatenated dataset to: {output_path}")
+    ds.save_to_disk(output_path)
+    
+    print(f"\n Process completed successfully!")
+
 
 if __name__ == "__main__":
     main()

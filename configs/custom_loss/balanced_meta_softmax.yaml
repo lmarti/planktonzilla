@@ -1,9 +1,6 @@
 # @package _global_
 # (c) Inria
 
-defaults:
-  - default.yaml
-
 custom_loss:
   _target_: planktonzilla.loss.BalancedMetaSoftmaxLoss
   cls_num_list: ???

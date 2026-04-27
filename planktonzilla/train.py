@@ -18,6 +18,14 @@ torch.multiprocessing.set_sharing_strategy("file_system")
 import os
 from functools import partial
 
+import numpy as np
+from sklearn.metrics import (
+    f1_score,
+    precision_score,
+    recall_score,
+    accuracy_score,
+)
+
 import hydra
 import numpy as np
 import torch
@@ -26,14 +34,7 @@ from huggingface_hub import DatasetCard, login
 from omegaconf import DictConfig, OmegaConf
 from transformers import AutoModelForImageClassification, Trainer, TrainingArguments, set_seed
 
-from sklearn.metrics import (
-    f1_score,
-    precision_score,
-    recall_score,
-    accuracy_score,
-)
-
-
+from planktonzilla.clip_model import ClipClassifier
 from planktonzilla.dataset import DatasetWrapper
 from planktonzilla.utils.hydra import (
     get_metric_value,
@@ -90,7 +91,7 @@ def validate_environment():
 
 
 # def compute_metrics(eval_pred):
-#    """requires training_args.eval_do_concat_batches = True"""
+#     """requires training_args.eval_do_concat_batches = True"""
 #     metrics = combine([load("f1"), load("precision"), load("recall")])
 #     predictions = np.argmax(eval_pred.predictions, axis=-1)
 #     res = metrics.compute(predictions=predictions, references=eval_pred.label_ids, average="macro")
@@ -154,14 +155,25 @@ def train(cfg: DictConfig) -> tuple[dict, dict]:
 
     log.info(f"Instantiating base model «{cfg.model._args_[0]}».")
 
-    model: AutoModelForImageClassification = hydra.utils.instantiate(
-        cfg.model,
-        id2label=dataset_wrapper.id2label,
-        label2id=dataset_wrapper.label2id,
-        num_labels=len(dataset_wrapper.label2id),
-        _convert_="all",
-    )
+    try:
+        model: AutoModelForImageClassification = hydra.utils.instantiate(
+            cfg.model,
+            id2label=dataset_wrapper.id2label,
+            label2id=dataset_wrapper.label2id,
+            num_labels=len(dataset_wrapper.label2id),
+            _convert_="all",
+        )
 
+    except:
+        model: ClipClassifier = hydra.utils.instantiate(
+            cfg.model,
+            num_features=cfg.num_features,
+            id2label=dataset_wrapper.id2label,
+            label2id=dataset_wrapper.label2id,
+            num_labels=len(dataset_wrapper.label2id),
+            _convert_="all",
+        )
+        
     if cfg.get("peft"):
         log.info("Adding LoRA adapter(s).")
         for adapter_name in cfg.peft:
