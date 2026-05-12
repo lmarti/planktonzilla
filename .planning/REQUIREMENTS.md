@@ -104,39 +104,45 @@ Explicitly excluded. Documented to prevent scope creep.
 
 ## Traceability
 
-Empty until roadmap creation. Updated by `gsd-roadmapper` agent.
+Updated by `gsd-roadmapper` agent on 2026-05-12 — all 22 v1 requirements mapped to phases.
 
 | Requirement | Phase | Status  |
 | ----------- | ----- | ------- |
-| FOUND-01    | TBD   | Pending |
-| FOUND-02    | TBD   | Pending |
-| HARD-01     | TBD   | Pending |
-| HARD-02     | TBD   | Pending |
-| HARD-03     | TBD   | Pending |
-| HARD-04     | TBD   | Pending |
-| REL-01      | TBD   | Pending |
-| REL-02      | TBD   | Pending |
-| REL-03      | TBD   | Pending |
-| REL-04      | TBD   | Pending |
-| REL-05      | TBD   | Pending |
-| REL-06      | TBD   | Pending |
-| DEMO-01     | TBD   | Pending |
-| DEMO-02     | TBD   | Pending |
-| DEMO-03     | TBD   | Pending |
-| DEMO-04     | TBD   | Pending |
-| DOC-01      | TBD   | Pending |
-| DOC-02      | TBD   | Pending |
-| DOC-03      | TBD   | Pending |
-| DOC-04      | TBD   | Pending |
-| LAUNCH-01   | TBD   | Pending |
-| LAUNCH-02   | TBD   | Pending |
+| FOUND-01    | 1     | Pending |
+| FOUND-02    | 1     | Pending |
+| HARD-01     | 2     | Pending |
+| HARD-02     | 2     | Pending |
+| HARD-03     | 2     | Pending |
+| HARD-04     | 2     | Pending |
+| REL-01      | 3     | Pending |
+| REL-02      | 3     | Pending |
+| REL-03      | 3     | Pending |
+| REL-04      | 3     | Pending |
+| REL-05      | 4     | Pending |
+| REL-06      | 3     | Pending |
+| DEMO-01     | 4     | Pending |
+| DEMO-02     | 4     | Pending |
+| DEMO-03     | 4     | Pending |
+| DEMO-04     | 4     | Pending |
+| DOC-01      | 5     | Pending |
+| DOC-02      | 5     | Pending |
+| DOC-03      | 5     | Pending |
+| DOC-04      | 5     | Pending |
+| LAUNCH-01   | 5     | Pending |
+| LAUNCH-02   | 5     | Pending |
 
 **Coverage:**
 
 - v1 requirements: 22 total
-- Mapped to phases: 0 (roadmapper will fill)
-- Unmapped: 22 ⚠️ (expected; resolved during roadmap creation)
+- Mapped to phases: 22 ✓
+- Unmapped: 0
+- Duplicates: 0
+
+**Sequencing checks (verified by roadmapper):**
+- ✓ REL-06 (CLIP-first) honored — CLIP models in Phase 3, pure-HF wave deferred to Phase 4
+- ✓ HARD-04 (clean-env smoke test) satisfied in Phase 2 before any REL-* requirement is shipped in Phase 3
+- ✓ LAUNCH-01..02 both in Phase 5 (the final phase) — no launch coordination work in earlier phases
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-12 after user redirect: "leave datasets as they are, focus on documentation and code"*
+*Last updated: 2026-05-12 — Traceability filled in by `gsd-roadmapper` (5-phase roadmap, 100% coverage)*
