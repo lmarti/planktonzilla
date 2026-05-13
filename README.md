@@ -1,7 +1,7 @@
 <div align="center">
-<img src="docs/images/planktonzilla-logo.gif" width="29%" alt="planktonzilla logo"/>
+<!-- <img src="docs/images/planktonzilla-logo.gif" width="29%" alt="planktonzilla logo"/> -->
 
-# `planktonzilla`
+# 🪸 🦠 🪼 🦐 🦖 🐙 🫧 🌊<br/>`planktonzilla`
 
 Deep learning framework, datasets, and models for plankton identification.
 
